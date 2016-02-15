@@ -1,0 +1,81 @@
+"use strict";
+
+var express = require('express');
+var path = require('path');
+//var io = require('../scripts/socket.io.js');
+var tf = require('../scripts/tinkerforge.js')
+
+//Routes
+var index = require('../routes/index.js');
+var api = require('../routes/api.js');
+
+var app = express();
+app.set('port', process.env.PORT || 3000);
+app.set('ipAddr', process.env.IP);
+
+//View Engine
+app.set('views', './angular');
+app.set('view engine', 'jade');
+
+//Middleware
+app.use(express.static('./public'));
+app.use('/angular', express.static('./angular'));
+
+// Add headers
+app.use(function (req, res, next) {
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    //res.setHeader('Access-Control-Allow-Credentials', true);
+    // Pass to next layer of middleware
+    next();
+});
+
+//Routes
+app.use('/', index);
+app.use('/api', api);
+
+//Error Handling
+app.use(function(req, res) {
+    res.type('text/plain');
+    res.status(404);
+    res.send('404 - Not Found');
+});
+
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.type('text/plain');
+    res.status(500);
+    res.send('500 - Internal Server Error');
+});
+
+
+exports.start = function() {
+    try {
+        var server = undefined;
+        if(app.get('ipAddr') === undefined) {
+            server = app.listen(app.get('port'), function() {
+                console.log("Web Brick Viewer listening on Network Interface on Port " + app.get('port'));
+            });
+        } else {
+            server = app.listen(app.get('port'), function() {
+                console.log("Web Brick Viewer listening on " + app.get('ipAddr') + ":" + app.get('port'));
+            });
+        }
+        //Start Socket.io
+        if(server === undefined){
+            console.error("Socket.io could not be initialized! Server was undefined!")
+            return;
+        }
+        tf.init(server);
+        //io.init(server);
+
+    } catch(e) {
+        console.log("Server could not be started. " + e.stack);
+    }
+}
