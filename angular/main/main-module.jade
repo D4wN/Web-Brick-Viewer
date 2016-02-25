@@ -1,2 +1,9 @@
-h3 {{::main.name}}
-button(ng-click="main.loadConnectedBricks()") Press Me!
+div(ng-controller="mainCtrl")
+    h3 {{::name}}
+
+    //p Current AirPressure: {{airPressure}} {{::airPressureUnit}}
+    div
+        button(ng-click='debugCheckDevices()') DEBUG CHECK DEVICE
+        p Controller here...
+        div(ng-repeat='(key, device) in deviceList' ng-controller='deviceCtrl' ng-init='init(key, device)')
+            include ../device/device-module

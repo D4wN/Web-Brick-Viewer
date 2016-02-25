@@ -1,34 +1,48 @@
 "use strict";
 
 var m = angular.module('wbv.main', []);
-m.controller('mainCtrl', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope){
+m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'Manager', 'Socket', function($scope, $http, $rootScope, Manager, Socket){
     //this.templateURL = "/angular/main/main-module.jade";
 
-    this.name = "Main0r";
-    this.loadConnectedBricks = function(){
-        console.log("Bricks loaded!");
+    $scope.name = "Manager Tab";
+    $scope.deviceList = {};
+    //$scope.bricklet = null;
+    //$scope.airPressure = 0;
+    //$scope.airPressureUnit = "mbar"
 
-        $rootScope.socketManager.emit('init');
+    Manager.emit('init');
+    Manager.on('init', function(data){
+        console.log("[Manager:init] data: " + data.name);
+        checkDevice(data);
+        //$scope.initBricklet(data['devices'][0]);
+    });
 
-        //$http.get($rootScope.serverAddress + '/api')
-        //    .then(function(data) {
-        //            console.log(data);
-        //        }
-        //        , function(err) {
-        //            console.log(err);
-        //        });
+    $scope.debugCheckDevices = function(){
+        Manager.emit('init');
     };
 
-    $rootScope.$watch('deviceList', function(){
-        console.log("deviceList changed!");
-        console.log($rootScope.deviceList)
-    })
+    // Helper Functions
+    var checkDevice = function(device){
+        var key = device.name + ":" + device.uid;
+        if(key in $scope.deviceList)
+            console.log("Key(" + key + ") in List!!!");
+        else {
+            console.log("Key(" + key + ") not in List");
+            //$scope.$apply(function(){
+            //    $scope.deviceList[key] = device;
+            //});
+            $scope.deviceList[key] = device;
 
-    //$scope.$watch(function(){
-    //    return $rootScope.deviceList;
-    //}, function(){
-    //    console.log("deviceList changed!");
-    //    console.log($rootScope.deviceList)
-    //}, true);
+        }
+    };
+
+    var initBricklet = function(namespace){
+        //$scope.bricklet = new Socket(namespace);
+        //$scope.bricklet.emit('init');
+        //
+        //$scope.bricklet.on('airPressure', function(data){
+        //    $scope.airPressure = data /1000.0;
+        //})
+    }
 
 }]);

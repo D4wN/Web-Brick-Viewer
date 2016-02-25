@@ -6,11 +6,14 @@ html
 
         //Scripts
         script(src='scripts/socket.io-1.4.5.js')
-        script(src='angular/socketNamespaces.js')
+
+        //script(src='angular/socketNamespaces.js')
 
         script(src='scripts/angular.min.js')
         script(src='angular/main/main-module.js')
+        script(src='angular/device/device-module.js')
         script(src='angular/app.js')
+        script(src='angular/factory/socket-io.js')
 
     body(ng-app="wbv")
         block content

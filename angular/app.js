@@ -1,16 +1,16 @@
 "use strict";
 
-var angApp = angular.module('wbv', ['wbv.main']);
+var angApp = angular.module('wbv', ['wbv.main', 'wbv.device']);
 
 angApp.run(function($rootScope){
     //TODO better way to get REST IP?
     $rootScope.serverAddress = 'http://' + location.host;
     //Connected TF Device List
-    $rootScope.deviceList = [];
+    //$rootScope.deviceList = [];
     //console.log($rootScope.serverAddress);
     //Socket.io
     //$rootScope.socket = io();
-    managerNamespaceInit($rootScope);
+    //managerNamespaceInit($rootScope);
 });
 
 angApp.config(['$httpProvider', function($httpProvider) {
