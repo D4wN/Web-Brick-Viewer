@@ -17,6 +17,10 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'Manager', 'Socket', 
         //$scope.initBricklet(data['devices'][0]);
     });
 
+    Manager.on('update', function(data){
+        console.log("[Manager:init] data: " + data);
+    });
+
     $scope.debugCheckDevices = function(){
         Manager.emit('init');
     };
