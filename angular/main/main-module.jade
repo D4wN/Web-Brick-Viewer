@@ -3,7 +3,40 @@ div(ng-controller="mainCtrl")
 
     //p Current AirPressure: {{airPressure}} {{::airPressureUnit}}
     div
-        button(ng-click='debugCheckDevices()') DEBUG CHECK DEVICE
-        p Controller here...
-        div(ng-repeat='(key, device) in deviceList' ng-controller='deviceCtrl' ng-init='init(key, device)')
-            include ../device/device-module
+        label Ip-Address
+        input(type='text' ng-model='ipAddress')
+        br
+        label Websocket Port
+        //TODO fix max and min
+        input(type='number' max='65535' min="5" ng-model='websocketPort')
+        br
+        //label Secret
+        //input(type='password')
+        //br
+        br
+
+        button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled') {{btnConnectText}}
+        br
+        button(ng-click='test()') DEBUG CHECK DEVICE
+        hr
+        hr
+
+        //Quelle: http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_tab&stacked=h
+        .container
+            ul.nav.nav-tabs
+                li(ng-repeat='(uid, deviceInfo) in deviceList')
+                    a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::uid}}
+                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
+                    h2 {{uid}}
+                    p Some Text here!
+        //div.container
+        //    ul.nav.nav-tabs
+        //        li(ng-repeat='(uid, deviceInfo) in deviceList')
+        //            a(href='#{{uid}}', data-toggle='tab') {{::uid}}
+        //.tab-content
+        //    div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{::uid}}') Hallo Welt
+            //div(ng-repeat='(uid, deviceInfo) in deviceList' ng-controller='deviceCtrl' ng-init='init(uid, deviceInfo)')
+            //include ../device/device-module
+        //div(ng-controller="deviceCtrl")
+        //    include ../device/device-module
+

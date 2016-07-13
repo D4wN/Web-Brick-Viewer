@@ -1,13 +1,20 @@
 "use strict";
 
 var m = angular.module('wbv.device', []);
-m.controller('deviceCtrl', ['$scope', '$rootScope', 'Manager', 'Socket', function($scope, $rootScope, Manager, Socket){
-    //$scope.name = "device?";
-    //$scope.device = null;
+m.controller('deviceCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
 
-    $scope.init = function(namespace, device){
-        $scope.namespace = namespace;
-        $scope.device = device;
-        $scope.name = device['deviceIdentifier'];
+
+    $scope.test = function(){
+        console.log("uid: " + $scope.uid);
+        console.log($scope.deviceInfo);
+    }
+    
+    
+    $scope.init = function(uid, deviceInfo){
+        $scope.uid = uid;
+        $scope.deviceInfo = deviceInfo;
+
+        // console.log("uid: " + uid + "\ndeviceInfo: " + deviceInfo + "\n");
+        // $scope.name = device['deviceIdentifier'];
     }
 }]);

@@ -7,7 +7,7 @@
  */
 var angApp = angular.module('wbv');
 
-// Socket
+// Socket FIXME dont need that?
 angApp.factory('Socket', ['$rootScope', function($rootScope) {
     var connections = {};
 
@@ -56,7 +56,7 @@ angApp.factory('Socket', ['$rootScope', function($rootScope) {
     return Socket;
 }]);
 
-//Gloabl Namepsaces
+//Gloabl Namepsaces FIXME dont need that?
 angApp.factory('Manager', ['Socket', function(Socket) {
     return new Socket('/manager');
 }]);

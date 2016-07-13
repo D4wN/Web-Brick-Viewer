@@ -1,6 +1,6 @@
 "use strict";
 
-var Tinkerforge = require('tinkerforge');
+// var Tinkerforge = require('tinkerforge');
 var io = require('../scripts/socket.io.js');
 var lgr = new (require('./simpleLogger'))("Tinkerforge");
 
