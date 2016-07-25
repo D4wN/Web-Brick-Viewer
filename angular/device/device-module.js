@@ -11,6 +11,7 @@ m.controller('deviceCtrl', ['$scope', '$rootScope', function($scope, $rootScope)
     
     
     $scope.init = function(uid, deviceInfo){
+        console.log("init");
         $scope.uid = uid;
         $scope.deviceInfo = deviceInfo;
 
