@@ -1,8 +1,7 @@
 div(ng-controller="mainCtrl")
     h3 {{::name}}
 
-    //p Current AirPressure: {{airPressure}} {{::airPressureUnit}}
-    div
+    header.top(role='header')
         label Ip-Address
         input(type='text' ng-model='ipAddress')
         br
@@ -21,39 +20,21 @@ div(ng-controller="mainCtrl")
         hr
         hr
 
-        .container
+    .container
+        button.navbar-toggle(ng-if="!(deviceList | isEmpty)", data-toggle='collapse', data-target='.navbar-collapse')
+            b.navbar-brand.pull-left Device List
+            span.glyphicon.glyphicon-align-justify
+
+
+        nav.navbar-collapse.collapse
             ul.nav.nav-tabs
                 li(ng-repeat='(uid, deviceInfo) in deviceList')
                     a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::uid}}
 
-            .tab-content
-                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
-                    h3 {{uid}}
-                    p Some Text here!
-                    div(ng-controller="deviceCtrl")
-                        include ../device/device-module
+        .tab-content
+            div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
+                div(ng-controller="deviceCtrl")
+                    include ../device/device-module
 
 
-
-        //Quelle: http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_tab&stacked=h
-        //.container
-        //    ul.nav.nav-tabs
-        //        li(ng-repeat='(uid, deviceInfo) in deviceList')
-        //            a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::uid}}
-        //        div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
-        //            h2 {{uid}}
-        //            p Some Text here!
-
-
-
-        //div.container
-        //    ul.nav.nav-tabs
-        //        li(ng-repeat='(uid, deviceInfo) in deviceList')
-        //            a(href='#{{uid}}', data-toggle='tab') {{::uid}}
-        //.tab-content
-        //    div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{::uid}}') Hallo Welt
-            //div(ng-repeat='(uid, deviceInfo) in deviceList' ng-controller='deviceCtrl' ng-init='init(uid, deviceInfo)')
-            //include ../device/device-module
-        //div(ng-controller="deviceCtrl")
-        //    include ../device/device-module
 
