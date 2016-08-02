@@ -24,6 +24,8 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
         }
     }
     var btnConnectChange = function(text, disabled){
+        console.log("btn_changed: " + text + " - " + disabled);
+
         if(text !== null && text !== undefined)
             $scope.btnConnectText = text;
         if(disabled !== null && disabled !== undefined)
@@ -40,8 +42,11 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
 
             TF.ipcon = new TF.Tinkerforge.IPConnection();
             TF.ipcon.connect($scope.ipAddress, $scope.websocketPort, function(err){
-                btnConnectChange(null, false);
+                $scope.$apply(function(){
+                    btnConnectChange("Connect", false);
+                });
                 console.error("TF.ipcon.connect: " + err);
+                alert("TODO: Change Message to User. TF.ipcon.connect: " + err);
                 TF.ipcon = null;
                 return;
             });
@@ -97,7 +102,7 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
         }
     }
     var btnConnectDoDisconnect = function(){
-        console.log("Disconecct clicked!");
+        console.log("Disconect clicked!");
         TF.ipcon.disconnect();
         TF.ipcon = null;
         $scope.deviceList = {};
@@ -105,8 +110,32 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
     }
 
 
-    $scope.test = function(){
-        console.log($scope.deviceList);
+    $scope.halloWelt = function(a, b, cb, cb_err){
+        console.log("Function: halloWelt")
+        console.log("a: " + a);
+        console.log("b: " + b);
+        cb(a, b);
     }
 
+
+    $scope.test = function(){
+        var device_spec = {
+            'args' : ["Hallo", 2],
+            'sub_values' : ['a', 'b']
+        }
+
+
+        var new_args = device_spec['args'];
+
+
+        var cb = function(...subvalues){
+            console.log("Callback:");
+            console.log(subvalues);
+        }
+
+        new_args.push(cb);
+
+        $scope['halloWelt'](...new_args);
+
+    }
 }]);
