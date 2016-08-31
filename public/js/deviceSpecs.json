@@ -1,0 +1,1376 @@
+{
+  "Accelerometer Bricklet": {
+    "class": "BrickletAccelerometer", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getAcceleration", 
+        "name": "Acceleration", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "g/1000", 
+          "g/1000", 
+          "g/1000"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getTemperature", 
+        "name": "Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C"
+      }
+    ]
+  }, 
+  "Ambient Light Bricklet": {
+    "class": "BrickletAmbientLight", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getIlluminance", 
+        "name": "Illuminance", 
+        "subvalues": null, 
+        "unit": "lx/10"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Ambient Light Bricklet 2.0": {
+    "class": "BrickletAmbientLightV2", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getIlluminance", 
+        "name": "Illuminance", 
+        "subvalues": null, 
+        "unit": "lx/100"
+      }
+    ]
+  }, 
+  "Analog In Bricklet": {
+    "class": "BrickletAnalogIn", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getVoltage", 
+        "name": "Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Analog In Bricklet 2.0": {
+    "class": "BrickletAnalogInV2", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getVoltage", 
+        "name": "Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Analog Out Bricklet 2.0": {
+    "class": "BrickletAnalogOutV2", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getInputVoltage", 
+        "name": "Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }
+    ]
+  }, 
+  "Barometer Bricklet": {
+    "class": "BrickletBarometer", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getAirPressure", 
+        "name": "Air Pressure", 
+        "subvalues": null, 
+        "unit": "mbar/1000"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getAltitude", 
+        "name": "Altitude", 
+        "subvalues": null, 
+        "unit": "cm"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }
+    ]
+  }, 
+  "CO2 Bricklet": {
+    "class": "BrickletCO2", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCo2Concentration", 
+        "name": "CO2 Concentration", 
+        "subvalues": null, 
+        "unit": "ppm"
+      }
+    ]
+  }, 
+  "Color Bricklet": {
+    "class": "BrickletColor", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getColor", 
+        "name": "Color", 
+        "subvalues": [
+          "Red", 
+          "Green", 
+          "Blue", 
+          "Clear"
+        ], 
+        "unit": [
+          null, 
+          null, 
+          null, 
+          null
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getColorTemperature", 
+        "name": "Color Temperature", 
+        "subvalues": null, 
+        "unit": "K"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "special_get_get_illuminance", 
+        "name": "Illuminance", 
+        "subvalues": null, 
+        "unit": "lx/10"
+      }
+    ]
+  }, 
+  "Current12 Bricklet": {
+    "class": "BrickletCurrent12", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCurrent", 
+        "name": "Current", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Current25 Bricklet": {
+    "class": "BrickletCurrent25", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCurrent", 
+        "name": "Current", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "DC Brick": {
+    "class": "BrickDC", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStackInputVoltage", 
+        "name": "Stack Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getExternalInputVoltage", 
+        "name": "External Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCurrentConsumption", 
+        "name": "Current Consumption", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Distance IR Bricklet": {
+    "class": "BrickletDistanceIR", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getDistance", 
+        "name": "Distance", 
+        "subvalues": null, 
+        "unit": "mm"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Distance US Bricklet": {
+    "class": "BrickletDistanceUS", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getDistanceValue", 
+        "name": "Distance Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Dual Button Bricklet": {
+    "class": "BrickletDualButton", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getButtonState", 
+        "name": "Button State", 
+        "subvalues": [
+          "Left", 
+          "Right"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getLedState", 
+        "name": "LED State", 
+        "subvalues": [
+          "Left", 
+          "Right"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }
+    ]
+  }, 
+  "Dust Detector Bricklet": {
+    "class": "BrickletDustDetector", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getDustDensity", 
+        "name": "Dust Density", 
+        "subvalues": null, 
+        "unit": "\u00b5g/m\u00b3"
+      }
+    ]
+  }, 
+  "GPS Bricklet": {
+    "class": "BrickletGPS", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "special_get_gps_coordinates", 
+        "name": "Coordinates", 
+        "subvalues": [
+          "Latitude", 
+          "NS", 
+          "Longitude", 
+          "EW", 
+          "PDOP", 
+          "HDOP", 
+          "VDOP", 
+          "EPE"
+        ], 
+        "unit": [
+          "deg/1000000", 
+          null, 
+          "deg/1000000", 
+          null, 
+          "1/100", 
+          "1/100", 
+          "1/100", 
+          "cm"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "special_get_gps_altitude", 
+        "name": "Altitude", 
+        "subvalues": [
+          "Altitude", 
+          "Geoidal Separation"
+        ], 
+        "unit": [
+          "cm", 
+          "cm"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "special_get_gps_motion", 
+        "name": "Motion", 
+        "subvalues": [
+          "Course", 
+          "Speed"
+        ], 
+        "unit": [
+          "deg/100", 
+          "10m/h"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getDateTime", 
+        "name": "Date Time", 
+        "subvalues": [
+          "Date", 
+          "Time"
+        ], 
+        "unit": [
+          "ddmmyy", 
+          "hhmmss|sss"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStatus", 
+        "name": "Status", 
+        "subvalues": [
+          "Fix", 
+          "Satellites View", 
+          "Satellites Used"
+        ], 
+        "unit": [
+          null, 
+          null, 
+          null
+        ]
+      }
+    ]
+  }, 
+  "Hall Effect Bricklet": {
+    "class": "BrickletHallEffect", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getValue", 
+        "name": "Value", 
+        "subvalues": null, 
+        "unit": null
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          "False"
+        ], 
+        "getter": "getEdgeCount", 
+        "name": "Edge Count", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Humidity Bricklet": {
+    "class": "BrickletHumidity", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getHumidity", 
+        "name": "Humidity", 
+        "subvalues": null, 
+        "unit": "%RH/10"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "IMU Brick": {
+    "class": "BrickIMU", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getOrientation", 
+        "name": "Orientation", 
+        "subvalues": [
+          "Roll", 
+          "Pitch", 
+          "Yaw"
+        ], 
+        "unit": [
+          "\u00b0/100", 
+          "\u00b0/100", 
+          "\u00b0/100"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getQuaternion", 
+        "name": "Quaternion", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z", 
+          "W"
+        ], 
+        "unit": [
+          null, 
+          null, 
+          null, 
+          null
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAcceleration", 
+        "name": "Acceleration", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "g/1000", 
+          "g/1000", 
+          "g/1000"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getMagneticField", 
+        "name": "Magnetic Field", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "G/1000", 
+          "G/1000", 
+          "G/1000"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAngularVelocity", 
+        "name": "Angular Velocity", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "8/115 \u00b0/s", 
+          "8/115 \u00b0/s", 
+          "8/115 \u00b0/s"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getImuTemperature", 
+        "name": "IMU Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAllData", 
+        "name": "All Data", 
+        "subvalues": [
+          "Acceleration-X", 
+          "Acceleration-Y", 
+          "Acceleration-Z", 
+          "Acceleration-X", 
+          "Acceleration-Y", 
+          "Acceleration-Z", 
+          "Angular Velocity-X", 
+          "Angular Velocity-Y", 
+          "Angular Velocity-Z", 
+          "IMU Temperature"
+        ], 
+        "unit": [
+          "g/1000", 
+          "g/1000", 
+          "g/1000", 
+          "G/1000", 
+          "G/1000", 
+          "G/1000", 
+          "8/115 \u00b0/s", 
+          "8/115 \u00b0/s", 
+          "8/115 \u00b0/s", 
+          "\u00b0C/100"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "IMU Brick 2.0": {
+    "class": "BrickIMUV2", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getOrientation", 
+        "name": "Orientation", 
+        "subvalues": [
+          "Heading", 
+          "Roll", 
+          "Pitch"
+        ], 
+        "unit": [
+          "\u00b0/16", 
+          "\u00b0/16", 
+          "\u00b0/16"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getLinearAcceleration", 
+        "name": "Linear Acceleration", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getGravityVector", 
+        "name": "Gravity Vector", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2"
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getQuaternion", 
+        "name": "Quaternion", 
+        "subvalues": [
+          "W", 
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/16383", 
+          "1/16383", 
+          "1/16383", 
+          "1/16383"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAcceleration", 
+        "name": "Acceleration", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2", 
+          "1/100 m/s\u00b2"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getMagneticField", 
+        "name": "Magnetic Field", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/16 \u00b5T ", 
+          "1/16 \u00b5T ", 
+          "1/16 \u00b5T "
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAngularVelocity", 
+        "name": "Angular Velocity", 
+        "subvalues": [
+          "X", 
+          "Y", 
+          "Z"
+        ], 
+        "unit": [
+          "1/16 \u00b0/s", 
+          "1/16 \u00b0/s", 
+          "1/16 \u00b0/s"
+        ]
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getTemperature", 
+        "name": "Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Industrial Dual 0-20mA Bricklet": {
+    "class": "BrickletIndustrialDual020mA", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [
+          0
+        ], 
+        "getter": "getCurrent", 
+        "name": "Current (Sensor 0)", 
+        "subvalues": null, 
+        "unit": "nA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          1
+        ], 
+        "getter": "getCurrent", 
+        "name": "Current (Sensor 1)", 
+        "subvalues": null, 
+        "unit": "nA"
+      }
+    ]
+  }, 
+  "Industrial Dual Analog In Bricklet": {
+    "class": "BrickletIndustrialDualAnalogIn", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [
+          0
+        ], 
+        "getter": "getVoltage", 
+        "name": "Voltage (Channel 0)", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          1
+        ], 
+        "getter": "getVoltage", 
+        "name": "Voltage (Channel 1)", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAdcValues", 
+        "name": "ADC Values", 
+        "subvalues": [
+          "Channel 0", 
+          "Channel 1"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }
+    ]
+  }, 
+  "Joystick Bricklet": {
+    "class": "BrickletJoystick", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getPosition", 
+        "name": "Position", 
+        "subvalues": [
+          "X", 
+          "Y"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "isPressed", 
+        "name": "Pressed", 
+        "subvalues": null, 
+        "unit": null
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": [
+          "X", 
+          "Y"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }
+    ]
+  }, 
+  "LED Strip Bricklet": {
+    "class": "BrickletLEDStrip", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getSupplyVoltage", 
+        "name": "Supply Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }
+    ]
+  }, 
+  "Line Bricklet": {
+    "class": "BrickletLine", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getReflectivity", 
+        "name": "Reflectivity", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Linear Poti Bricklet": {
+    "class": "BrickletLinearPoti", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getPosition", 
+        "name": "Position", 
+        "subvalues": null, 
+        "unit": null
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Load Cell Bricklet": {
+    "class": "BrickletLoadCell", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getWeight", 
+        "name": "Weight", 
+        "subvalues": null, 
+        "unit": "gram"
+      }
+    ]
+  }, 
+  "Master Brick": {
+    "class": "BrickMaster", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStackVoltage", 
+        "name": "Stack Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStackCurrent", 
+        "name": "Stack Current", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Moisture Bricklet": {
+    "class": "BrickletMoisture", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getMoistureValue", 
+        "name": "Moisture Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Motion Detector Bricklet": {
+    "class": "BrickletMotionDetector", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getMotionDetected", 
+        "name": "Motion Detected", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "PTC Bricklet": {
+    "class": "BrickletPTC", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "special_get_ptc_temperature", 
+        "name": "Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "special_get_ptc_resistance", 
+        "name": "Resistance", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Pressure Bricklet": {
+    "class": "BrickletPressure", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getPressure", 
+        "name": "Pressure", 
+        "subvalues": null, 
+        "unit": "Pa"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Rotary Encoder Bricklet": {
+    "class": "BrickletRotaryEncoder", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [
+          "False"
+        ], 
+        "getter": "getCount", 
+        "name": "Count", 
+        "subvalues": null, 
+        "unit": null
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "isPressed", 
+        "name": "Pressed", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Rotary Poti Bricklet": {
+    "class": "BrickletRotaryPoti", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getPosition", 
+        "name": "Position", 
+        "subvalues": null, 
+        "unit": null
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Servo Brick": {
+    "class": "BrickServo", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [
+          0
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 0)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          1
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 1)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          2
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 2)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          3
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 3)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          4
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 4)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          5
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 5)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [
+          6
+        ], 
+        "getter": "getServoCurrent", 
+        "name": "Servo Current (Servo 6)", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getOverallCurrent", 
+        "name": "Overall Current", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStackInputVoltage", 
+        "name": "Stack Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getExternalInputVoltage", 
+        "name": "External Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Sound Intensity Bricklet": {
+    "class": "BrickletSoundIntensity", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getIntensity", 
+        "name": "Intensity", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Stepper Brick": {
+    "class": "BrickStepper", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getStackInputVoltage", 
+        "name": "Stack Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getExternalInputVoltage", 
+        "name": "External Input Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCurrentConsumption", 
+        "name": "Current Consumption", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getChipTemperature", 
+        "name": "Chip Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Temperature Bricklet": {
+    "class": "BrickletTemperature", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getTemperature", 
+        "name": "Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }
+    ]
+  }, 
+  "Temperature IR Bricklet": {
+    "class": "BrickletTemperatureIR", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getAmbientTemperature", 
+        "name": "Ambient Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getObjectTemperature", 
+        "name": "Object Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/10"
+      }
+    ]
+  }, 
+  "Thermocouple Bricklet": {
+    "class": "BrickletThermocouple", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getTemperature", 
+        "name": "Temperature", 
+        "subvalues": null, 
+        "unit": "\u00b0C/100"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getErrorState", 
+        "name": "Error State", 
+        "subvalues": [
+          "Over/Under Voltage", 
+          "Open Circuit"
+        ], 
+        "unit": [
+          null, 
+          null
+        ]
+      }
+    ]
+  }, 
+  "Tilt Bricklet": {
+    "class": "BrickletTilt", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getTiltState", 
+        "name": "State", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "UV Light Bricklet": {
+    "class": "BrickletUVLight", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getUvLight", 
+        "name": "UV Light", 
+        "subvalues": null, 
+        "unit": "\u00b5W/cm\u00b2"
+      }
+    ]
+  }, 
+  "Voltage Bricklet": {
+    "class": "BrickletVoltage", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getVoltage", 
+        "name": "Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": true, 
+        "args": [], 
+        "getter": "getAnalogValue", 
+        "name": "Analog Value", 
+        "subvalues": null, 
+        "unit": null
+      }
+    ]
+  }, 
+  "Voltage/Current Bricklet": {
+    "class": "BrickletVoltageCurrent", 
+    "values": [
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getVoltage", 
+        "name": "Voltage", 
+        "subvalues": null, 
+        "unit": "mV"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getCurrent", 
+        "name": "Current", 
+        "subvalues": null, 
+        "unit": "mA"
+      }, 
+      {
+        "advanced": false, 
+        "args": [], 
+        "getter": "getPower", 
+        "name": "Power", 
+        "subvalues": null, 
+        "unit": "mW"
+      }
+    ]
+  },
+  "Test Brick": {
+    "class": "BrickletTest",
+    "values": [
+      {
+      },
+      {
+        "advanced": false,
+        "args": [],
+        "getter": "getTest",
+        "name": "TestValue",
+        "subvalues": null,
+        "unit": "testUnit"
+      }
+    ]
+  }
+}

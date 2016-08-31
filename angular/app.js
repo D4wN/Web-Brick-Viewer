@@ -1,6 +1,6 @@
 "use strict";
 
-var angApp = angular.module('wbv', ['wbv.main', 'wbv.device']);
+var angApp = angular.module('wbv', ['wbv.main', 'wbv.device', 'wbv.deviceValue']);
 
 angApp.run(function($rootScope){
     //TODO better way to get REST IP?
@@ -13,7 +13,7 @@ angApp.run(function($rootScope){
     //managerNamespaceInit($rootScope);
 });
 
-angApp.config(['$httpProvider', function($httpProvider) {
+angApp.config(['$httpProvider', '$logProvider', function($httpProvider, $logProvider) {
     //http://stackoverflow.com/questions/24134117/no-access-control-allow-origin-header-is-present-on-the-requested-resource-an
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials = true;
@@ -21,7 +21,8 @@ angApp.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.headers.common["Accept"] = "application/json";
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 
-
+    //TODO Disable Logging
+    $logProvider.debugEnabled(true);
 }]);
 
-console.log("Angular working!");
+console.log("[APP]Angular working!");

@@ -1,8 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -377,11 +377,11 @@ function BrickDC(uid, ipcon) {
 
 module.exports = BrickDC;
 
-},{"./Device":69}],2:[function(require,module,exports){
+},{"./Device":71}],2:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -943,11 +943,11 @@ function BrickIMU(uid, ipcon) {
 
 module.exports = BrickIMU;
 
-},{"./Device":69}],3:[function(require,module,exports){
+},{"./Device":71}],3:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -1448,11 +1448,11 @@ function BrickIMUV2(uid, ipcon) {
 
 module.exports = BrickIMUV2;
 
-},{"./Device":69}],4:[function(require,module,exports){
+},{"./Device":71}],4:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -1539,6 +1539,31 @@ BrickMaster.FUNCTION_SET_ETHERNET_AUTHENTICATION_SECRET = 73;
 BrickMaster.FUNCTION_GET_ETHERNET_AUTHENTICATION_SECRET = 74;
 BrickMaster.FUNCTION_SET_WIFI_AUTHENTICATION_SECRET = 75;
 BrickMaster.FUNCTION_GET_WIFI_AUTHENTICATION_SECRET = 76;
+BrickMaster.FUNCTION_GET_CONNECTION_TYPE = 77;
+BrickMaster.FUNCTION_IS_WIFI2_PRESENT = 78;
+BrickMaster.FUNCTION_START_WIFI2_BOOTLOADER = 79;
+BrickMaster.FUNCTION_WRITE_WIFI2_SERIAL_PORT = 80;
+BrickMaster.FUNCTION_READ_WIFI2_SERIAL_PORT = 81;
+BrickMaster.FUNCTION_SET_WIFI2_AUTHENTICATION_SECRET = 82;
+BrickMaster.FUNCTION_GET_WIFI2_AUTHENTICATION_SECRET = 83;
+BrickMaster.FUNCTION_SET_WIFI2_CONFIGURATION = 84;
+BrickMaster.FUNCTION_GET_WIFI2_CONFIGURATION = 85;
+BrickMaster.FUNCTION_GET_WIFI2_STATUS = 86;
+BrickMaster.FUNCTION_SET_WIFI2_CLIENT_CONFIGURATION = 87;
+BrickMaster.FUNCTION_GET_WIFI2_CLIENT_CONFIGURATION = 88;
+BrickMaster.FUNCTION_SET_WIFI2_CLIENT_HOSTNAME = 89;
+BrickMaster.FUNCTION_GET_WIFI2_CLIENT_HOSTNAME = 90;
+BrickMaster.FUNCTION_SET_WIFI2_CLIENT_PASSWORD = 91;
+BrickMaster.FUNCTION_GET_WIFI2_CLIENT_PASSWORD = 92;
+BrickMaster.FUNCTION_SET_WIFI2_AP_CONFIGURATION = 93;
+BrickMaster.FUNCTION_GET_WIFI2_AP_CONFIGURATION = 94;
+BrickMaster.FUNCTION_SET_WIFI2_AP_PASSWORD = 95;
+BrickMaster.FUNCTION_GET_WIFI2_AP_PASSWORD = 96;
+BrickMaster.FUNCTION_SAVE_WIFI2_CONFIGURATION = 97;
+BrickMaster.FUNCTION_GET_WIFI2_FIRMWARE_VERSION = 98;
+BrickMaster.FUNCTION_ENABLE_WIFI2_STATUS_LED = 99;
+BrickMaster.FUNCTION_DISABLE_WIFI2_STATUS_LED = 100;
+BrickMaster.FUNCTION_IS_WIFI2_STATUS_LED_ENABLED = 101;
 BrickMaster.FUNCTION_ENABLE_STATUS_LED = 238;
 BrickMaster.FUNCTION_DISABLE_STATUS_LED = 239;
 BrickMaster.FUNCTION_IS_STATUS_LED_ENABLED = 240;
@@ -1550,6 +1575,7 @@ BrickMaster.EXTENSION_TYPE_CHIBI = 1;
 BrickMaster.EXTENSION_TYPE_RS485 = 2;
 BrickMaster.EXTENSION_TYPE_WIFI = 3;
 BrickMaster.EXTENSION_TYPE_ETHERNET = 4;
+BrickMaster.EXTENSION_TYPE_WIFI2 = 5;
 BrickMaster.CHIBI_FREQUENCY_OQPSK_868_MHZ = 0;
 BrickMaster.CHIBI_FREQUENCY_OQPSK_915_MHZ = 1;
 BrickMaster.CHIBI_FREQUENCY_OQPSK_780_MHZ = 2;
@@ -1593,6 +1619,28 @@ BrickMaster.THRESHOLD_OPTION_SMALLER = '<';
 BrickMaster.THRESHOLD_OPTION_GREATER = '>';
 BrickMaster.ETHERNET_CONNECTION_DHCP = 0;
 BrickMaster.ETHERNET_CONNECTION_STATIC_IP = 1;
+BrickMaster.CONNECTION_TYPE_NONE = 0;
+BrickMaster.CONNECTION_TYPE_USB = 1;
+BrickMaster.CONNECTION_TYPE_SPI_STACK = 2;
+BrickMaster.CONNECTION_TYPE_CHIBI = 3;
+BrickMaster.CONNECTION_TYPE_RS485 = 4;
+BrickMaster.CONNECTION_TYPE_WIFI = 5;
+BrickMaster.CONNECTION_TYPE_ETHERNET = 6;
+BrickMaster.CONNECTION_TYPE_WIFI2 = 7;
+BrickMaster.WIFI2_PHY_MODE_B = 0;
+BrickMaster.WIFI2_PHY_MODE_G = 1;
+BrickMaster.WIFI2_PHY_MODE_N = 2;
+BrickMaster.WIFI2_CLIENT_STATUS_IDLE = 0;
+BrickMaster.WIFI2_CLIENT_STATUS_CONNECTING = 1;
+BrickMaster.WIFI2_CLIENT_STATUS_WRONG_PASSWORD = 2;
+BrickMaster.WIFI2_CLIENT_STATUS_NO_AP_FOUND = 3;
+BrickMaster.WIFI2_CLIENT_STATUS_CONNECT_FAILED = 4;
+BrickMaster.WIFI2_CLIENT_STATUS_GOT_IP = 5;
+BrickMaster.WIFI2_AP_ENCRYPTION_OPEN = 0;
+BrickMaster.WIFI2_AP_ENCRYPTION_WEP = 1;
+BrickMaster.WIFI2_AP_ENCRYPTION_WPA_PSK = 2;
+BrickMaster.WIFI2_AP_ENCRYPTION_WPA2_PSK = 3;
+BrickMaster.WIFI2_AP_ENCRYPTION_WPA_WPA2_PSK = 4;
 
 function BrickMaster(uid, ipcon) {
 	//Basis to build stacks and has 4 Bricklet ports
@@ -1605,7 +1653,7 @@ function BrickMaster(uid, ipcon) {
 	BrickMaster.prototype = Object.create(Device);
 	this.responseExpected = {};
 	this.callbackFormats = {};
-	this.APIVersion = [2, 0, 3];
+	this.APIVersion = [2, 0, 4];
 	this.responseExpected[BrickMaster.FUNCTION_GET_STACK_VOLTAGE] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickMaster.FUNCTION_GET_STACK_CURRENT] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickMaster.FUNCTION_SET_EXTENSION_TYPE] = Device.RESPONSE_EXPECTED_FALSE;
@@ -1682,6 +1730,31 @@ function BrickMaster(uid, ipcon) {
 	this.responseExpected[BrickMaster.FUNCTION_GET_ETHERNET_AUTHENTICATION_SECRET] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI_AUTHENTICATION_SECRET] = Device.RESPONSE_EXPECTED_FALSE;
 	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI_AUTHENTICATION_SECRET] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_CONNECTION_TYPE] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_IS_WIFI2_PRESENT] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_START_WIFI2_BOOTLOADER] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_WRITE_WIFI2_SERIAL_PORT] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_READ_WIFI2_SERIAL_PORT] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_AUTHENTICATION_SECRET] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_AUTHENTICATION_SECRET] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_CONFIGURATION] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_CONFIGURATION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_STATUS] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_CLIENT_CONFIGURATION] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_CLIENT_CONFIGURATION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_CLIENT_HOSTNAME] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_CLIENT_HOSTNAME] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_CLIENT_PASSWORD] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_CLIENT_PASSWORD] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_AP_CONFIGURATION] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_AP_CONFIGURATION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SET_WIFI2_AP_PASSWORD] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_AP_PASSWORD] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_SAVE_WIFI2_CONFIGURATION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_GET_WIFI2_FIRMWARE_VERSION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickMaster.FUNCTION_ENABLE_WIFI2_STATUS_LED] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_DISABLE_WIFI2_STATUS_LED] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickMaster.FUNCTION_IS_WIFI2_STATUS_LED_ENABLED] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickMaster.FUNCTION_ENABLE_STATUS_LED] = Device.RESPONSE_EXPECTED_FALSE;
 	this.responseExpected[BrickMaster.FUNCTION_DISABLE_STATUS_LED] = Device.RESPONSE_EXPECTED_FALSE;
 	this.responseExpected[BrickMaster.FUNCTION_IS_STATUS_LED_ENABLED] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
@@ -1699,7 +1772,7 @@ function BrickMaster(uid, ipcon) {
 	this.getStackVoltage = function(returnCallback, errorCallback) {
 		/*
 		Returns the stack voltage in mV. The stack voltage is the
-		voltage that is supplied via the stack, i.e. it is given by a 
+		voltage that is supplied via the stack, i.e. it is given by a
 		Step-Down or Step-Up Power Supply.
 		*/
 		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_STACK_VOLTAGE, [], '', 'H', returnCallback, errorCallback);
@@ -1714,8 +1787,8 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setExtensionType = function(extension, exttype, returnCallback, errorCallback) {
 		/*
-		Writes the extension type to the EEPROM of a specified extension. 
-		The extension is either 0 or 1 (0 is the on the bottom, 1 is the on on top, 
+		Writes the extension type to the EEPROM of a specified extension.
+		The extension is either 0 or 1 (0 is the on the bottom, 1 is the one on top,
 		if only one extension is present use 0).
 		
 		Possible extension types:
@@ -1728,8 +1801,9 @@ function BrickMaster(uid, ipcon) {
 		 "2",    "RS485"
 		 "3",    "WIFI"
 		 "4",    "Ethernet"
+		 "5",    "WIFI 2.0"
 		
-		The extension type is already set when bought and it can be set with the 
+		The extension type is already set when bought and it can be set with the
 		Brick Viewer, it is unlikely that you need this function.
 		*/
 		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_EXTENSION_TYPE, [extension, exttype], 'B I', '', returnCallback, errorCallback);
@@ -1750,7 +1824,7 @@ function BrickMaster(uid, ipcon) {
 		/*
 		Sets the address (1-255) belonging to the Chibi Extension.
 		
-		It is possible to set the address with the Brick Viewer and it will be 
+		It is possible to set the address with the Brick Viewer and it will be
 		saved in the EEPROM of the Chibi Extension, it does not
 		have to be set on every startup.
 		*/
@@ -1767,7 +1841,7 @@ function BrickMaster(uid, ipcon) {
 		Sets the address (1-255) of the Chibi Master. This address is used if the
 		Chibi Extension is used as slave (i.e. it does not have a USB connection).
 		
-		It is possible to set the address with the Brick Viewer and it will be 
+		It is possible to set the address with the Brick Viewer and it will be
 		saved in the EEPROM of the Chibi Extension, it does not
 		have to be set on every startup.
 		*/
@@ -1835,7 +1909,7 @@ function BrickMaster(uid, ipcon) {
 		 "2",    "OQPSK 780MHz (China)"
 		 "3",    "BPSK40 915MHz"
 		
-		It is possible to set the frequency with the Brick Viewer and it will be 
+		It is possible to set the frequency with the Brick Viewer and it will be
 		saved in the EEPROM of the Chibi Extension, it does not
 		have to be set on every startup.
 		*/
@@ -1861,7 +1935,7 @@ function BrickMaster(uid, ipcon) {
 		 "OQPSK 780MHz (China)",  "0, 1, 2, 3"
 		 "BPSK40 915MHz",         "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
 		
-		It is possible to set the channel with the Brick Viewer and it will be 
+		It is possible to set the channel with the Brick Viewer and it will be
 		saved in the EEPROM of the Chibi Extension, it does not
 		have to be set on every startup.
 		*/
@@ -1886,7 +1960,7 @@ function BrickMaster(uid, ipcon) {
 		Set to 0 if the RS485 Extension should be the RS485 Master (i.e.
 		connected to a PC via USB).
 		
-		It is possible to set the address with the Brick Viewer and it will be 
+		It is possible to set the address with the Brick Viewer and it will be
 		saved in the EEPROM of the RS485 Extension, it does not
 		have to be set on every startup.
 		*/
@@ -2090,7 +2164,7 @@ function BrickMaster(uid, ipcon) {
 		/*
 		This function is used to set the certificate as well as password and username
 		for WPA Enterprise. To set the username use index 0xFFFF,
-		to set the password use index 0xFFFE. The max length of username and 
+		to set the password use index 0xFFFE. The max length of username and
 		password is 32.
 		
 		The certificate is written in chunks of size 32 and the index is used as
@@ -2142,7 +2216,7 @@ function BrickMaster(uid, ipcon) {
 		receive buffer has a max size of 1500 byte and if data is transfered
 		too fast, it might overflow.
 		
-		The return values are the number of overflows, the low watermark 
+		The return values are the number of overflows, the low watermark
 		(i.e. the smallest number of bytes that were free in the buffer) and
 		the bytes that are currently used.
 		
@@ -2207,7 +2281,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setWifiHostname = function(hostname, returnCallback, errorCallback) {
 		/*
-		Sets the hostname of the WIFI Extension. The hostname will be displayed 
+		Sets the hostname of the WIFI Extension. The hostname will be displayed
 		by access points as the hostname in the DHCP clients table.
 		
 		Setting an empty String will restore the default hostname.
@@ -2218,7 +2292,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.getWifiHostname = function(returnCallback, errorCallback) {
 		/*
-		Returns the hostname as set by :func:`GetWifiHostname`.
+		Returns the hostname as set by :func:`SetWifiHostname`.
 		
 		An empty String means, that the default hostname is used.
 		
@@ -2294,7 +2368,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setStackCurrentCallbackThreshold = function(option, min, max, returnCallback, errorCallback) {
 		/*
-		Sets the thresholds for the :func:`StackCurrentReached` callback. 
+		Sets the thresholds for the :func:`StackCurrentReached` callback.
 		
 		The following options are possible:
 		
@@ -2324,7 +2398,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setStackVoltageCallbackThreshold = function(option, min, max, returnCallback, errorCallback) {
 		/*
-		Sets the thresholds for the :func:`StackStackVoltageReached` callback. 
+		Sets the thresholds for the :func:`StackStackVoltageReached` callback.
 		
 		The following options are possible:
 		
@@ -2354,7 +2428,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setUSBVoltageCallbackThreshold = function(option, min, max, returnCallback, errorCallback) {
 		/*
-		Sets the thresholds for the :func:`USBVoltageReached` callback. 
+		Sets the thresholds for the :func:`USBVoltageReached` callback.
 		
 		The following options are possible:
 		
@@ -2477,7 +2551,7 @@ function BrickMaster(uid, ipcon) {
 	};
 	this.setEthernetHostname = function(hostname, returnCallback, errorCallback) {
 		/*
-		Sets the hostname of the Ethernet Extension. The hostname will be displayed 
+		Sets the hostname of the Ethernet Extension. The hostname will be displayed
 		by access points as the hostname in the DHCP clients table.
 		
 		Setting an empty String will restore the default hostname.
@@ -2583,6 +2657,347 @@ function BrickMaster(uid, ipcon) {
 		*/
 		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI_AUTHENTICATION_SECRET, [], '', 's64', returnCallback, errorCallback);
 	};
+	this.getConnectionType = function(returnCallback, errorCallback) {
+		/*
+		Returns the type of the connection over which this function was called.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_CONNECTION_TYPE, [], '', 'B', returnCallback, errorCallback);
+	};
+	this.isWifi2Present = function(returnCallback, errorCallback) {
+		/*
+		Returns *true* if a WIFI Extension 2.0 is available to be used by the Master
+		Brick.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_IS_WIFI2_PRESENT, [], '', '?', returnCallback, errorCallback);
+	};
+	this.startWifi2Bootloader = function(returnCallback, errorCallback) {
+		/*
+		Starts the bootloader of the WIFI Extension 2.0. Returns 0 on success.
+		Afterwards the :func:`WriteWifi2SerialPort` and :func:`ReadWifi2SerialPort`
+		functions can be used to communicate with the bootloader to flash a new
+		firmware.
+		
+		The bootloader should only be started over a USB connection. It cannot be
+		started over a WIFI2 connection, see the :func:`GetConnectionType` function.
+		
+		It is recommended to use the Brick Viewer to update the firmware of the WIFI
+		Extension 2.0.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_START_WIFI2_BOOTLOADER, [], '', 'b', returnCallback, errorCallback);
+	};
+	this.writeWifi2SerialPort = function(data, length, returnCallback, errorCallback) {
+		/*
+		Writes up to 60 bytes (number of bytes to be written specified by ``length``)
+		to the serial port of the bootloader of the WIFI Extension 2.0. Returns 0 on
+		success.
+		
+		Before this function can be used the bootloader has to be started using the
+		:func:`StartWifi2Bootloader` function.
+		
+		It is recommended to use the Brick Viewer to update the firmware of the WIFI
+		Extension 2.0.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_WRITE_WIFI2_SERIAL_PORT, [data, length], 'B60 B', 'b', returnCallback, errorCallback);
+	};
+	this.readWifi2SerialPort = function(length, returnCallback, errorCallback) {
+		/*
+		Reads up to 60 bytes (number of bytes to be read specified by ``length``)
+		from the serial port of the bootloader of the WIFI Extension 2.0.
+		Returns the number of actually read bytes.
+		
+		Before this function can be used the bootloader has to be started using the
+		:func:`StartWifi2Bootloader` function.
+		
+		It is recommended to use the Brick Viewer to update the firmware of the WIFI
+		Extension 2.0.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_READ_WIFI2_SERIAL_PORT, [length], 'B', 'B60 B', returnCallback, errorCallback);
+	};
+	this.setWifi2AuthenticationSecret = function(secret, returnCallback, errorCallback) {
+		/*
+		Sets the WIFI authentication secret. The secret can be a string of up to 64
+		characters. An empty string disables the authentication. The default value is
+		an empty string (authentication disabled).
+		
+		See the :ref:`authentication tutorial <tutorial_authentication>` for more
+		information.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the WIFI authentication secret.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_AUTHENTICATION_SECRET, [secret], 's64', '', returnCallback, errorCallback);
+	};
+	this.getWifi2AuthenticationSecret = function(returnCallback, errorCallback) {
+		/*
+		Returns the WIFI authentication secret as set by
+		:func:`SetWifi2AuthenticationSecret`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_AUTHENTICATION_SECRET, [], '', 's64', returnCallback, errorCallback);
+	};
+	this.setWifi2Configuration = function(port, websocketPort, websitePort, phyMode, sleepMode, website, returnCallback, errorCallback) {
+		/*
+		Sets the general configuration of the WIFI Extension 2.0.
+		
+		The ``port`` parameter sets the port number that your programm will connect
+		to. The default value is 4223.
+		
+		The ``websocket_port`` parameter sets the WebSocket port number that your
+		JavaScript programm will connect to. The default value is 4280.
+		
+		The ``website_port`` parameter sets the port number for the website of the
+		WIFI Extension 2.0. The default value is 80.
+		
+		The ``phy_mode`` parameter sets the specific wireless network mode to be used.
+		Possible values are B, G and N. The default value is G.
+		
+		The ``sleep_mode`` and ``website`` parameters are currently unused.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the Ethernet configuration.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_CONFIGURATION, [port, websocketPort, websitePort, phyMode, sleepMode, website], 'H H H B B B', '', returnCallback, errorCallback);
+	};
+	this.getWifi2Configuration = function(returnCallback, errorCallback) {
+		/*
+		Returns the general configuration as set by :func:`SetWifi2Configuration`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_CONFIGURATION, [], '', 'H H H B B B', returnCallback, errorCallback);
+	};
+	this.getWifi2Status = function(returnCallback, errorCallback) {
+		/*
+		Returns the client and access point status of the WIFI Extension 2.0.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_STATUS, [], '', '? B B4 B4 B4 B6 I I b ? B4 B4 B4 B6 I I B', returnCallback, errorCallback);
+	};
+	this.setWifi2ClientConfiguration = function(enable, ssid, ip, subnetMask, gateway, macAddress, bssid, returnCallback, errorCallback) {
+		/*
+		Sets the client specific configuration of the WIFI Extension 2.0.
+		
+		The ``enable`` parameter enables or disables the client part fo the
+		WIFI Extension 2.0. The default value is *true*.
+		
+		The ``ssid`` parameter sets the SSID (up to 32 characters) of the access point
+		to connect to.
+		
+		If the ``ip``, ``subnet_mask`` and ``gateway`` parameters are set to all zero
+		then DHCP is used for IP address configuration. Otherwise those three
+		parameters can be used to configure a static IP address. The default
+		configuration is DHCP.
+		
+		If the ``mac_address`` parameter is set to all zero then the factory MAC
+		address is used. Otherwise this parameter can be used to set a custom MAC
+		address.
+		
+		If the ``bssid`` parameter is set to all zero then WIFI Extension 2.0 will
+		connect to any access point that matches the configured SSID. Otherwise this
+		parameter can be used to make the WIFI Extension 2.0 only connect to an
+		access point if SSID and BSSID match.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the client configuration.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_CLIENT_CONFIGURATION, [enable, ssid, ip, subnetMask, gateway, macAddress, bssid], '? s32 B4 B4 B4 B6 B6', '', returnCallback, errorCallback);
+	};
+	this.getWifi2ClientConfiguration = function(returnCallback, errorCallback) {
+		/*
+		Returns the client configuration as set by :func:`SetWifi2ClientConfiguration`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_CLIENT_CONFIGURATION, [], '', '? s32 B4 B4 B4 B6 B6', returnCallback, errorCallback);
+	};
+	this.setWifi2ClientHostname = function(hostname, returnCallback, errorCallback) {
+		/*
+		Sets the client hostname (up to 32 characters) of the WIFI Extension 2.0. The
+		hostname will be displayed by access points as the hostname in the DHCP clients
+		table.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the client hostname.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_CLIENT_HOSTNAME, [hostname], 's32', '', returnCallback, errorCallback);
+	};
+	this.getWifi2ClientHostname = function(returnCallback, errorCallback) {
+		/*
+		Returns the client hostname as set by :func:`SetWifi2ClientHostname`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_CLIENT_HOSTNAME, [], '', 's32', returnCallback, errorCallback);
+	};
+	this.setWifi2ClientPassword = function(password, returnCallback, errorCallback) {
+		/*
+		Sets the client password (up to 63 chars) for WPA/WPA2 encryption.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the client password.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_CLIENT_PASSWORD, [password], 's64', '', returnCallback, errorCallback);
+	};
+	this.getWifi2ClientPassword = function(returnCallback, errorCallback) {
+		/*
+		Returns the client password as set by :func:`SetWifi2ClientPassword`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_CLIENT_PASSWORD, [], '', 's64', returnCallback, errorCallback);
+	};
+	this.setWifi2APConfiguration = function(enable, ssid, ip, subnetMask, gateway, encryption, hidden, channel, macAddress, returnCallback, errorCallback) {
+		/*
+		Sets the access point specific configuration of the WIFI Extension 2.0.
+		
+		The ``enable`` parameter enables or disables the access point part fo the
+		WIFI Extension 2.0. The default value is true.
+		
+		The ``ssid`` parameter sets the SSID (up to 32 characters) of the access point.
+		
+		If the ``ip``, ``subnet_mask`` and ``gateway`` parameters are set to all zero
+		then a DHCP server is enabled. Otherwise those three parameters can be used to
+		configure a static IP address for the access point. The default configuration
+		is DHCP.
+		
+		The ``encryption`` parameter sets the encryption mode to be used. Possible
+		values are Open (no encryption), WEP or WPA/WPA2 PSK. The default value is
+		WPA/WPA2 PSK. Use the :func:`SetWifi2APPassword` function to set the encryption
+		password.
+		
+		The ``hidden`` parameter makes the access point hide or show its SSID.
+		The default value is *false*.
+		
+		The ``channel`` parameter sets the channel (1 to 13) of the access point.
+		The default value is 1.
+		
+		If the ``mac_address`` parameter is set to all zero then the factory MAC
+		address is used. Otherwise this parameter can be used to set a custom MAC
+		address.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the access point configuration.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_AP_CONFIGURATION, [enable, ssid, ip, subnetMask, gateway, encryption, hidden, channel, macAddress], '? s32 B4 B4 B4 B ? B B6', '', returnCallback, errorCallback);
+	};
+	this.getWifi2APConfiguration = function(returnCallback, errorCallback) {
+		/*
+		Returns the access point configuration as set by :func:`SetWifi2APConfiguration`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_AP_CONFIGURATION, [], '', '? s32 B4 B4 B4 B ? B B6', returnCallback, errorCallback);
+	};
+	this.setWifi2APPassword = function(password, returnCallback, errorCallback) {
+		/*
+		Sets the access point password (up to 63 chars) for the configured encryption
+		mode, see :func:`SetWifi2APConfiguration`.
+		
+		To apply configuration changes to the WIFI Extension 2.0 the
+		:func:`SaveWifi2Configuration` function has to be called and the Master Brick
+		has to be restarted afterwards.
+		
+		It is recommended to use the Brick Viewer to set the access point password.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SET_WIFI2_AP_PASSWORD, [password], 's64', '', returnCallback, errorCallback);
+	};
+	this.getWifi2APPassword = function(returnCallback, errorCallback) {
+		/*
+		Returns the access point password as set by :func:`SetWifi2APPassword`.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_AP_PASSWORD, [], '', 's64', returnCallback, errorCallback);
+	};
+	this.saveWifi2Configuration = function(returnCallback, errorCallback) {
+		/*
+		All configuration functions for the WIFI Extension 2.0 do not change the
+		values permanently. After configuration this function has to be called to
+		permanently store the values.
+		
+		The values are stored in the EEPROM and only applied on startup. That means
+		you have to restart the Master Brick after configuration.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_SAVE_WIFI2_CONFIGURATION, [], '', 'B', returnCallback, errorCallback);
+	};
+	this.getWifi2FirmwareVersion = function(returnCallback, errorCallback) {
+		/*
+		Returns the current version of the WIFI Extension 2.0 firmware (major, minor, revision).
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_GET_WIFI2_FIRMWARE_VERSION, [], '', 'B3', returnCallback, errorCallback);
+	};
+	this.enableWifi2StatusLED = function(returnCallback, errorCallback) {
+		/*
+		Turns the green status LED of the WIFI Extension 2.0 on.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_ENABLE_WIFI2_STATUS_LED, [], '', '', returnCallback, errorCallback);
+	};
+	this.disableWifi2StatusLED = function(returnCallback, errorCallback) {
+		/*
+		Turns the green status LED of the WIFI Extension 2.0 off.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_DISABLE_WIFI2_STATUS_LED, [], '', '', returnCallback, errorCallback);
+	};
+	this.isWifi2StatusLEDEnabled = function(returnCallback, errorCallback) {
+		/*
+		Returns *true* if the green status LED of the WIFI Extension 2.0 is turned on.
+		
+		.. versionadded:: 2.4.0$nbsp;(Firmware)
+		*/
+		this.ipcon.sendRequest(this, BrickMaster.FUNCTION_IS_WIFI2_STATUS_LED_ENABLED, [], '', '?', returnCallback, errorCallback);
+	};
 	this.enableStatusLED = function(returnCallback, errorCallback) {
 		/*
 		Enables the status LED.
@@ -2666,11 +3081,11 @@ function BrickMaster(uid, ipcon) {
 
 module.exports = BrickMaster;
 
-},{"./Device":69}],5:[function(require,module,exports){
+},{"./Device":71}],5:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -3562,11 +3977,11 @@ function BrickRED(uid, ipcon) {
 
 module.exports = BrickRED;
 
-},{"./Device":69}],6:[function(require,module,exports){
+},{"./Device":71}],6:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -4079,11 +4494,11 @@ function BrickServo(uid, ipcon) {
 
 module.exports = BrickServo;
 
-},{"./Device":69}],7:[function(require,module,exports){
+},{"./Device":71}],7:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -4661,11 +5076,11 @@ function BrickStepper(uid, ipcon) {
 
 module.exports = BrickStepper;
 
-},{"./Device":69}],8:[function(require,module,exports){
+},{"./Device":71}],8:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -4889,11 +5304,11 @@ function BrickletAccelerometer(uid, ipcon) {
 
 module.exports = BrickletAccelerometer;
 
-},{"./Device":69}],9:[function(require,module,exports){
+},{"./Device":71}],9:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -5123,11 +5538,11 @@ function BrickletAmbientLight(uid, ipcon) {
 
 module.exports = BrickletAmbientLight;
 
-},{"./Device":69}],10:[function(require,module,exports){
+},{"./Device":71}],10:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -5334,11 +5749,11 @@ function BrickletAmbientLightV2(uid, ipcon) {
 
 module.exports = BrickletAmbientLightV2;
 
-},{"./Device":69}],11:[function(require,module,exports){
+},{"./Device":71}],11:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -5625,11 +6040,11 @@ function BrickletAnalogIn(uid, ipcon) {
 
 module.exports = BrickletAnalogIn;
 
-},{"./Device":69}],12:[function(require,module,exports){
+},{"./Device":71}],12:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -5872,11 +6287,11 @@ function BrickletAnalogInV2(uid, ipcon) {
 
 module.exports = BrickletAnalogInV2;
 
-},{"./Device":69}],13:[function(require,module,exports){
+},{"./Device":71}],13:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -5968,11 +6383,11 @@ function BrickletAnalogOut(uid, ipcon) {
 
 module.exports = BrickletAnalogOut;
 
-},{"./Device":69}],14:[function(require,module,exports){
+},{"./Device":71}],14:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -6039,11 +6454,11 @@ function BrickletAnalogOutV2(uid, ipcon) {
 
 module.exports = BrickletAnalogOutV2;
 
-},{"./Device":69}],15:[function(require,module,exports){
+},{"./Device":71}],15:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -6342,11 +6757,300 @@ function BrickletBarometer(uid, ipcon) {
 
 module.exports = BrickletBarometer;
 
-},{"./Device":69}],16:[function(require,module,exports){
+},{"./Device":71}],16:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
+ *                                                           *
+ * If you have a bugfix for this file and want to commit it, *
+ * please fix the bug in the generator. You can find a link  *
+ * to the generators git repository on tinkerforge.com       *
+ *************************************************************/
+
+var Device = require('./Device');
+
+BrickletCAN.DEVICE_IDENTIFIER = 270;
+BrickletCAN.DEVICE_DISPLAY_NAME = 'CAN Bricklet';
+BrickletCAN.CALLBACK_FRAME_READ = 11;
+BrickletCAN.FUNCTION_WRITE_FRAME = 1;
+BrickletCAN.FUNCTION_READ_FRAME = 2;
+BrickletCAN.FUNCTION_ENABLE_FRAME_READ_CALLBACK = 3;
+BrickletCAN.FUNCTION_DISABLE_FRAME_READ_CALLBACK = 4;
+BrickletCAN.FUNCTION_IS_FRAME_READ_CALLBACK_ENABLED = 5;
+BrickletCAN.FUNCTION_SET_CONFIGURATION = 6;
+BrickletCAN.FUNCTION_GET_CONFIGURATION = 7;
+BrickletCAN.FUNCTION_SET_READ_FILTER = 8;
+BrickletCAN.FUNCTION_GET_READ_FILTER = 9;
+BrickletCAN.FUNCTION_GET_ERROR_LOG = 10;
+BrickletCAN.FUNCTION_GET_IDENTITY = 255;
+BrickletCAN.FRAME_TYPE_STANDARD_DATA = 0;
+BrickletCAN.FRAME_TYPE_STANDARD_REMOTE = 1;
+BrickletCAN.FRAME_TYPE_EXTENDED_DATA = 2;
+BrickletCAN.FRAME_TYPE_EXTENDED_REMOTE = 3;
+BrickletCAN.BAUD_RATE_10KBPS = 0;
+BrickletCAN.BAUD_RATE_20KBPS = 1;
+BrickletCAN.BAUD_RATE_50KBPS = 2;
+BrickletCAN.BAUD_RATE_125KBPS = 3;
+BrickletCAN.BAUD_RATE_250KBPS = 4;
+BrickletCAN.BAUD_RATE_500KBPS = 5;
+BrickletCAN.BAUD_RATE_800KBPS = 6;
+BrickletCAN.BAUD_RATE_1000KBPS = 7;
+BrickletCAN.TRANSCEIVER_MODE_NORMAL = 0;
+BrickletCAN.TRANSCEIVER_MODE_LOOPBACK = 1;
+BrickletCAN.TRANSCEIVER_MODE_READ_ONLY = 2;
+BrickletCAN.FILTER_MODE_DISABLED = 0;
+BrickletCAN.FILTER_MODE_ACCEPT_ALL = 1;
+BrickletCAN.FILTER_MODE_MATCH_STANDARD = 2;
+BrickletCAN.FILTER_MODE_MATCH_STANDARD_AND_DATA = 3;
+BrickletCAN.FILTER_MODE_MATCH_EXTENDED = 4;
+
+function BrickletCAN(uid, ipcon) {
+	//Communicates with CAN bus devices
+
+	/*
+	Creates an object with the unique device ID *uid* and adds it to
+	the IP Connection *ipcon*.
+	*/
+	Device.call(this, this, uid, ipcon);
+	BrickletCAN.prototype = Object.create(Device);
+	this.responseExpected = {};
+	this.callbackFormats = {};
+	this.APIVersion = [2, 0, 0];
+	this.responseExpected[BrickletCAN.FUNCTION_WRITE_FRAME] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_READ_FRAME] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_ENABLE_FRAME_READ_CALLBACK] = Device.RESPONSE_EXPECTED_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_DISABLE_FRAME_READ_CALLBACK] = Device.RESPONSE_EXPECTED_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_IS_FRAME_READ_CALLBACK_ENABLED] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_SET_CONFIGURATION] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickletCAN.FUNCTION_GET_CONFIGURATION] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_SET_READ_FILTER] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickletCAN.FUNCTION_GET_READ_FILTER] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.FUNCTION_GET_ERROR_LOG] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletCAN.CALLBACK_FRAME_READ] = Device.RESPONSE_EXPECTED_ALWAYS_FALSE;
+	this.responseExpected[BrickletCAN.FUNCTION_GET_IDENTITY] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.callbackFormats[BrickletCAN.CALLBACK_FRAME_READ] = 'B I B8 B';
+
+	this.writeFrame = function(frameType, identifier, data, length, returnCallback, errorCallback) {
+		/*
+		Writes a data or remote frame to the write buffer to be transmitted over the
+		CAN transceiver.
+		
+		The Bricklet supports the standard 11-bit (CAN 2.0A) and the extended 29-bit
+		(CAN 2.0B) identifiers. For remote frames the ``data`` parameter is ignored.
+		
+		Returns *true* if the frame was successfully added to the write buffer. Returns
+		*false* if the frame could not be added because write buffer is already full.
+		
+		The write buffer can overflow if frames are written to it at a higher rate
+		than the Bricklet can transmitted them over the CAN transceiver. This may
+		happen if the CAN transceiver is configured as read-only or is using a low baud
+		rate (see :func:`SetConfiguration`). It can also happen if the CAN bus is
+		congested and the frame cannot be transmitted because it constantly loses
+		arbitration or because the CAN transceiver is currently disabled due to a high
+		write error level (see :func:`GetErrorLog`).
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_WRITE_FRAME, [frameType, identifier, data, length], 'B I B8 B', '?', returnCallback, errorCallback);
+	};
+	this.readFrame = function(returnCallback, errorCallback) {
+		/*
+		Tries to read the next data or remote frame from the read buffer and return it.
+		If a frame was successfully read, then the ``success`` return value is set to
+		*true* and the other return values contain the frame. If the read buffer is
+		empty and no frame could be read, then the ``success`` return value is set to
+		*false* and the other return values contain invalid data.
+		
+		For remote frames the ``data`` return value always contains invalid data.
+		
+		A configurable read filter can be used to define which frames should be
+		received by the CAN transceiver and put into the read buffer (see
+		:func:`SetReadFilter`).
+		
+		Instead of polling with this function, you can also use callbacks. See the
+		:func:`EnableFrameReadCallback` function and the :func:`FrameRead` callback.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_READ_FRAME, [], '', '? B I B8 B', returnCallback, errorCallback);
+	};
+	this.enableFrameReadCallback = function(returnCallback, errorCallback) {
+		/*
+		Enables the :func:`FrameRead` callback.
+		
+		By default the callback is disabled.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_ENABLE_FRAME_READ_CALLBACK, [], '', '', returnCallback, errorCallback);
+	};
+	this.disableFrameReadCallback = function(returnCallback, errorCallback) {
+		/*
+		Disables the :func:`FrameRead` callback.
+		
+		By default the callback is disabled.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_DISABLE_FRAME_READ_CALLBACK, [], '', '', returnCallback, errorCallback);
+	};
+	this.isFrameReadCallbackEnabled = function(returnCallback, errorCallback) {
+		/*
+		Returns *true* if the :func:`FrameRead` callback is enabled, *false* otherwise.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_IS_FRAME_READ_CALLBACK_ENABLED, [], '', '?', returnCallback, errorCallback);
+	};
+	this.setConfiguration = function(baudRate, transceiverMode, writeTimeout, returnCallback, errorCallback) {
+		/*
+		Sets the configuration for the CAN bus communication.
+		
+		The baud rate can be configured in steps between 10 and 1000 kbit/s.
+		
+		The CAN transceiver has three different modes:
+		
+		* Normal: Reads from and writes and to the CAN bus and performs active bus
+		  error detection and acknowledgement.
+		* Loopback: All reads and writes are performed internally. The transceiver
+		  is disconnected from the actual CAN bus.
+		* Read-Only: Only reads from the CAN bus, but does neither active bus error
+		  detection nor acknowledgement. Only the receiving part of the transceiver
+		  is connected to the CAN bus.
+		
+		The write timeout has three different modes that define how a failed frame
+		transmission should be handled:
+		
+		* One-Shot (< 0): Only one transmission attempt will be made. If the
+		  transmission fails then the frame is discarded.
+		* Infinite (= 0): Infinite transmission attempts will be made. The frame will
+		  never be discarded.
+		* Milliseconds (> 0): A limited number of transmission attempts will be made.
+		  If the frame could not be transmitted successfully after the configured
+		  number of milliseconds then the frame is discarded.
+		
+		The default is: 125 kbit/s, normal transceiver mode and infinite write timeout.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_SET_CONFIGURATION, [baudRate, transceiverMode, writeTimeout], 'B B i', '', returnCallback, errorCallback);
+	};
+	this.getConfiguration = function(returnCallback, errorCallback) {
+		/*
+		Returns the configuration as set by :func:`SetConfiguration`.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_GET_CONFIGURATION, [], '', 'B B i', returnCallback, errorCallback);
+	};
+	this.setReadFilter = function(mode, mask, filter1, filter2, returnCallback, errorCallback) {
+		/*
+		Set the read filter configuration. This can be used to define which frames
+		should be received by the CAN transceiver and put into the read buffer.
+		
+		The read filter has five different modes that define if and how the mask and
+		the two filters are applied:
+		
+		* Disabled: No filtering is applied at all. All frames are received even
+		  incomplete and defective frames. This mode should be used for debugging only.
+		* Accept-All: All complete and error-free frames are received.
+		* Match-Standard: Only standard frames with a matching identifier are received.
+		* Match-Standard-and-Data: Only standard frames with matching identifier and
+		  data bytes are received.
+		* Match-Extended: Only extended frames with a matching identifier are received.
+		
+		The mask and filters are used as bit masks. Their usage depends on the mode:
+		
+		* Disabled: Mask and filters are ignored.
+		* Accept-All: Mask and filters are ignored.
+		* Match-Standard: Bit 0 to 10 (11 bits) of mask and filters are used to match
+		  the 11-bit identifier of standard frames.
+		* Match-Standard-and-Data: Bit 0 to 10 (11 bits) of mask and filters are used
+		  to match the 11-bit identifier of standard frames. Bit 11 to 18 (8 bits) and
+		  bit 19 to 26 (8 bits) of mask and filters are used to match the first and
+		  second data byte (if present) of standard frames.
+		* Match-Extended: Bit 0 to 28 (29 bits) of mask and filters are used to match
+		  the 29-bit identifier of extended frames.
+		
+		The mask and filters are applied in this way: The mask is used to select the
+		identifier and data bits that should be compared to the corresponding filter
+		bits. All unselected bits are automatically accepted. All selected bits have
+		to match one of the filters to be accepted. If all bits for the selected mode
+		are accepted then the frame is accepted and is added to the read buffer.
+		
+		.. csv-table::
+		 :header: "Mask Bit", "Filter Bit", "Identifier/Data Bit", "Result"
+		 :widths: 10, 10, 10, 10
+		
+		 0, X, X, Accept
+		 1, 0, 0, Accept
+		 1, 0, 1, Reject
+		 1, 1, 0, Reject
+		 1, 1, 1, Accept
+		
+		For example, to receive standard frames with identifier 0x123 only the mode can
+		be set to Match-Standard with 0x7FF as mask and 0x123 as filter 1 and filter 2.
+		The mask of 0x7FF selects all 11 identifier bits for matching so that the
+		identifier has to be exactly 0x123 to be accepted.
+		
+		To accept identifier 0x123 and identifier 0x456 at the same time, just set
+		filter 2 to 0x456 and keep mask and filter 1 unchanged.
+		
+		The default mode is accept-all.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_SET_READ_FILTER, [mode, mask, filter1, filter2], 'B I I I', '', returnCallback, errorCallback);
+	};
+	this.getReadFilter = function(returnCallback, errorCallback) {
+		/*
+		Returns the read filter as set by :func:`SetReadFilter`.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_GET_READ_FILTER, [], '', 'B I I I', returnCallback, errorCallback);
+	};
+	this.getErrorLog = function(returnCallback, errorCallback) {
+		/*
+		Returns information about different kinds of errors.
+		
+		The write and read error levels indicate the current level of checksum,
+		acknowledgement, form, bit and stuffing errors during CAN bus write and read
+		operations.
+		
+		When the write error level extends 255 then the CAN transceiver gets disabled
+		and no frames can be transmitted or received anymore. The CAN transceiver will
+		automatically be activated again after the CAN bus is idle for a while.
+		
+		The write and read error levels are not available in read-only transceiver mode
+		(see :func:`SetConfiguration`) and are reset to 0 as a side effect of changing
+		the configuration or the read filter.
+		
+		The write timeout, read register and buffer overflow counts represents the
+		number of these errors:
+		
+		* A write timeout occurs if a frame could not be transmitted before the
+		  configured write timeout expired (see :func:`SetConfiguration`).
+		* A read register overflow occurs if the read register of the CAN transceiver
+		  still contains the last received frame when the next frame arrives. In this
+		  case the newly arrived frame is lost. This happens if the CAN transceiver
+		  receives more frames than the Bricklet can handle. Using the read filter
+		  (see :func:`SetReadFilter`) can help to reduce the amount of received frames.
+		* A read buffer overflow occurs if the read buffer of the Bricklet is already
+		  full when the next frame should be read from the read register of the CAN
+		  transceiver. In this case the frame in the read register is lost. This
+		  happens if the CAN transceiver receives more frames to be added to the read
+		  buffer than are removed from the read buffer using the :func:`ReadFrame`
+		  function. Using the :func:`FrameRead` callback ensures that the read buffer
+		  can not overflow.
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_GET_ERROR_LOG, [], '', 'B B ? I I I', returnCallback, errorCallback);
+	};
+	this.getIdentity = function(returnCallback, errorCallback) {
+		/*
+		Returns the UID, the UID where the Bricklet is connected to, 
+		the position, the hardware and firmware version as well as the
+		device identifier.
+		
+		The position can be 'a', 'b', 'c' or 'd'.
+		
+		The device identifier numbers can be found :ref:`here <device_identifier>`.
+		|device_identifier_constant|
+		*/
+		this.ipcon.sendRequest(this, BrickletCAN.FUNCTION_GET_IDENTITY, [], '', 's8 s8 c B3 B3 H', returnCallback, errorCallback);
+	};
+}
+
+module.exports = BrickletCAN;
+
+},{"./Device":71}],17:[function(require,module,exports){
+/* ***********************************************************
+ * This file was automatically generated on 2016-06-30.      *
+ *                                                           *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -6493,11 +7197,11 @@ function BrickletCO2(uid, ipcon) {
 
 module.exports = BrickletCO2;
 
-},{"./Device":69}],17:[function(require,module,exports){
+},{"./Device":71}],18:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -6812,11 +7516,11 @@ function BrickletColor(uid, ipcon) {
 
 module.exports = BrickletColor;
 
-},{"./Device":69}],18:[function(require,module,exports){
+},{"./Device":71}],19:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -7073,11 +7777,11 @@ function BrickletCurrent12(uid, ipcon) {
 
 module.exports = BrickletCurrent12;
 
-},{"./Device":69}],19:[function(require,module,exports){
+},{"./Device":71}],20:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -7334,11 +8038,11 @@ function BrickletCurrent25(uid, ipcon) {
 
 module.exports = BrickletCurrent25;
 
-},{"./Device":69}],20:[function(require,module,exports){
+},{"./Device":71}],21:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -7598,11 +8302,11 @@ function BrickletDistanceIR(uid, ipcon) {
 
 module.exports = BrickletDistanceIR;
 
-},{"./Device":69}],21:[function(require,module,exports){
+},{"./Device":71}],22:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -7776,11 +8480,11 @@ function BrickletDistanceUS(uid, ipcon) {
 
 module.exports = BrickletDistanceUS;
 
-},{"./Device":69}],22:[function(require,module,exports){
+},{"./Device":71}],23:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -7885,11 +8589,11 @@ function BrickletDualButton(uid, ipcon) {
 
 module.exports = BrickletDualButton;
 
-},{"./Device":69}],23:[function(require,module,exports){
+},{"./Device":71}],24:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -8003,11 +8707,11 @@ function BrickletDualRelay(uid, ipcon) {
 
 module.exports = BrickletDualRelay;
 
-},{"./Device":69}],24:[function(require,module,exports){
+},{"./Device":71}],25:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -8176,11 +8880,11 @@ function BrickletDustDetector(uid, ipcon) {
 
 module.exports = BrickletDustDetector;
 
-},{"./Device":69}],25:[function(require,module,exports){
+},{"./Device":71}],26:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -8460,11 +9164,11 @@ function BrickletGPS(uid, ipcon) {
 
 module.exports = BrickletGPS;
 
-},{"./Device":69}],26:[function(require,module,exports){
+},{"./Device":71}],27:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -8625,11 +9329,11 @@ function BrickletHallEffect(uid, ipcon) {
 
 module.exports = BrickletHallEffect;
 
-},{"./Device":69}],27:[function(require,module,exports){
+},{"./Device":71}],28:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -8858,11 +9562,11 @@ function BrickletHumidity(uid, ipcon) {
 
 module.exports = BrickletHumidity;
 
-},{"./Device":69}],28:[function(require,module,exports){
+},{"./Device":71}],29:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -9070,7 +9774,7 @@ function BrickletIO16(uid, ipcon) {
 		
 		.. note::
 		 This function does nothing for pins that are configured as input.
-		 Pull-up resistors can be switched on with :func:`SetConfiguration`.
+		 Pull-up resistors can be switched on with :func:`SetPortConfiguration`.
 		*/
 		this.ipcon.sendRequest(this, BrickletIO16.FUNCTION_SET_SELECTED_VALUES, [port, selectionMask, valueMask], 'c B B', '', returnCallback, errorCallback);
 	};
@@ -9137,11 +9841,11 @@ function BrickletIO16(uid, ipcon) {
 
 module.exports = BrickletIO16;
 
-},{"./Device":69}],29:[function(require,module,exports){
+},{"./Device":71}],30:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -9414,11 +10118,11 @@ function BrickletIO4(uid, ipcon) {
 
 module.exports = BrickletIO4;
 
-},{"./Device":69}],30:[function(require,module,exports){
+},{"./Device":71}],31:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -9562,11 +10266,11 @@ function BrickletIndustrialAnalogOut(uid, ipcon) {
 
 module.exports = BrickletIndustrialAnalogOut;
 
-},{"./Device":69}],31:[function(require,module,exports){
+},{"./Device":71}],32:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -9777,11 +10481,11 @@ function BrickletIndustrialDigitalIn4(uid, ipcon) {
 
 module.exports = BrickletIndustrialDigitalIn4;
 
-},{"./Device":69}],32:[function(require,module,exports){
+},{"./Device":71}],33:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -9952,11 +10656,11 @@ function BrickletIndustrialDigitalOut4(uid, ipcon) {
 
 module.exports = BrickletIndustrialDigitalOut4;
 
-},{"./Device":69}],33:[function(require,module,exports){
+},{"./Device":71}],34:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -10142,11 +10846,11 @@ function BrickletIndustrialDual020mA(uid, ipcon) {
 
 module.exports = BrickletIndustrialDual020mA;
 
-},{"./Device":69}],34:[function(require,module,exports){
+},{"./Device":71}],35:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -10349,11 +11053,11 @@ function BrickletIndustrialDualAnalogIn(uid, ipcon) {
 
 module.exports = BrickletIndustrialDualAnalogIn;
 
-},{"./Device":69}],35:[function(require,module,exports){
+},{"./Device":71}],36:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -10524,11 +11228,11 @@ function BrickletIndustrialQuadRelay(uid, ipcon) {
 
 module.exports = BrickletIndustrialQuadRelay;
 
-},{"./Device":69}],36:[function(require,module,exports){
+},{"./Device":71}],37:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -10784,11 +11488,11 @@ function BrickletJoystick(uid, ipcon) {
 
 module.exports = BrickletJoystick;
 
-},{"./Device":69}],37:[function(require,module,exports){
+},{"./Device":71}],38:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -10962,11 +11666,11 @@ function BrickletLCD16x2(uid, ipcon) {
 
 module.exports = BrickletLCD16x2;
 
-},{"./Device":69}],38:[function(require,module,exports){
+},{"./Device":71}],39:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -11200,11 +11904,11 @@ function BrickletLCD20x4(uid, ipcon) {
 
 module.exports = BrickletLCD20x4;
 
-},{"./Device":69}],39:[function(require,module,exports){
+},{"./Device":71}],40:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -11300,7 +12004,7 @@ function BrickletLEDStrip(uid, ipcon) {
 	};
 	this.getRGBValues = function(index, length, returnCallback, errorCallback) {
 		/*
-		Returns the rgb with the given *length* starting from the
+		Returns *rgb* values with the given *length* starting from the
 		given *index*.
 		
 		The values are the last values that were set by :func:`SetRGBValues`.
@@ -11408,11 +12112,11 @@ function BrickletLEDStrip(uid, ipcon) {
 
 module.exports = BrickletLEDStrip;
 
-},{"./Device":69}],40:[function(require,module,exports){
+},{"./Device":71}],41:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -11517,7 +12221,7 @@ function BrickletLaserRangeFinder(uid, ipcon) {
 	};
 	this.getVelocity = function(returnCallback, errorCallback) {
 		/*
-		Returns the measured velocity. The value has a range of 0 to 12700
+		Returns the measured velocity. The value has a range of -12800 to 12700
 		and is given in 1/100 m/s.
 		
 		The Laser Range Finder Bricklet knows different modes. Velocity 
@@ -11725,11 +12429,11 @@ function BrickletLaserRangeFinder(uid, ipcon) {
 
 module.exports = BrickletLaserRangeFinder;
 
-},{"./Device":69}],41:[function(require,module,exports){
+},{"./Device":71}],42:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -11878,11 +12582,11 @@ function BrickletLine(uid, ipcon) {
 
 module.exports = BrickletLine;
 
-},{"./Device":69}],42:[function(require,module,exports){
+},{"./Device":71}],43:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12107,11 +12811,11 @@ function BrickletLinearPoti(uid, ipcon) {
 
 module.exports = BrickletLinearPoti;
 
-},{"./Device":69}],43:[function(require,module,exports){
+},{"./Device":71}],44:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12370,11 +13074,11 @@ function BrickletLoadCell(uid, ipcon) {
 
 module.exports = BrickletLoadCell;
 
-},{"./Device":69}],44:[function(require,module,exports){
+},{"./Device":71}],45:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12545,11 +13249,11 @@ function BrickletMoisture(uid, ipcon) {
 
 module.exports = BrickletMoisture;
 
-},{"./Device":69}],45:[function(require,module,exports){
+},{"./Device":71}],46:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12615,11 +13319,11 @@ function BrickletMotionDetector(uid, ipcon) {
 
 module.exports = BrickletMotionDetector;
 
-},{"./Device":69}],46:[function(require,module,exports){
+},{"./Device":71}],47:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12668,7 +13372,7 @@ function BrickletMultiTouch(uid, ipcon) {
 		Bits 0 to 11 represent the 12 electrodes and bit 12 represents
 		the proximity.
 		
-		If an electrode is touched, the corresponding bit is true. If
+		If an electrode is touched, the corresponding bit is *true*. If
 		a hand or similar is in proximity to the electrodes, bit 12 is
 		*true*.
 		
@@ -12757,11 +13461,11 @@ function BrickletMultiTouch(uid, ipcon) {
 
 module.exports = BrickletMultiTouch;
 
-},{"./Device":69}],47:[function(require,module,exports){
+},{"./Device":71}],48:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -12993,11 +13697,11 @@ function BrickletNFCRFID(uid, ipcon) {
 
 module.exports = BrickletNFCRFID;
 
-},{"./Device":69}],48:[function(require,module,exports){
+},{"./Device":71}],49:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13125,11 +13829,11 @@ function BrickletOLED128x64(uid, ipcon) {
 
 module.exports = BrickletOLED128x64;
 
-},{"./Device":69}],49:[function(require,module,exports){
+},{"./Device":71}],50:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13256,11 +13960,11 @@ function BrickletOLED64x48(uid, ipcon) {
 
 module.exports = BrickletOLED64x48;
 
-},{"./Device":69}],50:[function(require,module,exports){
+},{"./Device":71}],51:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13543,11 +14247,11 @@ function BrickletPTC(uid, ipcon) {
 
 module.exports = BrickletPTC;
 
-},{"./Device":69}],51:[function(require,module,exports){
+},{"./Device":71}],52:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13622,11 +14326,11 @@ function BrickletPiezoBuzzer(uid, ipcon) {
 
 module.exports = BrickletPiezoBuzzer;
 
-},{"./Device":69}],52:[function(require,module,exports){
+},{"./Device":71}],53:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13731,11 +14435,74 @@ function BrickletPiezoSpeaker(uid, ipcon) {
 
 module.exports = BrickletPiezoSpeaker;
 
-},{"./Device":69}],53:[function(require,module,exports){
+},{"./Device":71}],54:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
+ *                                                           *
+ * If you have a bugfix for this file and want to commit it, *
+ * please fix the bug in the generator. You can find a link  *
+ * to the generators git repository on tinkerforge.com       *
+ *************************************************************/
+
+var Device = require('./Device');
+
+BrickletRGBLED.DEVICE_IDENTIFIER = 271;
+BrickletRGBLED.DEVICE_DISPLAY_NAME = 'RGB LED Bricklet';
+BrickletRGBLED.FUNCTION_SET_RGB_VALUE = 1;
+BrickletRGBLED.FUNCTION_GET_RGB_VALUE = 2;
+BrickletRGBLED.FUNCTION_GET_IDENTITY = 255;
+
+function BrickletRGBLED(uid, ipcon) {
+	//Controls one RGB LED
+
+	/*
+	Creates an object with the unique device ID *uid* and adds it to
+	the IP Connection *ipcon*.
+	*/
+	Device.call(this, this, uid, ipcon);
+	BrickletRGBLED.prototype = Object.create(Device);
+	this.responseExpected = {};
+	this.callbackFormats = {};
+	this.APIVersion = [2, 0, 0];
+	this.responseExpected[BrickletRGBLED.FUNCTION_SET_RGB_VALUE] = Device.RESPONSE_EXPECTED_FALSE;
+	this.responseExpected[BrickletRGBLED.FUNCTION_GET_RGB_VALUE] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletRGBLED.FUNCTION_GET_IDENTITY] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.setRGBValue = function(r, g, b, returnCallback, errorCallback) {
+		/*
+		Sets the *rgb* value for the LED.
+		*/
+		this.ipcon.sendRequest(this, BrickletRGBLED.FUNCTION_SET_RGB_VALUE, [r, g, b], 'B B B', '', returnCallback, errorCallback);
+	};
+	this.getRGBValue = function(returnCallback, errorCallback) {
+		/*
+		Returns the *rgb* value of the LED as set by :func:`SetRGBValues`.
+		*/
+		this.ipcon.sendRequest(this, BrickletRGBLED.FUNCTION_GET_RGB_VALUE, [], '', 'B B B', returnCallback, errorCallback);
+	};
+	this.getIdentity = function(returnCallback, errorCallback) {
+		/*
+		Returns the UID, the UID where the Bricklet is connected to, 
+		the position, the hardware and firmware version as well as the
+		device identifier.
+		
+		The position can be 'a', 'b', 'c' or 'd'.
+		
+		The device identifier numbers can be found :ref:`here <device_identifier>`.
+		|device_identifier_constant|
+		*/
+		this.ipcon.sendRequest(this, BrickletRGBLED.FUNCTION_GET_IDENTITY, [], '', 's8 s8 c B3 B3 H', returnCallback, errorCallback);
+	};
+}
+
+module.exports = BrickletRGBLED;
+
+},{"./Device":71}],55:[function(require,module,exports){
+/* ***********************************************************
+ * This file was automatically generated on 2016-06-30.      *
+ *                                                           *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13909,11 +14676,11 @@ function BrickletRS232(uid, ipcon) {
 
 module.exports = BrickletRS232;
 
-},{"./Device":69}],54:[function(require,module,exports){
+},{"./Device":71}],56:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -13924,11 +14691,17 @@ var Device = require('./Device');
 
 BrickletRealTimeClock.DEVICE_IDENTIFIER = 268;
 BrickletRealTimeClock.DEVICE_DISPLAY_NAME = 'Real-Time Clock Bricklet';
+BrickletRealTimeClock.CALLBACK_DATE_TIME = 10;
+BrickletRealTimeClock.CALLBACK_ALARM = 11;
 BrickletRealTimeClock.FUNCTION_SET_DATE_TIME = 1;
 BrickletRealTimeClock.FUNCTION_GET_DATE_TIME = 2;
 BrickletRealTimeClock.FUNCTION_GET_TIMESTAMP = 3;
 BrickletRealTimeClock.FUNCTION_SET_OFFSET = 4;
 BrickletRealTimeClock.FUNCTION_GET_OFFSET = 5;
+BrickletRealTimeClock.FUNCTION_SET_DATE_TIME_CALLBACK_PERIOD = 6;
+BrickletRealTimeClock.FUNCTION_GET_DATE_TIME_CALLBACK_PERIOD = 7;
+BrickletRealTimeClock.FUNCTION_SET_ALARM = 8;
+BrickletRealTimeClock.FUNCTION_GET_ALARM = 9;
 BrickletRealTimeClock.FUNCTION_GET_IDENTITY = 255;
 BrickletRealTimeClock.WEEKDAY_MONDAY = 1;
 BrickletRealTimeClock.WEEKDAY_TUESDAY = 2;
@@ -13937,6 +14710,8 @@ BrickletRealTimeClock.WEEKDAY_THURSDAY = 4;
 BrickletRealTimeClock.WEEKDAY_FRIDAY = 5;
 BrickletRealTimeClock.WEEKDAY_SATURDAY = 6;
 BrickletRealTimeClock.WEEKDAY_SUNDAY = 7;
+BrickletRealTimeClock.ALARM_MATCH_DISABLED = -1;
+BrickletRealTimeClock.ALARM_INTERVAL_DISABLED = -1;
 
 function BrickletRealTimeClock(uid, ipcon) {
 	//Battery-backed real-time clock
@@ -13949,13 +14724,22 @@ function BrickletRealTimeClock(uid, ipcon) {
 	BrickletRealTimeClock.prototype = Object.create(Device);
 	this.responseExpected = {};
 	this.callbackFormats = {};
-	this.APIVersion = [2, 0, 0];
+	this.APIVersion = [2, 0, 1];
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_SET_DATE_TIME] = Device.RESPONSE_EXPECTED_FALSE;
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_DATE_TIME] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_TIMESTAMP] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_SET_OFFSET] = Device.RESPONSE_EXPECTED_FALSE;
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_OFFSET] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletRealTimeClock.FUNCTION_SET_DATE_TIME_CALLBACK_PERIOD] = Device.RESPONSE_EXPECTED_TRUE;
+	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_DATE_TIME_CALLBACK_PERIOD] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletRealTimeClock.FUNCTION_SET_ALARM] = Device.RESPONSE_EXPECTED_TRUE;
+	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_ALARM] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.responseExpected[BrickletRealTimeClock.CALLBACK_DATE_TIME] = Device.RESPONSE_EXPECTED_ALWAYS_FALSE;
+	this.responseExpected[BrickletRealTimeClock.CALLBACK_ALARM] = Device.RESPONSE_EXPECTED_ALWAYS_FALSE;
 	this.responseExpected[BrickletRealTimeClock.FUNCTION_GET_IDENTITY] = Device.RESPONSE_EXPECTED_ALWAYS_TRUE;
+	this.callbackFormats[BrickletRealTimeClock.CALLBACK_DATE_TIME] = 'H B B B B B B B q';
+	this.callbackFormats[BrickletRealTimeClock.CALLBACK_ALARM] = 'H B B B B B B B q';
+
 	this.setDateTime = function(year, month, day, hour, minute, second, centisecond, weekday, returnCallback, errorCallback) {
 		/*
 		Sets the current date (including weekday) and the current time with hundredths
@@ -14032,6 +14816,67 @@ function BrickletRealTimeClock(uid, ipcon) {
 		*/
 		this.ipcon.sendRequest(this, BrickletRealTimeClock.FUNCTION_GET_OFFSET, [], '', 'b', returnCallback, errorCallback);
 	};
+	this.setDateTimeCallbackPeriod = function(period, returnCallback, errorCallback) {
+		/*
+		Sets the period in ms with which the :func:`DateTime` callback is triggered
+		periodically. A value of 0 turns the callback off.
+		
+		:func:`DateTime` is only triggered if the date or time changed since the
+		last triggering.
+		
+		The default value is 0.
+		
+		.. versionadded:: 2.0.1$nbsp;(Plugin)
+		*/
+		this.ipcon.sendRequest(this, BrickletRealTimeClock.FUNCTION_SET_DATE_TIME_CALLBACK_PERIOD, [period], 'I', '', returnCallback, errorCallback);
+	};
+	this.getDateTimeCallbackPeriod = function(returnCallback, errorCallback) {
+		/*
+		Returns the period as set by :func:`SetDateTimeCallbackPeriod`.
+		
+		.. versionadded:: 2.0.1$nbsp;(Plugin)
+		*/
+		this.ipcon.sendRequest(this, BrickletRealTimeClock.FUNCTION_GET_DATE_TIME_CALLBACK_PERIOD, [], '', 'I', returnCallback, errorCallback);
+	};
+	this.setAlarm = function(month, day, hour, minute, second, weekday, interval, returnCallback, errorCallback) {
+		/*
+		Configures a repeatable alarm. The :func:`Alarm` callback is triggered if the
+		current date and time matches the configured alarm.
+		
+		Setting a parameter to -1 means that it should be disabled and doesn't take part
+		in the match. Setting all parameters to -1 disables the alarm completely.
+		
+		For example, to make the alarm trigger every day at 7:30 AM it can be
+		configured as (-1, -1, 7, 30, -1, -1, -1). The hour is set to match 7 and the
+		minute is set to match 30. The alarm is triggered if all enabled parameters
+		match.
+		
+		The interval has a special role. It allows to make the alarm reconfigure itself.
+		This is useful if you need a repeated alarm that cannot be expressed by matching
+		the current date and time. For example, to make the alarm trigger every 23
+		seconds it can be configured as (-1, -1, -1, -1, -1, -1, 23). Internally the
+		Bricklet will take the current date and time, add 23 seconds to it and set the
+		result as its alarm. The first alarm will be triggered 23 seconds after the
+		call. Because the interval is not -1, the Bricklet will do the same again
+		internally, take the current date and time, add 23 seconds to it and set that
+		as its alarm. This results in a repeated alarm that triggers every 23 seconds.
+		
+		The interval can also be used in combination with the other parameters. For
+		example, configuring the alarm as (-1, -1, 7, 30, -1, -1, 300) results in an
+		alarm that triggers every day at 7:30 AM and is then repeated every 5 minutes.
+		
+		.. versionadded:: 2.0.1$nbsp;(Plugin)
+		*/
+		this.ipcon.sendRequest(this, BrickletRealTimeClock.FUNCTION_SET_ALARM, [month, day, hour, minute, second, weekday, interval], 'b b b b b b i', '', returnCallback, errorCallback);
+	};
+	this.getAlarm = function(returnCallback, errorCallback) {
+		/*
+		Returns the alarm configuration as set by :func:`SetAlarm`.
+		
+		.. versionadded:: 2.0.1$nbsp;(Plugin)
+		*/
+		this.ipcon.sendRequest(this, BrickletRealTimeClock.FUNCTION_GET_ALARM, [], '', 'b b b b b b i', returnCallback, errorCallback);
+	};
 	this.getIdentity = function(returnCallback, errorCallback) {
 		/*
 		Returns the UID, the UID where the Bricklet is connected to, 
@@ -14049,11 +14894,11 @@ function BrickletRealTimeClock(uid, ipcon) {
 
 module.exports = BrickletRealTimeClock;
 
-},{"./Device":69}],55:[function(require,module,exports){
+},{"./Device":71}],57:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14216,11 +15061,11 @@ function BrickletRemoteSwitch(uid, ipcon) {
 
 module.exports = BrickletRemoteSwitch;
 
-},{"./Device":69}],56:[function(require,module,exports){
+},{"./Device":71}],58:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14385,11 +15230,11 @@ function BrickletRotaryEncoder(uid, ipcon) {
 
 module.exports = BrickletRotaryEncoder;
 
-},{"./Device":69}],57:[function(require,module,exports){
+},{"./Device":71}],59:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14614,11 +15459,11 @@ function BrickletRotaryPoti(uid, ipcon) {
 
 module.exports = BrickletRotaryPoti;
 
-},{"./Device":69}],58:[function(require,module,exports){
+},{"./Device":71}],60:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14725,11 +15570,11 @@ function BrickletSegmentDisplay4x7(uid, ipcon) {
 
 module.exports = BrickletSegmentDisplay4x7;
 
-},{"./Device":69}],59:[function(require,module,exports){
+},{"./Device":71}],61:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14827,11 +15672,11 @@ function BrickletSolidStateRelay(uid, ipcon) {
 
 module.exports = BrickletSolidStateRelay;
 
-},{"./Device":69}],60:[function(require,module,exports){
+},{"./Device":71}],62:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -14980,11 +15825,11 @@ function BrickletSoundIntensity(uid, ipcon) {
 
 module.exports = BrickletSoundIntensity;
 
-},{"./Device":69}],61:[function(require,module,exports){
+},{"./Device":71}],63:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -15163,11 +16008,11 @@ function BrickletTemperature(uid, ipcon) {
 
 module.exports = BrickletTemperature;
 
-},{"./Device":69}],62:[function(require,module,exports){
+},{"./Device":71}],64:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -15428,11 +16273,11 @@ function BrickletTemperatureIR(uid, ipcon) {
 
 module.exports = BrickletTemperatureIR;
 
-},{"./Device":69}],63:[function(require,module,exports){
+},{"./Device":71}],65:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -15656,11 +16501,11 @@ function BrickletThermocouple(uid, ipcon) {
 
 module.exports = BrickletThermocouple;
 
-},{"./Device":69}],64:[function(require,module,exports){
+},{"./Device":71}],66:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -15752,11 +16597,11 @@ function BrickletTilt(uid, ipcon) {
 
 module.exports = BrickletTilt;
 
-},{"./Device":69}],65:[function(require,module,exports){
+},{"./Device":71}],67:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -15905,11 +16750,11 @@ function BrickletUVLight(uid, ipcon) {
 
 module.exports = BrickletUVLight;
 
-},{"./Device":69}],66:[function(require,module,exports){
+},{"./Device":71}],68:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -16134,11 +16979,11 @@ function BrickletVoltage(uid, ipcon) {
 
 module.exports = BrickletVoltage;
 
-},{"./Device":69}],67:[function(require,module,exports){
+},{"./Device":71}],69:[function(require,module,exports){
 /* ***********************************************************
- * This file was automatically generated on 2016-02-10.      *
+ * This file was automatically generated on 2016-06-30.      *
  *                                                           *
- * JavaScript Bindings Version 2.0.8                         *
+ * JavaScript Bindings Version 2.0.9                         *
  *                                                           *
  * If you have a bugfix for this file and want to commit it, *
  * please fix the bug in the generator. You can find a link  *
@@ -16511,7 +17356,7 @@ function BrickletVoltageCurrent(uid, ipcon) {
 
 module.exports = BrickletVoltageCurrent;
 
-},{"./Device":69}],68:[function(require,module,exports){
+},{"./Device":71}],70:[function(require,module,exports){
 (function (global){
 function Tinkerforge() {
 	this.IPConnection = require('./IPConnection');
@@ -16530,6 +17375,7 @@ function Tinkerforge() {
 	this.BrickletAnalogOut = require('./BrickletAnalogOut');
 	this.BrickletAnalogOutV2 = require('./BrickletAnalogOutV2');
 	this.BrickletBarometer = require('./BrickletBarometer');
+	this.BrickletCAN = require('./BrickletCAN');
 	this.BrickletCO2 = require('./BrickletCO2');
 	this.BrickletColor = require('./BrickletColor');
 	this.BrickletCurrent12 = require('./BrickletCurrent12');
@@ -16569,6 +17415,7 @@ function Tinkerforge() {
 	this.BrickletPTC = require('./BrickletPTC');
 	this.BrickletRealTimeClock = require('./BrickletRealTimeClock');
 	this.BrickletRemoteSwitch = require('./BrickletRemoteSwitch');
+	this.BrickletRGBLED = require('./BrickletRGBLED');
 	this.BrickletRotaryEncoder = require('./BrickletRotaryEncoder');
 	this.BrickletRotaryPoti = require('./BrickletRotaryPoti');
 	this.BrickletRS232 = require('./BrickletRS232');
@@ -16586,7 +17433,7 @@ function Tinkerforge() {
 
 global.Tinkerforge = new Tinkerforge();
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./BrickDC":1,"./BrickIMU":2,"./BrickIMUV2":3,"./BrickMaster":4,"./BrickRED":5,"./BrickServo":6,"./BrickStepper":7,"./BrickletAccelerometer":8,"./BrickletAmbientLight":9,"./BrickletAmbientLightV2":10,"./BrickletAnalogIn":11,"./BrickletAnalogInV2":12,"./BrickletAnalogOut":13,"./BrickletAnalogOutV2":14,"./BrickletBarometer":15,"./BrickletCO2":16,"./BrickletColor":17,"./BrickletCurrent12":18,"./BrickletCurrent25":19,"./BrickletDistanceIR":20,"./BrickletDistanceUS":21,"./BrickletDualButton":22,"./BrickletDualRelay":23,"./BrickletDustDetector":24,"./BrickletGPS":25,"./BrickletHallEffect":26,"./BrickletHumidity":27,"./BrickletIO16":28,"./BrickletIO4":29,"./BrickletIndustrialAnalogOut":30,"./BrickletIndustrialDigitalIn4":31,"./BrickletIndustrialDigitalOut4":32,"./BrickletIndustrialDual020mA":33,"./BrickletIndustrialDualAnalogIn":34,"./BrickletIndustrialQuadRelay":35,"./BrickletJoystick":36,"./BrickletLCD16x2":37,"./BrickletLCD20x4":38,"./BrickletLEDStrip":39,"./BrickletLaserRangeFinder":40,"./BrickletLine":41,"./BrickletLinearPoti":42,"./BrickletLoadCell":43,"./BrickletMoisture":44,"./BrickletMotionDetector":45,"./BrickletMultiTouch":46,"./BrickletNFCRFID":47,"./BrickletOLED128x64":48,"./BrickletOLED64x48":49,"./BrickletPTC":50,"./BrickletPiezoBuzzer":51,"./BrickletPiezoSpeaker":52,"./BrickletRS232":53,"./BrickletRealTimeClock":54,"./BrickletRemoteSwitch":55,"./BrickletRotaryEncoder":56,"./BrickletRotaryPoti":57,"./BrickletSegmentDisplay4x7":58,"./BrickletSolidStateRelay":59,"./BrickletSoundIntensity":60,"./BrickletTemperature":61,"./BrickletTemperatureIR":62,"./BrickletThermocouple":63,"./BrickletTilt":64,"./BrickletUVLight":65,"./BrickletVoltage":66,"./BrickletVoltageCurrent":67,"./IPConnection":70}],69:[function(require,module,exports){
+},{"./BrickDC":1,"./BrickIMU":2,"./BrickIMUV2":3,"./BrickMaster":4,"./BrickRED":5,"./BrickServo":6,"./BrickStepper":7,"./BrickletAccelerometer":8,"./BrickletAmbientLight":9,"./BrickletAmbientLightV2":10,"./BrickletAnalogIn":11,"./BrickletAnalogInV2":12,"./BrickletAnalogOut":13,"./BrickletAnalogOutV2":14,"./BrickletBarometer":15,"./BrickletCAN":16,"./BrickletCO2":17,"./BrickletColor":18,"./BrickletCurrent12":19,"./BrickletCurrent25":20,"./BrickletDistanceIR":21,"./BrickletDistanceUS":22,"./BrickletDualButton":23,"./BrickletDualRelay":24,"./BrickletDustDetector":25,"./BrickletGPS":26,"./BrickletHallEffect":27,"./BrickletHumidity":28,"./BrickletIO16":29,"./BrickletIO4":30,"./BrickletIndustrialAnalogOut":31,"./BrickletIndustrialDigitalIn4":32,"./BrickletIndustrialDigitalOut4":33,"./BrickletIndustrialDual020mA":34,"./BrickletIndustrialDualAnalogIn":35,"./BrickletIndustrialQuadRelay":36,"./BrickletJoystick":37,"./BrickletLCD16x2":38,"./BrickletLCD20x4":39,"./BrickletLEDStrip":40,"./BrickletLaserRangeFinder":41,"./BrickletLine":42,"./BrickletLinearPoti":43,"./BrickletLoadCell":44,"./BrickletMoisture":45,"./BrickletMotionDetector":46,"./BrickletMultiTouch":47,"./BrickletNFCRFID":48,"./BrickletOLED128x64":49,"./BrickletOLED64x48":50,"./BrickletPTC":51,"./BrickletPiezoBuzzer":52,"./BrickletPiezoSpeaker":53,"./BrickletRGBLED":54,"./BrickletRS232":55,"./BrickletRealTimeClock":56,"./BrickletRemoteSwitch":57,"./BrickletRotaryEncoder":58,"./BrickletRotaryPoti":59,"./BrickletSegmentDisplay4x7":60,"./BrickletSolidStateRelay":61,"./BrickletSoundIntensity":62,"./BrickletTemperature":63,"./BrickletTemperatureIR":64,"./BrickletThermocouple":65,"./BrickletTilt":66,"./BrickletUVLight":67,"./BrickletVoltage":68,"./BrickletVoltageCurrent":69,"./IPConnection":72}],71:[function(require,module,exports){
 /*
 Copyright (C) 2014 Ishraq Ibne Ashraf <ishraq@tinkerforge.com>
 
@@ -16703,7 +17550,7 @@ function Device(deviceRegistering, uid, ipcon) {
 
 module.exports = Device;
 
-},{}],70:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 (function (process,Buffer){
 /*
 Copyright (C) 2014 Ishraq Ibne Ashraf <ishraq@tinkerforge.com>
@@ -17865,7 +18712,7 @@ function IPConnection() {
 module.exports = IPConnection;
 
 }).call(this,require('_process'),require("buffer").Buffer)
-},{"./Device":69,"_process":175,"buffer":117,"crypto":126,"net":73}],71:[function(require,module,exports){
+},{"./Device":71,"_process":177,"buffer":119,"crypto":128,"net":75}],73:[function(require,module,exports){
 /*!
  * https://github.com/es-shims/es5-shim
  * @license es5-shim Copyright 2009-2015 by contributors, MIT License
@@ -18423,7 +19270,7 @@ if (!Object.isExtensible) {
 
 }));
 
-},{}],72:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 /*!
  * https://github.com/es-shims/es5-shim
  * @license es5-shim Copyright 2009-2015 by contributors, MIT License
@@ -20015,9 +20862,9 @@ if (parseInt(ws + '08') !== 8 || parseInt(ws + '0x16') !== 22) {
 
 }));
 
-},{}],73:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 
-},{}],74:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 var asn1 = exports;
 
 asn1.bignum = require('bn.js');
@@ -20028,7 +20875,7 @@ asn1.constants = require('./asn1/constants');
 asn1.decoders = require('./asn1/decoders');
 asn1.encoders = require('./asn1/encoders');
 
-},{"./asn1/api":75,"./asn1/base":77,"./asn1/constants":81,"./asn1/decoders":83,"./asn1/encoders":86,"bn.js":89}],75:[function(require,module,exports){
+},{"./asn1/api":77,"./asn1/base":79,"./asn1/constants":83,"./asn1/decoders":85,"./asn1/encoders":88,"bn.js":91}],77:[function(require,module,exports){
 var asn1 = require('../asn1');
 var inherits = require('inherits');
 
@@ -20089,7 +20936,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
   return this._getEncoder(enc).encode(data, reporter);
 };
 
-},{"../asn1":74,"inherits":164,"vm":205}],76:[function(require,module,exports){
+},{"../asn1":76,"inherits":166,"vm":207}],78:[function(require,module,exports){
 var inherits = require('inherits');
 var Reporter = require('../base').Reporter;
 var Buffer = require('buffer').Buffer;
@@ -20207,7 +21054,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
   return out;
 };
 
-},{"../base":77,"buffer":117,"inherits":164}],77:[function(require,module,exports){
+},{"../base":79,"buffer":119,"inherits":166}],79:[function(require,module,exports){
 var base = exports;
 
 base.Reporter = require('./reporter').Reporter;
@@ -20215,7 +21062,7 @@ base.DecoderBuffer = require('./buffer').DecoderBuffer;
 base.EncoderBuffer = require('./buffer').EncoderBuffer;
 base.Node = require('./node');
 
-},{"./buffer":76,"./node":78,"./reporter":79}],78:[function(require,module,exports){
+},{"./buffer":78,"./node":80,"./reporter":81}],80:[function(require,module,exports){
 var Reporter = require('../base').Reporter;
 var EncoderBuffer = require('../base').EncoderBuffer;
 var DecoderBuffer = require('../base').DecoderBuffer;
@@ -20847,7 +21694,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
   return /^[A-Za-z0-9 '\(\)\+,\-\.\/:=\?]*$/.test(str);
 };
 
-},{"../base":77,"minimalistic-assert":168}],79:[function(require,module,exports){
+},{"../base":79,"minimalistic-assert":170}],81:[function(require,module,exports){
 var inherits = require('inherits');
 
 function Reporter(options) {
@@ -20951,7 +21798,7 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
   return this;
 };
 
-},{"inherits":164}],80:[function(require,module,exports){
+},{"inherits":166}],82:[function(require,module,exports){
 var constants = require('../constants');
 
 exports.tagClass = {
@@ -20995,7 +21842,7 @@ exports.tag = {
 };
 exports.tagByName = constants._reverse(exports.tag);
 
-},{"../constants":81}],81:[function(require,module,exports){
+},{"../constants":83}],83:[function(require,module,exports){
 var constants = exports;
 
 // Helper
@@ -21016,7 +21863,7 @@ constants._reverse = function reverse(map) {
 
 constants.der = require('./der');
 
-},{"./der":80}],82:[function(require,module,exports){
+},{"./der":82}],84:[function(require,module,exports){
 var inherits = require('inherits');
 
 var asn1 = require('../../asn1');
@@ -21341,13 +22188,13 @@ function derDecodeLen(buf, primitive, fail) {
   return len;
 }
 
-},{"../../asn1":74,"inherits":164}],83:[function(require,module,exports){
+},{"../../asn1":76,"inherits":166}],85:[function(require,module,exports){
 var decoders = exports;
 
 decoders.der = require('./der');
 decoders.pem = require('./pem');
 
-},{"./der":82,"./pem":84}],84:[function(require,module,exports){
+},{"./der":84,"./pem":86}],86:[function(require,module,exports){
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
 
@@ -21399,7 +22246,7 @@ PEMDecoder.prototype.decode = function decode(data, options) {
   return DERDecoder.prototype.decode.call(this, input, options);
 };
 
-},{"../../asn1":74,"./der":82,"buffer":117,"inherits":164}],85:[function(require,module,exports){
+},{"../../asn1":76,"./der":84,"buffer":119,"inherits":166}],87:[function(require,module,exports){
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
 
@@ -21699,13 +22546,13 @@ function encodeTag(tag, primitive, cls, reporter) {
   return res;
 }
 
-},{"../../asn1":74,"buffer":117,"inherits":164}],86:[function(require,module,exports){
+},{"../../asn1":76,"buffer":119,"inherits":166}],88:[function(require,module,exports){
 var encoders = exports;
 
 encoders.der = require('./der');
 encoders.pem = require('./pem');
 
-},{"./der":85,"./pem":87}],87:[function(require,module,exports){
+},{"./der":87,"./pem":89}],89:[function(require,module,exports){
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
 
@@ -21730,7 +22577,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
   return out.join('\n');
 };
 
-},{"../../asn1":74,"./der":85,"buffer":117,"inherits":164}],88:[function(require,module,exports){
+},{"../../asn1":76,"./der":87,"buffer":119,"inherits":166}],90:[function(require,module,exports){
 ;(function (exports) {
   'use strict'
 
@@ -21850,7 +22697,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
   exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],89:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 (function (module, exports) {
   'use strict';
 
@@ -25261,7 +26108,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
   };
 })(typeof module === 'undefined' || module, this);
 
-},{}],90:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 var r;
 
 module.exports = function rand(len) {
@@ -25320,9 +26167,9 @@ if (typeof window === 'object') {
   }
 }
 
-},{}],91:[function(require,module,exports){
-arguments[4][73][0].apply(exports,arguments)
-},{"dup":73}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
+arguments[4][75][0].apply(exports,arguments)
+},{"dup":75}],94:[function(require,module,exports){
 (function (Buffer){
 // based on the aes implimentation in triple sec
 // https://github.com/keybase/triplesec
@@ -25503,7 +26350,7 @@ AES.prototype._doCryptBlock = function (M, keySchedule, SUB_MIX, SBOX) {
 exports.AES = AES
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],93:[function(require,module,exports){
+},{"buffer":119}],95:[function(require,module,exports){
 (function (Buffer){
 var aes = require('./aes')
 var Transform = require('cipher-base')
@@ -25604,7 +26451,7 @@ function xorTest (a, b) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./aes":92,"./ghash":97,"buffer":117,"buffer-xor":116,"cipher-base":119,"inherits":164}],94:[function(require,module,exports){
+},{"./aes":94,"./ghash":99,"buffer":119,"buffer-xor":118,"cipher-base":121,"inherits":166}],96:[function(require,module,exports){
 var ciphers = require('./encrypter')
 exports.createCipher = exports.Cipher = ciphers.createCipher
 exports.createCipheriv = exports.Cipheriv = ciphers.createCipheriv
@@ -25617,7 +26464,7 @@ function getCiphers () {
 }
 exports.listCiphers = exports.getCiphers = getCiphers
 
-},{"./decrypter":95,"./encrypter":96,"./modes":98}],95:[function(require,module,exports){
+},{"./decrypter":97,"./encrypter":98,"./modes":100}],97:[function(require,module,exports){
 (function (Buffer){
 var aes = require('./aes')
 var Transform = require('cipher-base')
@@ -25758,7 +26605,7 @@ exports.createDecipher = createDecipher
 exports.createDecipheriv = createDecipheriv
 
 }).call(this,require("buffer").Buffer)
-},{"./aes":92,"./authCipher":93,"./modes":98,"./modes/cbc":99,"./modes/cfb":100,"./modes/cfb1":101,"./modes/cfb8":102,"./modes/ctr":103,"./modes/ecb":104,"./modes/ofb":105,"./streamCipher":106,"buffer":117,"cipher-base":119,"evp_bytestokey":155,"inherits":164}],96:[function(require,module,exports){
+},{"./aes":94,"./authCipher":95,"./modes":100,"./modes/cbc":101,"./modes/cfb":102,"./modes/cfb1":103,"./modes/cfb8":104,"./modes/ctr":105,"./modes/ecb":106,"./modes/ofb":107,"./streamCipher":108,"buffer":119,"cipher-base":121,"evp_bytestokey":157,"inherits":166}],98:[function(require,module,exports){
 (function (Buffer){
 var aes = require('./aes')
 var Transform = require('cipher-base')
@@ -25884,7 +26731,7 @@ exports.createCipheriv = createCipheriv
 exports.createCipher = createCipher
 
 }).call(this,require("buffer").Buffer)
-},{"./aes":92,"./authCipher":93,"./modes":98,"./modes/cbc":99,"./modes/cfb":100,"./modes/cfb1":101,"./modes/cfb8":102,"./modes/ctr":103,"./modes/ecb":104,"./modes/ofb":105,"./streamCipher":106,"buffer":117,"cipher-base":119,"evp_bytestokey":155,"inherits":164}],97:[function(require,module,exports){
+},{"./aes":94,"./authCipher":95,"./modes":100,"./modes/cbc":101,"./modes/cfb":102,"./modes/cfb1":103,"./modes/cfb8":104,"./modes/ctr":105,"./modes/ecb":106,"./modes/ofb":107,"./streamCipher":108,"buffer":119,"cipher-base":121,"evp_bytestokey":157,"inherits":166}],99:[function(require,module,exports){
 (function (Buffer){
 var zeros = new Buffer(16)
 zeros.fill(0)
@@ -25986,7 +26833,7 @@ function xor (a, b) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],98:[function(require,module,exports){
+},{"buffer":119}],100:[function(require,module,exports){
 exports['aes-128-ecb'] = {
   cipher: 'AES',
   key: 128,
@@ -26159,7 +27006,7 @@ exports['aes-256-gcm'] = {
   type: 'auth'
 }
 
-},{}],99:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 var xor = require('buffer-xor')
 
 exports.encrypt = function (self, block) {
@@ -26178,7 +27025,7 @@ exports.decrypt = function (self, block) {
   return xor(out, pad)
 }
 
-},{"buffer-xor":116}],100:[function(require,module,exports){
+},{"buffer-xor":118}],102:[function(require,module,exports){
 (function (Buffer){
 var xor = require('buffer-xor')
 
@@ -26213,7 +27060,7 @@ function encryptStart (self, data, decrypt) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"buffer-xor":116}],101:[function(require,module,exports){
+},{"buffer":119,"buffer-xor":118}],103:[function(require,module,exports){
 (function (Buffer){
 function encryptByte (self, byteParam, decrypt) {
   var pad
@@ -26251,7 +27098,7 @@ function shiftIn (buffer, value) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],102:[function(require,module,exports){
+},{"buffer":119}],104:[function(require,module,exports){
 (function (Buffer){
 function encryptByte (self, byteParam, decrypt) {
   var pad = self._cipher.encryptBlock(self._prev)
@@ -26270,7 +27117,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],103:[function(require,module,exports){
+},{"buffer":119}],105:[function(require,module,exports){
 (function (Buffer){
 var xor = require('buffer-xor')
 
@@ -26305,7 +27152,7 @@ exports.encrypt = function (self, chunk) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"buffer-xor":116}],104:[function(require,module,exports){
+},{"buffer":119,"buffer-xor":118}],106:[function(require,module,exports){
 exports.encrypt = function (self, block) {
   return self._cipher.encryptBlock(block)
 }
@@ -26313,7 +27160,7 @@ exports.decrypt = function (self, block) {
   return self._cipher.decryptBlock(block)
 }
 
-},{}],105:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 (function (Buffer){
 var xor = require('buffer-xor')
 
@@ -26333,7 +27180,7 @@ exports.encrypt = function (self, chunk) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"buffer-xor":116}],106:[function(require,module,exports){
+},{"buffer":119,"buffer-xor":118}],108:[function(require,module,exports){
 (function (Buffer){
 var aes = require('./aes')
 var Transform = require('cipher-base')
@@ -26362,7 +27209,7 @@ StreamCipher.prototype._final = function () {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./aes":92,"buffer":117,"cipher-base":119,"inherits":164}],107:[function(require,module,exports){
+},{"./aes":94,"buffer":119,"cipher-base":121,"inherits":166}],109:[function(require,module,exports){
 var ebtk = require('evp_bytestokey')
 var aes = require('browserify-aes/browser')
 var DES = require('browserify-des')
@@ -26437,7 +27284,7 @@ function getCiphers () {
 }
 exports.listCiphers = exports.getCiphers = getCiphers
 
-},{"browserify-aes/browser":94,"browserify-aes/modes":98,"browserify-des":108,"browserify-des/modes":109,"evp_bytestokey":155}],108:[function(require,module,exports){
+},{"browserify-aes/browser":96,"browserify-aes/modes":100,"browserify-des":110,"browserify-des/modes":111,"evp_bytestokey":157}],110:[function(require,module,exports){
 (function (Buffer){
 var CipherBase = require('cipher-base')
 var des = require('des.js')
@@ -26484,7 +27331,7 @@ DES.prototype._final = function () {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"cipher-base":119,"des.js":127,"inherits":164}],109:[function(require,module,exports){
+},{"buffer":119,"cipher-base":121,"des.js":129,"inherits":166}],111:[function(require,module,exports){
 exports['des-ecb'] = {
   key: 8,
   iv: 0
@@ -26510,7 +27357,7 @@ exports['des-ede'] = {
   iv: 0
 }
 
-},{}],110:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 (function (Buffer){
 var bn = require('bn.js');
 var randomBytes = require('randombytes');
@@ -26554,7 +27401,7 @@ function getr(priv) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"bn.js":89,"buffer":117,"randombytes":182}],111:[function(require,module,exports){
+},{"bn.js":91,"buffer":119,"randombytes":184}],113:[function(require,module,exports){
 (function (Buffer){
 'use strict'
 exports['RSA-SHA224'] = exports.sha224WithRSAEncryption = {
@@ -26630,7 +27477,7 @@ exports['RSA-MD5'] = exports.md5WithRSAEncryption = {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],112:[function(require,module,exports){
+},{"buffer":119}],114:[function(require,module,exports){
 (function (Buffer){
 var _algos = require('./algos')
 var createHash = require('create-hash')
@@ -26737,7 +27584,7 @@ module.exports = {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./algos":111,"./sign":114,"./verify":115,"buffer":117,"create-hash":122,"inherits":164,"stream":202}],113:[function(require,module,exports){
+},{"./algos":113,"./sign":116,"./verify":117,"buffer":119,"create-hash":124,"inherits":166,"stream":204}],115:[function(require,module,exports){
 'use strict'
 exports['1.3.132.0.10'] = 'secp256k1'
 
@@ -26751,7 +27598,7 @@ exports['1.3.132.0.34'] = 'p384'
 
 exports['1.3.132.0.35'] = 'p521'
 
-},{}],114:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 (function (Buffer){
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var createHmac = require('create-hmac')
@@ -26940,7 +27787,7 @@ module.exports.getKey = getKey
 module.exports.makeKey = makeKey
 
 }).call(this,require("buffer").Buffer)
-},{"./curves":113,"bn.js":89,"browserify-rsa":110,"buffer":117,"create-hmac":125,"elliptic":137,"parse-asn1":172}],115:[function(require,module,exports){
+},{"./curves":115,"bn.js":91,"browserify-rsa":112,"buffer":119,"create-hmac":127,"elliptic":139,"parse-asn1":174}],117:[function(require,module,exports){
 (function (Buffer){
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var curves = require('./curves')
@@ -27047,7 +27894,7 @@ function checkValue (b, q) {
 module.exports = verify
 
 }).call(this,require("buffer").Buffer)
-},{"./curves":113,"bn.js":89,"buffer":117,"elliptic":137,"parse-asn1":172}],116:[function(require,module,exports){
+},{"./curves":115,"bn.js":91,"buffer":119,"elliptic":139,"parse-asn1":174}],118:[function(require,module,exports){
 (function (Buffer){
 module.exports = function xor (a, b) {
   var length = Math.min(a.length, b.length)
@@ -27061,7 +27908,7 @@ module.exports = function xor (a, b) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],117:[function(require,module,exports){
+},{"buffer":119}],119:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -28519,14 +29366,14 @@ function blitBuffer (src, dst, offset, length) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":88,"ieee754":162,"isarray":118}],118:[function(require,module,exports){
+},{"base64-js":90,"ieee754":164,"isarray":120}],120:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],119:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 (function (Buffer){
 var Transform = require('stream').Transform
 var inherits = require('inherits')
@@ -28620,7 +29467,7 @@ CipherBase.prototype._toString = function (value, enc, final) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"inherits":164,"stream":202,"string_decoder":203}],120:[function(require,module,exports){
+},{"buffer":119,"inherits":166,"stream":204,"string_decoder":205}],122:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -28731,7 +29578,7 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":165}],121:[function(require,module,exports){
+},{"../../is-buffer/index.js":167}],123:[function(require,module,exports){
 (function (Buffer){
 var elliptic = require('elliptic');
 var BN = require('bn.js');
@@ -28857,7 +29704,7 @@ function formatReturnValue(bn, enc, len) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"bn.js":89,"buffer":117,"elliptic":137}],122:[function(require,module,exports){
+},{"bn.js":91,"buffer":119,"elliptic":139}],124:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 var inherits = require('inherits')
@@ -28913,7 +29760,7 @@ module.exports = function createHash (alg) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./md5":124,"buffer":117,"cipher-base":119,"inherits":164,"ripemd160":193,"sha.js":195}],123:[function(require,module,exports){
+},{"./md5":126,"buffer":119,"cipher-base":121,"inherits":166,"ripemd160":195,"sha.js":197}],125:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 var intSize = 4;
@@ -28950,7 +29797,7 @@ function hash(buf, fn, hashSize, bigEndian) {
 }
 exports.hash = hash;
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],124:[function(require,module,exports){
+},{"buffer":119}],126:[function(require,module,exports){
 'use strict';
 /*
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
@@ -29107,7 +29954,7 @@ function bit_rol(num, cnt)
 module.exports = function md5(buf) {
   return helpers.hash(buf, core_md5, 16);
 };
-},{"./helpers":123}],125:[function(require,module,exports){
+},{"./helpers":125}],127:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 var createHash = require('create-hash/browser');
@@ -29179,7 +30026,7 @@ module.exports = function createHmac(alg, key) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"create-hash/browser":122,"inherits":164,"stream":202}],126:[function(require,module,exports){
+},{"buffer":119,"create-hash/browser":124,"inherits":166,"stream":204}],128:[function(require,module,exports){
 'use strict'
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('randombytes')
@@ -29258,7 +30105,7 @@ var publicEncrypt = require('public-encrypt')
   }
 })
 
-},{"browserify-cipher":107,"browserify-sign":112,"browserify-sign/algos":111,"create-ecdh":121,"create-hash":122,"create-hmac":125,"diffie-hellman":133,"pbkdf2":173,"public-encrypt":176,"randombytes":182}],127:[function(require,module,exports){
+},{"browserify-cipher":109,"browserify-sign":114,"browserify-sign/algos":113,"create-ecdh":123,"create-hash":124,"create-hmac":127,"diffie-hellman":135,"pbkdf2":175,"public-encrypt":178,"randombytes":184}],129:[function(require,module,exports){
 'use strict';
 
 exports.utils = require('./des/utils');
@@ -29267,7 +30114,7 @@ exports.DES = require('./des/des');
 exports.CBC = require('./des/cbc');
 exports.EDE = require('./des/ede');
 
-},{"./des/cbc":128,"./des/cipher":129,"./des/des":130,"./des/ede":131,"./des/utils":132}],128:[function(require,module,exports){
+},{"./des/cbc":130,"./des/cipher":131,"./des/des":132,"./des/ede":133,"./des/utils":134}],130:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -29334,7 +30181,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
   }
 };
 
-},{"inherits":164,"minimalistic-assert":168}],129:[function(require,module,exports){
+},{"inherits":166,"minimalistic-assert":170}],131:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -29477,7 +30324,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
   return this._unpad(out);
 };
 
-},{"minimalistic-assert":168}],130:[function(require,module,exports){
+},{"minimalistic-assert":170}],132:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -29622,7 +30469,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
   utils.rip(l, r, out, off);
 };
 
-},{"../des":127,"inherits":164,"minimalistic-assert":168}],131:[function(require,module,exports){
+},{"../des":129,"inherits":166,"minimalistic-assert":170}],133:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -29679,7 +30526,7 @@ EDE.prototype._update = function _update(inp, inOff, out, outOff) {
 EDE.prototype._pad = DES.prototype._pad;
 EDE.prototype._unpad = DES.prototype._unpad;
 
-},{"../des":127,"inherits":164,"minimalistic-assert":168}],132:[function(require,module,exports){
+},{"../des":129,"inherits":166,"minimalistic-assert":170}],134:[function(require,module,exports){
 'use strict';
 
 exports.readUInt32BE = function readUInt32BE(bytes, off) {
@@ -29937,7 +30784,7 @@ exports.padSplit = function padSplit(num, size, group) {
   return out.join(' ');
 };
 
-},{}],133:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 (function (Buffer){
 var generatePrime = require('./lib/generatePrime')
 var primes = require('./lib/primes.json')
@@ -29983,7 +30830,7 @@ exports.DiffieHellmanGroup = exports.createDiffieHellmanGroup = exports.getDiffi
 exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 
 }).call(this,require("buffer").Buffer)
-},{"./lib/dh":134,"./lib/generatePrime":135,"./lib/primes.json":136,"buffer":117}],134:[function(require,module,exports){
+},{"./lib/dh":136,"./lib/generatePrime":137,"./lib/primes.json":138,"buffer":119}],136:[function(require,module,exports){
 (function (Buffer){
 var BN = require('bn.js');
 var MillerRabin = require('miller-rabin');
@@ -30151,7 +30998,7 @@ function formatReturnValue(bn, enc) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./generatePrime":135,"bn.js":89,"buffer":117,"miller-rabin":167,"randombytes":182}],135:[function(require,module,exports){
+},{"./generatePrime":137,"bn.js":91,"buffer":119,"miller-rabin":169,"randombytes":184}],137:[function(require,module,exports){
 var randomBytes = require('randombytes');
 module.exports = findPrime;
 findPrime.simpleSieve = simpleSieve;
@@ -30258,7 +31105,7 @@ function findPrime(bits, gen) {
 
 }
 
-},{"bn.js":89,"miller-rabin":167,"randombytes":182}],136:[function(require,module,exports){
+},{"bn.js":91,"miller-rabin":169,"randombytes":184}],138:[function(require,module,exports){
 module.exports={
     "modp1": {
         "gen": "02",
@@ -30293,7 +31140,7 @@ module.exports={
         "prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"
     }
 }
-},{}],137:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 'use strict';
 
 var elliptic = exports;
@@ -30309,7 +31156,7 @@ elliptic.curves = require('./elliptic/curves');
 elliptic.ec = require('./elliptic/ec');
 elliptic.eddsa = require('./elliptic/eddsa');
 
-},{"../package.json":153,"./elliptic/curve":140,"./elliptic/curves":143,"./elliptic/ec":144,"./elliptic/eddsa":147,"./elliptic/hmac-drbg":150,"./elliptic/utils":152,"brorand":90}],138:[function(require,module,exports){
+},{"../package.json":155,"./elliptic/curve":142,"./elliptic/curves":145,"./elliptic/ec":146,"./elliptic/eddsa":149,"./elliptic/hmac-drbg":152,"./elliptic/utils":154,"brorand":92}],140:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -30662,7 +31509,7 @@ BasePoint.prototype.dblp = function dblp(k) {
   return r;
 };
 
-},{"../../elliptic":137,"bn.js":89}],139:[function(require,module,exports){
+},{"../../elliptic":139,"bn.js":91}],141:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -31074,7 +31921,7 @@ Point.prototype.eq = function eq(other) {
 Point.prototype.toP = Point.prototype.normalize;
 Point.prototype.mixedAdd = Point.prototype.add;
 
-},{"../../elliptic":137,"../curve":140,"bn.js":89,"inherits":164}],140:[function(require,module,exports){
+},{"../../elliptic":139,"../curve":142,"bn.js":91,"inherits":166}],142:[function(require,module,exports){
 'use strict';
 
 var curve = exports;
@@ -31084,7 +31931,7 @@ curve.short = require('./short');
 curve.mont = require('./mont');
 curve.edwards = require('./edwards');
 
-},{"./base":138,"./edwards":139,"./mont":141,"./short":142}],141:[function(require,module,exports){
+},{"./base":140,"./edwards":141,"./mont":143,"./short":144}],143:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -31262,7 +32109,7 @@ Point.prototype.getX = function getX() {
   return this.x.fromRed();
 };
 
-},{"../../elliptic":137,"../curve":140,"bn.js":89,"inherits":164}],142:[function(require,module,exports){
+},{"../../elliptic":139,"../curve":142,"bn.js":91,"inherits":166}],144:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -32173,7 +33020,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
   return this.z.cmpn(0) === 0;
 };
 
-},{"../../elliptic":137,"../curve":140,"bn.js":89,"inherits":164}],143:[function(require,module,exports){
+},{"../../elliptic":139,"../curve":142,"bn.js":91,"inherits":166}],145:[function(require,module,exports){
 'use strict';
 
 var curves = exports;
@@ -32380,7 +33227,7 @@ defineCurve('secp256k1', {
   ]
 });
 
-},{"../elliptic":137,"./precomputed/secp256k1":151,"hash.js":156}],144:[function(require,module,exports){
+},{"../elliptic":139,"./precomputed/secp256k1":153,"hash.js":158}],146:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -32604,7 +33451,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
   throw new Error('Unable to find valid recovery factor');
 };
 
-},{"../../elliptic":137,"./key":145,"./signature":146,"bn.js":89}],145:[function(require,module,exports){
+},{"../../elliptic":139,"./key":147,"./signature":148,"bn.js":91}],147:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -32713,7 +33560,7 @@ KeyPair.prototype.inspect = function inspect() {
          ' pub: ' + (this.pub && this.pub.inspect()) + ' >';
 };
 
-},{"bn.js":89}],146:[function(require,module,exports){
+},{"bn.js":91}],148:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -32850,7 +33697,7 @@ Signature.prototype.toDER = function toDER(enc) {
   return utils.encode(res, enc);
 };
 
-},{"../../elliptic":137,"bn.js":89}],147:[function(require,module,exports){
+},{"../../elliptic":139,"bn.js":91}],149:[function(require,module,exports){
 'use strict';
 
 var hash = require('hash.js');
@@ -32970,7 +33817,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
   return val instanceof this.pointClass;
 };
 
-},{"../../elliptic":137,"./key":148,"./signature":149,"hash.js":156}],148:[function(require,module,exports){
+},{"../../elliptic":139,"./key":150,"./signature":151,"hash.js":158}],150:[function(require,module,exports){
 'use strict';
 
 var elliptic = require('../../elliptic');
@@ -33068,7 +33915,7 @@ KeyPair.prototype.getPublic = function getPublic(enc) {
 
 module.exports = KeyPair;
 
-},{"../../elliptic":137}],149:[function(require,module,exports){
+},{"../../elliptic":139}],151:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -33136,7 +33983,7 @@ Signature.prototype.toHex = function toHex() {
 
 module.exports = Signature;
 
-},{"../../elliptic":137,"bn.js":89}],150:[function(require,module,exports){
+},{"../../elliptic":139,"bn.js":91}],152:[function(require,module,exports){
 'use strict';
 
 var hash = require('hash.js');
@@ -33252,7 +34099,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
   return utils.encode(res, enc);
 };
 
-},{"../elliptic":137,"hash.js":156}],151:[function(require,module,exports){
+},{"../elliptic":139,"hash.js":158}],153:[function(require,module,exports){
 module.exports = {
   doubles: {
     step: 4,
@@ -34034,7 +34881,7 @@ module.exports = {
   }
 };
 
-},{}],152:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 'use strict';
 
 var utils = exports;
@@ -34209,7 +35056,7 @@ function intFromLE(bytes) {
 utils.intFromLE = intFromLE;
 
 
-},{"bn.js":89}],153:[function(require,module,exports){
+},{"bn.js":91}],155:[function(require,module,exports){
 module.exports={
   "_args": [
     [
@@ -34310,7 +35157,7 @@ module.exports={
   "version": "6.2.3"
 }
 
-},{}],154:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -34610,7 +35457,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],155:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 (function (Buffer){
 var md5 = require('create-hash/md5')
 module.exports = EVP_BytesToKey
@@ -34682,7 +35529,7 @@ function EVP_BytesToKey (password, salt, keyLen, ivLen) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"create-hash/md5":124}],156:[function(require,module,exports){
+},{"buffer":119,"create-hash/md5":126}],158:[function(require,module,exports){
 var hash = exports;
 
 hash.utils = require('./hash/utils');
@@ -34699,7 +35546,7 @@ hash.sha384 = hash.sha.sha384;
 hash.sha512 = hash.sha.sha512;
 hash.ripemd160 = hash.ripemd.ripemd160;
 
-},{"./hash/common":157,"./hash/hmac":158,"./hash/ripemd":159,"./hash/sha":160,"./hash/utils":161}],157:[function(require,module,exports){
+},{"./hash/common":159,"./hash/hmac":160,"./hash/ripemd":161,"./hash/sha":162,"./hash/utils":163}],159:[function(require,module,exports){
 var hash = require('../hash');
 var utils = hash.utils;
 var assert = utils.assert;
@@ -34792,7 +35639,7 @@ BlockHash.prototype._pad = function pad() {
   return res;
 };
 
-},{"../hash":156}],158:[function(require,module,exports){
+},{"../hash":158}],160:[function(require,module,exports){
 var hmac = exports;
 
 var hash = require('../hash');
@@ -34842,7 +35689,7 @@ Hmac.prototype.digest = function digest(enc) {
   return this.outer.digest(enc);
 };
 
-},{"../hash":156}],159:[function(require,module,exports){
+},{"../hash":158}],161:[function(require,module,exports){
 var hash = require('../hash');
 var utils = hash.utils;
 
@@ -34988,7 +35835,7 @@ var sh = [
   8, 5, 12, 9, 12, 5, 14, 6, 8, 13, 6, 5, 15, 13, 11, 11
 ];
 
-},{"../hash":156}],160:[function(require,module,exports){
+},{"../hash":158}],162:[function(require,module,exports){
 var hash = require('../hash');
 var utils = hash.utils;
 var assert = utils.assert;
@@ -35554,7 +36401,7 @@ function g1_512_lo(xh, xl) {
   return r;
 }
 
-},{"../hash":156}],161:[function(require,module,exports){
+},{"../hash":158}],163:[function(require,module,exports){
 var utils = exports;
 var inherits = require('inherits');
 
@@ -35813,7 +36660,7 @@ function shr64_lo(ah, al, num) {
 };
 exports.shr64_lo = shr64_lo;
 
-},{"inherits":164}],162:[function(require,module,exports){
+},{"inherits":166}],164:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -35899,7 +36746,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],163:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -35910,7 +36757,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],164:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -35935,7 +36782,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],165:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /**
  * Determine if an object is Buffer
  *
@@ -35954,12 +36801,12 @@ module.exports = function (obj) {
     ))
 }
 
-},{}],166:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],167:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 var bn = require('bn.js');
 var brorand = require('brorand');
 
@@ -36074,7 +36921,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
   return false;
 };
 
-},{"bn.js":89,"brorand":90}],168:[function(require,module,exports){
+},{"bn.js":91,"brorand":92}],170:[function(require,module,exports){
 module.exports = assert;
 
 function assert(val, msg) {
@@ -36087,7 +36934,7 @@ assert.equal = function assertEqual(l, r, msg) {
     throw new Error(msg || ('Assertion failed: ' + l + ' != ' + r));
 };
 
-},{}],169:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 module.exports={"2.16.840.1.101.3.4.1.1": "aes-128-ecb",
 "2.16.840.1.101.3.4.1.2": "aes-128-cbc",
 "2.16.840.1.101.3.4.1.3": "aes-128-ofb",
@@ -36101,7 +36948,7 @@ module.exports={"2.16.840.1.101.3.4.1.1": "aes-128-ecb",
 "2.16.840.1.101.3.4.1.43": "aes-256-ofb",
 "2.16.840.1.101.3.4.1.44": "aes-256-cfb"
 }
-},{}],170:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 // from https://github.com/indutny/self-signed/blob/gh-pages/lib/asn1.js
 // Fedor, you are amazing.
 
@@ -36220,7 +37067,7 @@ exports.signature = asn1.define('signature', function () {
   )
 })
 
-},{"asn1.js":74}],171:[function(require,module,exports){
+},{"asn1.js":76}],173:[function(require,module,exports){
 (function (Buffer){
 // adapted from https://github.com/apatil/pemstrip
 var findProc = /Proc-Type: 4,ENCRYPTED\r?\nDEK-Info: AES-((?:128)|(?:192)|(?:256))-CBC,([0-9A-H]+)\r?\n\r?\n([0-9A-z\n\r\+\/\=]+)\r?\n/m
@@ -36254,7 +37101,7 @@ module.exports = function (okey, password) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"browserify-aes":94,"buffer":117,"evp_bytestokey":155}],172:[function(require,module,exports){
+},{"browserify-aes":96,"buffer":119,"evp_bytestokey":157}],174:[function(require,module,exports){
 (function (Buffer){
 var asn1 = require('./asn1')
 var aesid = require('./aesid.json')
@@ -36359,7 +37206,7 @@ function decrypt (data, password) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./aesid.json":169,"./asn1":170,"./fixProc":171,"browserify-aes":94,"buffer":117,"pbkdf2":173}],173:[function(require,module,exports){
+},{"./aesid.json":171,"./asn1":172,"./fixProc":173,"browserify-aes":96,"buffer":119,"pbkdf2":175}],175:[function(require,module,exports){
 (function (Buffer){
 var createHmac = require('create-hmac')
 var MAX_ALLOC = Math.pow(2, 30) - 1 // default in iojs
@@ -36443,7 +37290,7 @@ function pbkdf2Sync (password, salt, iterations, keylen, digest) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"create-hmac":125}],174:[function(require,module,exports){
+},{"buffer":119,"create-hmac":127}],176:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -36467,7 +37314,7 @@ function nextTick(fn) {
 }
 
 }).call(this,require('_process'))
-},{"_process":175}],175:[function(require,module,exports){
+},{"_process":177}],177:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -36560,7 +37407,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],176:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 exports.publicEncrypt = require('./publicEncrypt');
 exports.privateDecrypt = require('./privateDecrypt');
 
@@ -36571,7 +37418,7 @@ exports.privateEncrypt = function privateEncrypt(key, buf) {
 exports.publicDecrypt = function publicDecrypt(key, buf) {
   return exports.privateDecrypt(key, buf, true);
 };
-},{"./privateDecrypt":178,"./publicEncrypt":179}],177:[function(require,module,exports){
+},{"./privateDecrypt":180,"./publicEncrypt":181}],179:[function(require,module,exports){
 (function (Buffer){
 var createHash = require('create-hash');
 module.exports = function (seed, len) {
@@ -36590,7 +37437,7 @@ function i2ops(c) {
   return out;
 }
 }).call(this,require("buffer").Buffer)
-},{"buffer":117,"create-hash":122}],178:[function(require,module,exports){
+},{"buffer":119,"create-hash":124}],180:[function(require,module,exports){
 (function (Buffer){
 var parseKeys = require('parse-asn1');
 var mgf = require('./mgf');
@@ -36701,7 +37548,7 @@ function compare(a, b){
   return dif;
 }
 }).call(this,require("buffer").Buffer)
-},{"./mgf":177,"./withPublic":180,"./xor":181,"bn.js":89,"browserify-rsa":110,"buffer":117,"create-hash":122,"parse-asn1":172}],179:[function(require,module,exports){
+},{"./mgf":179,"./withPublic":182,"./xor":183,"bn.js":91,"browserify-rsa":112,"buffer":119,"create-hash":124,"parse-asn1":174}],181:[function(require,module,exports){
 (function (Buffer){
 var parseKeys = require('parse-asn1');
 var randomBytes = require('randombytes');
@@ -36799,7 +37646,7 @@ function nonZero(len, crypto) {
   return out;
 }
 }).call(this,require("buffer").Buffer)
-},{"./mgf":177,"./withPublic":180,"./xor":181,"bn.js":89,"browserify-rsa":110,"buffer":117,"create-hash":122,"parse-asn1":172,"randombytes":182}],180:[function(require,module,exports){
+},{"./mgf":179,"./withPublic":182,"./xor":183,"bn.js":91,"browserify-rsa":112,"buffer":119,"create-hash":124,"parse-asn1":174,"randombytes":184}],182:[function(require,module,exports){
 (function (Buffer){
 var bn = require('bn.js');
 function withPublic(paddedMsg, key) {
@@ -36812,7 +37659,7 @@ function withPublic(paddedMsg, key) {
 
 module.exports = withPublic;
 }).call(this,require("buffer").Buffer)
-},{"bn.js":89,"buffer":117}],181:[function(require,module,exports){
+},{"bn.js":91,"buffer":119}],183:[function(require,module,exports){
 module.exports = function xor(a, b) {
   var len = a.length;
   var i = -1;
@@ -36821,7 +37668,7 @@ module.exports = function xor(a, b) {
   }
   return a
 };
-},{}],182:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
 (function (process,global,Buffer){
 'use strict'
 
@@ -36860,10 +37707,10 @@ function randomBytes (size, cb) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"_process":175,"buffer":117}],183:[function(require,module,exports){
+},{"_process":177,"buffer":119}],185:[function(require,module,exports){
 module.exports = require("./lib/_stream_duplex.js")
 
-},{"./lib/_stream_duplex.js":184}],184:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":186}],186:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
 // prototypally inherits from Readable, and then parasitically from
@@ -36947,7 +37794,7 @@ function forEach (xs, f) {
   }
 }
 
-},{"./_stream_readable":186,"./_stream_writable":188,"core-util-is":120,"inherits":164,"process-nextick-args":174}],185:[function(require,module,exports){
+},{"./_stream_readable":188,"./_stream_writable":190,"core-util-is":122,"inherits":166,"process-nextick-args":176}],187:[function(require,module,exports){
 // a passthrough stream.
 // basically just the most minimal sort of Transform stream.
 // Every written chunk gets output as-is.
@@ -36976,7 +37823,7 @@ PassThrough.prototype._transform = function(chunk, encoding, cb) {
   cb(null, chunk);
 };
 
-},{"./_stream_transform":187,"core-util-is":120,"inherits":164}],186:[function(require,module,exports){
+},{"./_stream_transform":189,"core-util-is":122,"inherits":166}],188:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37955,7 +38802,7 @@ function indexOf (xs, x) {
 }
 
 }).call(this,require('_process'))
-},{"./_stream_duplex":184,"_process":175,"buffer":117,"core-util-is":120,"events":154,"inherits":164,"isarray":166,"process-nextick-args":174,"string_decoder/":203,"util":91}],187:[function(require,module,exports){
+},{"./_stream_duplex":186,"_process":177,"buffer":119,"core-util-is":122,"events":156,"inherits":166,"isarray":168,"process-nextick-args":176,"string_decoder/":205,"util":93}],189:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -38154,7 +39001,7 @@ function done(stream, er) {
   return stream.push(null);
 }
 
-},{"./_stream_duplex":184,"core-util-is":120,"inherits":164}],188:[function(require,module,exports){
+},{"./_stream_duplex":186,"core-util-is":122,"inherits":166}],190:[function(require,module,exports){
 // A bit simpler than readable streams.
 // Implement an async ._write(chunk, encoding, cb), and it'll handle all
 // the drain event emission and buffering.
@@ -38685,10 +39532,10 @@ function endWritable(stream, state, cb) {
   state.ended = true;
 }
 
-},{"./_stream_duplex":184,"buffer":117,"core-util-is":120,"events":154,"inherits":164,"process-nextick-args":174,"util-deprecate":204}],189:[function(require,module,exports){
+},{"./_stream_duplex":186,"buffer":119,"core-util-is":122,"events":156,"inherits":166,"process-nextick-args":176,"util-deprecate":206}],191:[function(require,module,exports){
 module.exports = require("./lib/_stream_passthrough.js")
 
-},{"./lib/_stream_passthrough.js":185}],190:[function(require,module,exports){
+},{"./lib/_stream_passthrough.js":187}],192:[function(require,module,exports){
 var Stream = (function (){
   try {
     return require('st' + 'ream'); // hack to fix a circular dependency issue when used with browserify
@@ -38702,13 +39549,13 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_duplex.js":184,"./lib/_stream_passthrough.js":185,"./lib/_stream_readable.js":186,"./lib/_stream_transform.js":187,"./lib/_stream_writable.js":188}],191:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":186,"./lib/_stream_passthrough.js":187,"./lib/_stream_readable.js":188,"./lib/_stream_transform.js":189,"./lib/_stream_writable.js":190}],193:[function(require,module,exports){
 module.exports = require("./lib/_stream_transform.js")
 
-},{"./lib/_stream_transform.js":187}],192:[function(require,module,exports){
+},{"./lib/_stream_transform.js":189}],194:[function(require,module,exports){
 module.exports = require("./lib/_stream_writable.js")
 
-},{"./lib/_stream_writable.js":188}],193:[function(require,module,exports){
+},{"./lib/_stream_writable.js":190}],195:[function(require,module,exports){
 (function (Buffer){
 /*
 CryptoJS v3.1.2
@@ -38922,7 +39769,7 @@ function ripemd160 (message) {
 module.exports = ripemd160
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],194:[function(require,module,exports){
+},{"buffer":119}],196:[function(require,module,exports){
 (function (Buffer){
 // prototype class for hash functions
 function Hash (blockSize, finalSize) {
@@ -38995,7 +39842,7 @@ Hash.prototype._update = function () {
 module.exports = Hash
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":117}],195:[function(require,module,exports){
+},{"buffer":119}],197:[function(require,module,exports){
 var exports = module.exports = function SHA (algorithm) {
   algorithm = algorithm.toLowerCase()
 
@@ -39012,7 +39859,7 @@ exports.sha256 = require('./sha256')
 exports.sha384 = require('./sha384')
 exports.sha512 = require('./sha512')
 
-},{"./sha":196,"./sha1":197,"./sha224":198,"./sha256":199,"./sha384":200,"./sha512":201}],196:[function(require,module,exports){
+},{"./sha":198,"./sha1":199,"./sha224":200,"./sha256":201,"./sha384":202,"./sha512":203}],198:[function(require,module,exports){
 (function (Buffer){
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-0, as defined
@@ -39116,7 +39963,7 @@ module.exports = Sha
 
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"buffer":117,"inherits":164}],197:[function(require,module,exports){
+},{"./hash":196,"buffer":119,"inherits":166}],199:[function(require,module,exports){
 (function (Buffer){
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
@@ -39216,7 +40063,7 @@ Sha1.prototype._hash = function () {
 module.exports = Sha1
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"buffer":117,"inherits":164}],198:[function(require,module,exports){
+},{"./hash":196,"buffer":119,"inherits":166}],200:[function(require,module,exports){
 (function (Buffer){
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
@@ -39272,7 +40119,7 @@ Sha224.prototype._hash = function () {
 module.exports = Sha224
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"./sha256":199,"buffer":117,"inherits":164}],199:[function(require,module,exports){
+},{"./hash":196,"./sha256":201,"buffer":119,"inherits":166}],201:[function(require,module,exports){
 (function (Buffer){
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
@@ -39417,7 +40264,7 @@ Sha256.prototype._hash = function () {
 module.exports = Sha256
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"buffer":117,"inherits":164}],200:[function(require,module,exports){
+},{"./hash":196,"buffer":119,"inherits":166}],202:[function(require,module,exports){
 (function (Buffer){
 var inherits = require('inherits')
 var SHA512 = require('./sha512')
@@ -39477,7 +40324,7 @@ Sha384.prototype._hash = function () {
 module.exports = Sha384
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"./sha512":201,"buffer":117,"inherits":164}],201:[function(require,module,exports){
+},{"./hash":196,"./sha512":203,"buffer":119,"inherits":166}],203:[function(require,module,exports){
 (function (Buffer){
 var inherits = require('inherits')
 var Hash = require('./hash')
@@ -39747,7 +40594,7 @@ Sha512.prototype._hash = function () {
 module.exports = Sha512
 
 }).call(this,require("buffer").Buffer)
-},{"./hash":194,"buffer":117,"inherits":164}],202:[function(require,module,exports){
+},{"./hash":196,"buffer":119,"inherits":166}],204:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -39876,7 +40723,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":154,"inherits":164,"readable-stream/duplex.js":183,"readable-stream/passthrough.js":189,"readable-stream/readable.js":190,"readable-stream/transform.js":191,"readable-stream/writable.js":192}],203:[function(require,module,exports){
+},{"events":156,"inherits":166,"readable-stream/duplex.js":185,"readable-stream/passthrough.js":191,"readable-stream/readable.js":192,"readable-stream/transform.js":193,"readable-stream/writable.js":194}],205:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -40099,7 +40946,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":117}],204:[function(require,module,exports){
+},{"buffer":119}],206:[function(require,module,exports){
 (function (global){
 
 /**
@@ -40170,7 +41017,7 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],205:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 var indexOf = require('indexof');
 
 var Object_keys = function (obj) {
@@ -40310,4 +41157,4 @@ exports.createContext = Script.createContext = function (context) {
     return copy;
 };
 
-},{"indexof":163}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]);
+},{"indexof":165}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74]);

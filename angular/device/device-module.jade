@@ -1,6 +1,25 @@
-h3 {{uid}}
-p Some Text here!
-p UID: {{::uid}}
-p Device: {{deviceInfo}}
-button(ng-click='test()') Click me Too!
+//h3 {{::deviceInfo.deviceDisplayName}}({{::uid}})
+table.table.table-responsive
+    tr
+        td
+            b UID: {{::deviceInfo.uid}}
+        //TODO Hyperlink to the connected!
+        td Connected to: {{::deviceInfo.connectedUid}}
+        td Position: {{::deviceInfo.position}}
+        td FW Version: {{::deviceInfo.firmwareVersion}}
+        td Timeouts: TODO
 hr
+
+div(ng-if="deviceInfo.deviceSpec==null")
+    p No Device Specs found!
+
+div(ng-if="deviceInfo.deviceSpec!=null")
+    p Device: {{deviceInfo}}
+    br
+    br
+    div(ng-repeat="val in deviceInfo.deviceSpec['values']")
+        div(ng-controller="valueCtrl")
+            include ../device/value-module
+
+
+    //button(ng-click='test()') Timer - Start & Stop

@@ -11,14 +11,25 @@ html
         script(src='js/Tinkerforge.js')
         script(src='js/angular.min.js')
 
-        // Views/Controller
+        //Views/Controller
         script(src='angular/main/main-module.js')
         script(src='angular/device/device-module.js')
+        script(src='angular/device/value-module.js')
         //Angular App
         script(src='angular/app.js')
+
         //Factory/Utils
         script(src='angular/factory/tinkerforge.js')
         script(src='angular/factory/utils.js')
+        script(src='angular/factory/deviceSpecs.js')
+        script(src='angular/factory/timer.js')
+        //SpecialDevices
+        script(src='angular/factory/specialDevices/specialDeviceInjector.js')
+        script(src='angular/factory/specialDevices/specialDevices.js')
+
+        //Resources
+        //FIXME deviceSpecs.json:2 Uncaught SyntaxError: Unexpected token :
+        script(src='js/deviceSpecs.json')
 
         //Responsive Desig
         meta(charset="utf-8")

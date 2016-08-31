@@ -1,10 +1,10 @@
 "use strict";
 
 var m = angular.module('wbv.main', []);
-m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformation', function($scope, $http, $rootScope, TF, DeviceInformation){
+m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 'DeviceSpecs', function($scope, $log, $http, TF, DeviceInformation, DeviceSpecs){
     //this.templateURL = "/angular/main/main-module.jade";
-
-    $scope.name = "Manager Tab";
+    $scope.debug_name = "Manager Tab";
+    $scope.name = $scope.debug_name;
     //Manager Tab Var---------------------------------------------------------------------------------------------------
     $scope.ipAddress = "192.168.0.14";
     $scope.websocketPort = 4280;
@@ -24,7 +24,7 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
         }
     }
     var btnConnectChange = function(text, disabled){
-        console.log("btn_changed: " + text + " - " + disabled);
+        $log.log("["+ $scope.debug_name +"]btn_changed: " + text + " - " + disabled);
 
         if(text !== null && text !== undefined)
             $scope.btnConnectText = text;
@@ -45,22 +45,22 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
                 $scope.$apply(function(){
                     btnConnectChange("Connect", false);
                 });
-                console.error("TF.ipcon.connect: " + err);
+                $log.error("["+ $scope.debug_name +"]TF.ipcon.connect: " + err);
                 alert("TODO: Change Message to User. TF.ipcon.connect: " + err);
                 TF.ipcon = null;
                 return;
             });
-            console.log(TF.ipcon);
+            // $log.log(TF.ipcon);
 
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_CONNECTED, function(connectReason){
-                    console.log("reason = " + connectReason);
+                    $log.log("["+ $scope.debug_name +"]reason = " + connectReason);
                     $scope.$apply(function(){
                         btnConnectChange("Disconnect", false);
                     });
                 }
             );
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_CONNECTED, function(connectReason){
-                    console.log("reason = " + connectReason);
+                    $log.log("["+ $scope.debug_name +"]reason = " + connectReason);
                     $scope.$apply(function(){
                         btnConnectChange("Disconnect", false);
                     });
@@ -70,30 +70,18 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
 
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_ENUMERATE, function(uid, connectedUid, position, hardwareVersion, firmwareVersion, deviceIdentifier, enumerationType){
                     if(enumerationType === Tinkerforge.IPConnection.ENUMERATION_TYPE_DISCONNECTED){
-                        console.log("ENUMERATE disconnect")
+                        $log.log("["+ $scope.debug_name +"]ENUMERATE disconnect")
                         if($scope.deviceList[uid] !== undefined){
                             $scope.$apply(function(){
                                 delete $scope.deviceList[uid];
                             });
                         }
-
-
-                        // if(brickViewer.deviceList[uid] !== undefined){
-                        //     delete brickViewer.deviceList[uid];
-                        //     if(this.currentPlugin === undefined || this.currentPlugin.deviceInformation === undefined || this.currentPlugin.deviceInformation.uid === uid){
-                        //         $('#brick-uid-III_OVERVIEW').click();
-                        //     }
-                        // }
                     } else {
-                        console.log("ENUMERATE else")
+                        // $log.log("["+ $scope.debug_name +"]ENUMERATE else")
                         var deviceInformation = new DeviceInformation(uid, connectedUid, position, hardwareVersion, firmwareVersion, deviceIdentifier);
                         $scope.$apply(function(){
                             $scope.deviceList[uid] = deviceInformation;
                         });
-                        // if(brickViewer.deviceList[uid] === undefined){
-                        //     var deviceInformation = new DeviceInformation(uid, connectedUid, position, hardwareVersion, firmwareVersion, deviceIdentifier);
-                        //     brickViewer.deviceList[uid] = deviceInformation;
-                        // }
                     }
                 }
             );
@@ -102,7 +90,7 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
         }
     }
     var btnConnectDoDisconnect = function(){
-        console.log("Disconect clicked!");
+        $log.info("["+ $scope.debug_name +"]Disconect clicked!");
         TF.ipcon.disconnect();
         TF.ipcon = null;
         $scope.deviceList = {};
@@ -110,32 +98,19 @@ m.controller('mainCtrl', ['$scope', '$http', '$rootScope', 'TF', 'DeviceInformat
     }
 
 
-    $scope.halloWelt = function(a, b, cb, cb_err){
-        console.log("Function: halloWelt")
-        console.log("a: " + a);
-        console.log("b: " + b);
-        cb(a, b);
-    }
 
-
+    //TESt some functions
     $scope.test = function(){
-        var device_spec = {
-            'args' : ["Hallo", 2],
-            'sub_values' : ['a', 'b']
-        }
+        // let m = WBVUtils.regexUnitName("lx/100 lx")
+        // $log.log("Regex Test:");
+        // $log.log(WBVUtils.getUnitData("\u00b0C"));
+        // $log.log(WBVUtils.getUnitData("22marv/133337 hier is derr rest"));
+        // $log.log(WBVUtils.getUnitData("mV"));
+        // $log.log(WBVUtils.getUnitData("10m/h"));
+        // $log.log(WBVUtils.getUnitData("1/100 m/s\u00b2"));
+        // $log.log(WBVUtils.getUnitData("lx/1234 hallo welt"));
 
 
-        var new_args = device_spec['args'];
-
-
-        var cb = function(...subvalues){
-            console.log("Callback:");
-            console.log(subvalues);
-        }
-
-        new_args.push(cb);
-
-        $scope['halloWelt'](...new_args);
 
     }
 }]);

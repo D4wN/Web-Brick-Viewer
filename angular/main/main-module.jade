@@ -29,12 +29,9 @@ div(ng-controller="mainCtrl")
         nav.navbar-collapse.collapse
             ul.nav.nav-tabs
                 li(ng-repeat='(uid, deviceInfo) in deviceList')
-                    a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::uid}}
+                    a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::deviceInfo.deviceDisplayName}}
 
         .tab-content
             div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
                 div(ng-controller="deviceCtrl")
                     include ../device/device-module
-
-
-
