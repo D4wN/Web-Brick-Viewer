@@ -16,7 +16,6 @@ angApp.factory('WBVUtils', ['$log', function($log){
     WBVUtils.prototype.checkKey = function(object, key){
         return object.hasOwnProperty(key);
     };
-
     WBVUtils.prototype.getUnitData = function(text){
         /*Different Unit entries - display or convert:
          \u00b0C             - Coded with asci? (is NaN)
@@ -71,7 +70,6 @@ angApp.factory('WBVUtils', ['$log', function($log){
         return ret;
 
     }
-
     WBVUtils.prototype.isNumberParse = function(object){
         object = parseFloat(object);
         if(isNaN(object)){
@@ -82,7 +80,6 @@ angApp.factory('WBVUtils', ['$log', function($log){
     WBVUtils.prototype.isNumber = function(object){
         return (typeof object == 'number');
     }
-
 
     return new WBVUtils;
 }]);

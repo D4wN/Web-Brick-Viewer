@@ -7,16 +7,13 @@ table.table.table-responsive
         td Connected to: {{::deviceInfo.connectedUid}}
         td Position: {{::deviceInfo.position}}
         td FW Version: {{::deviceInfo.firmwareVersion}}
-        td Timeouts: TODO
 hr
 
 div(ng-if="deviceInfo.deviceSpec==null")
     p No Device Specs found!
 
 div(ng-if="deviceInfo.deviceSpec!=null")
-    p Device: {{deviceInfo}}
-    br
-    br
+    //p Device: {{deviceInfo}}
     div(ng-repeat="val in deviceInfo.deviceSpec['values']")
         div(ng-controller="valueCtrl")
             include ../device/value-module

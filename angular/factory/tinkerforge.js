@@ -30,7 +30,7 @@ angApp.factory('TF', ['$log', 'SpecialDeviceInjector', function($log, SpecialDev
             case this.Tinkerforge.IPConnection.ERROR_UNKNOWN_ERROR:
                 return "IPConnection.ERROR_UNKNOWN_ERROR = 43";
             default:
-                return "Unknown IPConnection Error: " + errCode;
+                return errCode;
         }
     }
 
@@ -66,7 +66,7 @@ angApp.factory('TF', ['$log', 'SpecialDeviceInjector', function($log, SpecialDev
         // $log.log(this.Tinkerforge);
         // $log.log(className);
         let device = new this.Tinkerforge[className](uid, this.ipcon);
-        SpecialDeviceInjector.injectFunctions(device);
+        SpecialDeviceInjector.injectFunctions(device, this);
         return device;
     }
 

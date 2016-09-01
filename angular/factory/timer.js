@@ -15,11 +15,11 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
         this.currentError = "THIS VALUE IS CURRENTLY NOT IMPLEMENTED!";
         this.session = null;
 
-        $log.log(this.debug_name + " constructed()");
+        // $log.log(this.debug_name + " constructed()");
     }
 
     PollingValueTimer.prototype.start = function(){
-        $log.log(this.debug_name + ".start()");
+        // $log.log(this.debug_name + ".start()");
         if(this.session != null){
             $log.log(this.debug_name + ".start() - session == null");
             return;
@@ -36,8 +36,8 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
             that.currentError = null;
         };
         let cb_error = function(err){
-            $log.warn(that.debug_name + " cb_error: " + err);
-            that.currentValue = 0;
+            if(that.currentError == null) $log.warn(that.debug_name + " cb_error: " + err);
+            // that.currentValue = 0;
             that.currentError = TF.getErrorDescription(err);
             //TODO CB_error Code auswerten
         };
@@ -57,8 +57,7 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
             //.getAirPressure([returnCallback][, errorCallback]
             // $log.log(that.debug_name + " got: " + tmp_args);
 
-            
-            
+
             that.device[that.functionName](...tmp_args);
         }, 1000, 0, true, tmp_args);
 
