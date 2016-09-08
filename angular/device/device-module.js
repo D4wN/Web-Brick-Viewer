@@ -7,9 +7,6 @@ m.controller('deviceCtrl', ['$scope', '$log', 'TF', function($scope, $log, TF){
     if($scope.deviceInfo.deviceSpec != null){
         $scope.device = TF.getDeviceImpl($scope.deviceInfo.deviceSpec['class'], $scope.uid);
     }
-    
-    
-    
 
 
     $scope.test = function(){
@@ -20,6 +17,4 @@ m.controller('deviceCtrl', ['$scope', '$log', 'TF', function($scope, $log, TF){
         //     $scope.timer[0].stop();
         // }
     }
-
-
 }]);

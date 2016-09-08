@@ -57,13 +57,6 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
                     $scope.$apply(function(){
                         btnConnectChange("Disconnect", false);
                     });
-                }
-            );
-            TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_CONNECTED, function(connectReason){
-                    $log.log("["+ $scope.debug_name +"]reason = " + connectReason);
-                    $scope.$apply(function(){
-                        btnConnectChange("Disconnect", false);
-                    });
                     TF.ipcon.enumerate();
                 }
             );
@@ -91,7 +84,11 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
     }
     var btnConnectDoDisconnect = function(){
         $log.info("["+ $scope.debug_name +"]Disconect clicked!");
-        TF.ipcon.disconnect();
+        TF.ipcon.disconnect(function(err){
+            $log.error("["+ $scope.debug_name +"] could not disconnect the ipcon! " + err);
+            TF.ipcon = null;
+            $scope.deviceList = {};
+        });
         TF.ipcon = null;
         $scope.deviceList = {};
         btnConnectChange("Connect", false);

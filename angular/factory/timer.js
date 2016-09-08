@@ -21,11 +21,11 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
     PollingValueTimer.prototype.start = function(){
         // $log.log(this.debug_name + ".start()");
         if(this.session != null){
-            $log.log(this.debug_name + ".start() - session == null");
+            $log.log(this.debug_name + ".start() - session != null");
             return;
         }
         if(!WBVUtils.checkKey(this.device, this.functionName)){
-            $log.error(this.debug_name + ".start() - Device(" + this.device.constructor.DEVICE_DISPLAY_NAME + ") has no Function(" + this.functionName + ")!");
+            $log.error(this.debug_name + ".start() - Device(" + this.device.CLASS_NAME + ") has no Function(" + this.functionName + ")!"); //FIXME get the device name! no device.constructor.DEVICE_DIPLAY_NAME!!!
             return
         }
 
@@ -76,9 +76,9 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
     }
 
     PollingValueTimer.prototype.stop = function(){
-        $log.log(this.debug_name + ".stop()");
+        // $log.log(this.debug_name + ".stop()");
         if(this.session == null){
-            $log.log(this.debug_name + ".stop() - session != null");
+            $log.log(this.debug_name + ".stop() - session == null");
             return;
         }
 

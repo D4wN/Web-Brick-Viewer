@@ -10,20 +10,20 @@ angApp.factory('SpecialBrickletGPS', ['$log', function($log){
 
     SpecialBrickletGPS.prototype.getStatus = function(deviceGPS){
         return new Promise(function(resolve, reject){
-            deviceGPS.getStatus(function(...data){
-                resolve(data);
+            deviceGPS.getStatus(function(...data){                resolve(data);
 
             }, function(err){
-                return reject(err);
+                reject(err);
             });
         });
     }
 
-    SpecialBrickletGPS.prototype.inject = function(deviceGPS,TF){
-        // $log.log(this.debug_name + "inject(deviceGPS)");
+    SpecialBrickletGPS.prototype.inject = function(deviceGPS, TF){
+         // $log.log(this.debug_name + "inject(deviceGPS)");
         let that = this;
 
         deviceGPS['special_get_gps_coordinates'] = function(cb, cb_error){
+
             that.getStatus(deviceGPS).then(function(){
                 if(arguments[0][0] == TF.Tinkerforge.BrickletGPS.FIX_NO_FIX){
                     cb_error("No Fix!");
@@ -35,9 +35,9 @@ angApp.factory('SpecialBrickletGPS', ['$log', function($log){
                     });
                 }
 
-            }),function(err){
+            }, function(err){
                 cb_error(err);
-            };
+            });
         };
         $log.log(that.debug_name + ".special_get_gps_coordinates() injected");
 
@@ -53,9 +53,9 @@ angApp.factory('SpecialBrickletGPS', ['$log', function($log){
                     });
                 }
 
-            }),function(err){
+            }, function(err){
                 cb_error(err);
-            };
+            });
         };
         $log.log(that.debug_name + ".special_get_gps_altitude() injected");
 
@@ -71,9 +71,9 @@ angApp.factory('SpecialBrickletGPS', ['$log', function($log){
                     });
                 }
 
-            }),function(err){
+            }, function(err){
                 cb_error(err);
-            };
+            });
         };
         $log.log(that.debug_name + ".special_get_gps_motion() injected");
     }
@@ -88,7 +88,7 @@ angApp.factory('SpecialBrickletColor', ['$log', function($log){
     }
 
     SpecialBrickletColor.prototype.inject = function(deviceColor, TF){
-        // $log.log(this.debug_name + "inject(deviceColor)");
+        $log.log(this.debug_name + "inject(deviceColor)");
         let that = this;
 
         $log.log(that.debug_name + ".special_get_get_illuminance() injected");
@@ -106,7 +106,7 @@ angApp.factory('SpecialBrickletColor', ['$log', function($log){
                         resolve(data);
 
                     }, function(err){
-                        return reject(err);
+                        reject(err);
                     });
                 })
             );
@@ -116,7 +116,8 @@ angApp.factory('SpecialBrickletColor', ['$log', function($log){
                         resolve(data);
 
                     }, function(err){
-                        return reject(err);
+                        // $log.log(that.debug_name + " reject illuminance: " + err);
+                        reject(err);
                     });
                 })
             );
@@ -148,7 +149,7 @@ angApp.factory('SpecialBrickletColor', ['$log', function($log){
 
 
                 if(illuminance == null || gainFactor == null || integrationTimeFactor == null){
-                    $log.warn(thath.debug_name + ".special_get_get_illuminance() illuminance, gainFactor or integrationTimeFactor were null!");
+                    $log.warn(that.debug_name + ".special_get_get_illuminance() illuminance, gainFactor or integrationTimeFactor were null!");
                     cb_error(TF.Tinkerforge.ipcon.ERROR_CODE_UNKNOWN_ERROR); //unknown error
                 }
 
@@ -158,6 +159,7 @@ angApp.factory('SpecialBrickletColor', ['$log', function($log){
                 cb(erg);
 
             }, function(err){
+                // $log.log(that.debug_name + " reject ALL: " + err);
                 cb_error(err);
             });
         };

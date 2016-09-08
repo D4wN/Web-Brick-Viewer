@@ -63,9 +63,8 @@ angApp.factory('TF', ['$log', 'SpecialDeviceInjector', function($log, SpecialDev
     }
 
     TF.prototype.getDeviceImpl = function(className, uid){
-        // $log.log(this.Tinkerforge);
-        // $log.log(className);
         let device = new this.Tinkerforge[className](uid, this.ipcon);
+        device.CLASS_NAME = className;
         SpecialDeviceInjector.injectFunctions(device, this);
         return device;
     }

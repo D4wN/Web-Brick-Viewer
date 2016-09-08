@@ -7,18 +7,18 @@ angApp.factory('SpecialDeviceInjector', ['$log', 'WBVUtils', 'SpecialBrickletGPS
         this.debug_name = "[SpecialDeviceInjector]";
 
         this.specialDeviceList = {};
-        this.specialDeviceList[Tinkerforge.BrickletGPS.DEVICE_DISPLAY_NAME] = SpecialBrickletGPS;
-        this.specialDeviceList[Tinkerforge.BrickletColor.DEVICE_DISPLAY_NAME] = SpecialBrickletColor;
+        this.specialDeviceList[Tinkerforge.BrickletGPS.name] = SpecialBrickletGPS;
+        this.specialDeviceList[Tinkerforge.BrickletColor.name] = SpecialBrickletColor;
 
+        // $log.log(this.specialDeviceList);
     }
 
     SpecialDeviceInjector.prototype.injectFunctions = function(deviceObject, TF){
-        let deviceName = deviceObject.constructor.DEVICE_DISPLAY_NAME;
         //check if it is in list
-        if(WBVUtils.checkKey(this.specialDeviceList, deviceName)){
+        if(WBVUtils.checkKey(this.specialDeviceList, deviceObject.CLASS_NAME)){
             //yes: inject functions
-            $log.log(this.debug_name + "injectFunctions(" + deviceName + ")");
-            this.specialDeviceList[deviceName].inject(deviceObject, TF);
+            $log.log(this.debug_name + "injectFunctions(" + deviceObject.CLASS_NAME + ")");
+            this.specialDeviceList[deviceObject.CLASS_NAME].inject(deviceObject, TF);
         }
         //no: do nothing nothing to inject
     }

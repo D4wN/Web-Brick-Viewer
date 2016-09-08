@@ -20,7 +20,7 @@ m.controller('valueCtrl', ['$scope', '$log', 'PollingValueTimer', 'WBVUtils', fu
     $scope.timer.start();
 
 
-    if($scope.uid == 'fVP'){
+    if($scope.uid == 'fa1'){
 
         // let t = function(object){
         //     // return isNaN(object);
