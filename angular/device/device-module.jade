@@ -11,14 +11,23 @@ hr
 
 
 
-div(ng-if="deviceInfo.deviceSpec==null")
+div(ng-if="deviceInfo.deviceSpec==null && !extendedView")
     p No Device Specs found!
 
 div(ng-if="deviceInfo.deviceSpec!=null")
-    //p Device: {{deviceInfo}}
-    div(ng-repeat="val in deviceInfo.deviceSpec['values']")
-        div(ng-controller="valueCtrl")
-            include ../device/value-module
+    button(ng-click="btnShowSimpleView()").btn.btn-default {{btnShowSimpleViewText}}
+    div(ng-hide="!showSimpleView").well
+        div(ng-repeat="val in deviceInfo.deviceSpec['values']")
+            div(ng-controller="valueCtrl")
+                include ../device/value-module
+br
+div(ng-if="extendedView")
+    button(ng-if="btnLoadExtendedView" ng-click="btnLoadExtendedView()").btn.btn-default Load Extended View
+    div(ng-if="!btnLoadExtendedView")
+        button(ng-click="btnShowExtendedView()").btn.btn-default {{btnShowExtendedViewText}}
+        div(ng-hide="!showExtendedView")
+            ng-include(src="extendedView.viewPath")
+
 
 
     //button(ng-click='test()') Timer - Start & Stop

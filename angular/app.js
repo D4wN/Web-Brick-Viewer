@@ -1,16 +1,16 @@
 "use strict";
 
-var angApp = angular.module('wbv', ['wbv.main', 'wbv.device', 'wbv.deviceValue']);
+var WBVProviders = {}; //used to dynamically load controllers
+var angApp = angular.module('wbv', ['wbv.main', 'wbv.device', 'wbv.deviceValue'], function($controllerProvider){
+    WBVProviders = {
+        $controllerProvider: $controllerProvider
+    };
+});
+// angApp.value('WBVProviders', providers);
 
 angApp.run(function($rootScope){
     //TODO better way to get REST IP?
-    $rootScope.serverAddress = 'http://' + location.host;
-    //Connected TF Device List
-    //$rootScope.deviceList = [];
-    //console.log($rootScope.serverAddress);
-    //Socket.io
-    //$rootScope.socket = io();
-    //managerNamespaceInit($rootScope);
+    // $rootScope.serverAddress = 'http://' + location.host;
 });
 
 angApp.config(['$httpProvider', '$logProvider', function($httpProvider, $logProvider) {
