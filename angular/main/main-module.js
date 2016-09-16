@@ -3,13 +3,52 @@
 var m = angular.module('wbv.main', []);
 m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 'DeviceSpecs', function($scope, $log, $http, TF, DeviceInformation, DeviceSpecs){
     //this.templateURL = "/angular/main/main-module.jade";
-    $scope.debug_name = "Manager Tab";
+    $scope.debug_name = "[Manager Tab]"; //TODO refactore debug_name from scope away
+    let debug_name = "[Manager Tab]";
+
     $scope.name = $scope.debug_name;
     //Manager Tab Var---------------------------------------------------------------------------------------------------
     $scope.ipAddress = "192.168.0.14";
     $scope.websocketPort = 4280;
     // $scope.secret = "";
     $scope.deviceList = {};
+
+    //Navigation--------------------------------------------------------------------------------------------------------
+    $scope.navigationID = "connectToStack";
+    $scope.navigationBtn = angular.element('#menu-content');
+    $scope.changeNavigation = function(id){
+        $log.log(debug_name + " Navigation: " + id);
+        if(id == $scope.navigationID){
+            $log.log(debug_name + " Navigation got the same ID. Change nothing.");
+            return;
+        }
+
+        let ele = angular.element('#' + id);
+        let eleMenu = angular.element('#' + id + '-Menu');
+
+        let oldEle = angular.element('#' + $scope.navigationID);
+        let oldEleMenu = angular.element('#' + $scope.navigationID + '-Menu');
+
+        //TODO better solution for Element not found?
+        if(ele.length == 0 || eleMenu.length == 0 || oldEle.length == 0 || oldEleMenu.length == 0){
+            $log.warn(debug_name + " Element(" + id + ") was not found!");
+            return;
+        }
+
+        oldEle.removeClass('in');
+        oldEleMenu.removeClass('active');
+        ele.addClass('in');
+        eleMenu.addClass('active');
+        $scope.navigationID = id;
+
+        $log.log($scope.navigationBtn);
+        $scope.navigationBtn.removeClass('in'); //TODO animation?
+    }
+
+    $scope.changeNavigationDefault = function(){
+        $scope.changeNavigation(connectToStack);
+    }
+
 
     //Button Connect ---------------------------------------------------------------------------------------------------
     $scope.btnConnectText = "Connect";
@@ -24,7 +63,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         }
     }
     var btnConnectChange = function(text, disabled){
-        $log.log("["+ $scope.debug_name +"]btn_changed: " + text + " - " + disabled);
+        // $log.log("["+ $scope.debug_name +"]btn_changed: " + text + " - " + disabled);
 
         if(text !== null && text !== undefined)
             $scope.btnConnectText = text;
@@ -45,7 +84,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
                 $scope.$apply(function(){
                     btnConnectChange("Connect", false);
                 });
-                $log.error("["+ $scope.debug_name +"]TF.ipcon.connect: " + err);
+                $log.error("[" + $scope.debug_name + "]TF.ipcon.connect: " + err);
                 alert("TODO: Change Message to User. TF.ipcon.connect: " + err);
                 TF.ipcon = null;
                 return;
@@ -53,7 +92,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
             // $log.log(TF.ipcon);
 
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_CONNECTED, function(connectReason){
-                    $log.log("["+ $scope.debug_name +"]reason = " + connectReason);
+                    $log.log("[" + $scope.debug_name + "]reason = " + connectReason);
                     $scope.$apply(function(){
                         btnConnectChange("Disconnect", false);
                     });
@@ -63,7 +102,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
 
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_ENUMERATE, function(uid, connectedUid, position, hardwareVersion, firmwareVersion, deviceIdentifier, enumerationType){
                     if(enumerationType === Tinkerforge.IPConnection.ENUMERATION_TYPE_DISCONNECTED){
-                        $log.log("["+ $scope.debug_name +"]ENUMERATE disconnect")
+                        $log.log("[" + $scope.debug_name + "]ENUMERATE disconnect")
                         if($scope.deviceList[uid] !== undefined){
                             $scope.$apply(function(){
                                 delete $scope.deviceList[uid];
@@ -83,17 +122,18 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         }
     }
     var btnConnectDoDisconnect = function(){
-        $log.info("["+ $scope.debug_name +"]Disconect clicked!");
+        $log.info("[" + $scope.debug_name + "]Disconect clicked!");
         TF.ipcon.disconnect(function(err){
-            $log.error("["+ $scope.debug_name +"] could not disconnect the ipcon! " + err);
+            $log.error("[" + $scope.debug_name + "] could not disconnect the ipcon! " + err);
             TF.ipcon = null;
             $scope.deviceList = {};
+            $scope.changeNavigationDefault();
         });
         TF.ipcon = null;
         $scope.deviceList = {};
+        $scope.changeNavigationDefault();
         btnConnectChange("Connect", false);
     }
-
 
 
     //TESt some functions
@@ -106,7 +146,6 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         // $log.log(WBVUtils.getUnitData("10m/h"));
         // $log.log(WBVUtils.getUnitData("1/100 m/s\u00b2"));
         // $log.log(WBVUtils.getUnitData("lx/1234 hallo welt"));
-
 
 
     }

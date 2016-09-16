@@ -2,6 +2,7 @@
 
 var angApp = angular.module('wbv');
 
+//FIXME Timer only working, when device tab is in focus!!!
 angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', function($log, $interval, WBVUtils, TF){
     function PollingValueTimer(interval, functionName, device, args = []){
         this.debug_name = "[PollingValueTimer| " + functionName + " ]";
@@ -54,10 +55,7 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
 
         let that = this;
         this.session = $interval(function(){
-            //.getAirPressure([returnCallback][, errorCallback]
-            // $log.log(that.debug_name + " got: " + tmp_args);
-
-
+            
             that.device[that.functionName](...tmp_args);
         }, 1000, 0, true, tmp_args);
 

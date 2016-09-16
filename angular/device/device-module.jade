@@ -10,13 +10,12 @@ table.table.table-responsive
 hr
 
 
-
 div(ng-if="deviceInfo.deviceSpec==null && !extendedView")
     p No Device Specs found!
 
 div(ng-if="deviceInfo.deviceSpec!=null")
     button(ng-click="btnShowSimpleView()").btn.btn-default {{btnShowSimpleViewText}}
-    div(ng-hide="!showSimpleView").well
+    div(ng-hide="!showSimpleView")
         div(ng-repeat="val in deviceInfo.deviceSpec['values']")
             div(ng-controller="valueCtrl")
                 include ../device/value-module
