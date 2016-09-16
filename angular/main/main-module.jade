@@ -1,21 +1,6 @@
 div(ng-controller="mainCtrl")
 
-    //div.navbar.navbar-inverse.navbar-static-top
-    //    div.container-fluid
-    //        div.navbar-header
-    //            span.navbar-brand Web Brick Viewer
-    //        div.navbar-collapse
-    //            input(ng-readonly="btnConnectText != 'Connect'" type='text' ng-model='ipAddress').navbar-form.navbar-left.form-control
-    //            input(ng-readonly="btnConnectText != 'Connect'" type='number' max='65535' min="1" ng-model='websocketPort').navbar-form.navbar-left.form-control
-    //            ul.nav.navbar-nav.navbar-left
-    //                li
-    //                    button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled').btn.btn-default {{btnConnectText}}
-    //            ul.nav.navbar-nav.navbar-right
-    //                li
-    //                    a(href="#about") About
-
     //Navbar Src: http://bootsnipp.com/snippets/featured/responsive-navigation-menu
-        //link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
     div.container-fluid
         div.row
             div.col-sm-3.col-md-3.nav-side-menu
@@ -28,15 +13,7 @@ div(ng-controller="mainCtrl")
                         //Generated after connect
                         li(ng-repeat='(uid, deviceInfo) in deviceList' ng-click="changeNavigation(uid)" id='{{uid}}-Menu') {{::deviceInfo.deviceDisplayName}} ({{::uid}})
 
-
-
-
-                        //        li(ng-repeat='(uid, deviceInfo) in deviceList')
-                        //            a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::deviceInfo.deviceDisplayName}}
-
-
-
-                        //RED Template
+                        //RED Template--------------------------------------------------------
                         //li(data-toggle='collapse', data-target='#redbrickMenu')
                         //    | REDBrick(UID)
                         //    span.glyphicon.glyphicon-plus.icon-sidenavbar-right
@@ -45,12 +22,8 @@ div(ng-controller="mainCtrl")
                         //        | General
                         //    li
                         //        | Settings
-
-                        //Normal Template
+                        //Normal Template------------------------------------------------------
                         //li(data-toggle='collapse', data-target='#newWorld') NewWorld
-
-
-
 
             div.col-sm-9.col-md-9.main-content
                 div#connectToStack.collapse.in
@@ -61,91 +34,3 @@ div(ng-controller="mainCtrl")
                 div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').collapse
                     div(ng-controller="deviceCtrl")
                         include ../device/device-module
-
-                //    div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
-                //        div(ng-controller="deviceCtrl")
-                //            include ../device/device-module
-
-
-
-
-
-
-
-
-    //label Ip-Address
-    //input(type='text' ng-model='ipAddress')
-    //br
-    //label Websocket Port
-    ////TODO fix max and min
-    //input(type='number' max='65535' min="5" ng-model='websocketPort')
-    //br
-    ////label Secret
-    ////input(type='password')
-    ////br
-    //br
-    //
-    //button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled') {{btnConnectText}}
-    //br
-    //button(ng-click='test()') DEBUG CHECK DEVICE
-    //hr
-    //hr
-
-    //TF system<--------
-    //div.container-fluid
-    //    div.row
-    //        div.col-sm-2.col-md-2.nav.navbar-collapse.collapse.well
-    //            ul.nav.nav-sidebar.nav-tabs
-    //                li.active
-    //                    a(data-toggle='tab' href="#nummer1") Nummer1
-    //                li
-    //                    a(data-toggle='tab' href="#nummer2") Nummer2
-    //
-    //
-    //        div.col-sm-10.col-md-10.main.tab-content.well
-    //            div(id="nummer1").row.tab-pane.fade
-    //                div.row.col-xs-12.col-sm-12
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 UID
-    //                        span.text-muted HfD
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Connected
-    //                        span.text-muted dasdasd
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Position
-    //                        span.text-muted c
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Firmware
-    //                        span.text-muted 2.0.2
-    //            div(id="nummer2").row.tab-pane.fade
-    //                div.row.col-xs-12.col-sm-12
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 UID2
-    //                        span.text-muted HfD2
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Connected2
-    //                        span.text-muted dasdasd2
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Position2
-    //                        span.text-muted c2
-    //                    div.col-xs-4.col-sm-2
-    //                        h4 Firmware2
-    //                        span.text-muted 2.0.22
-
-    //OLD System<-----------
-    //br
-    //
-    //button.navbar-toggle(ng-if="!(deviceList | isEmpty)", data-toggle='collapse', data-target='.navbar-collapse')
-    //    b.navbar-brand.pull-left Device List
-    //    span.glyphicon.glyphicon-align-justify
-    //
-    //
-    //nav.navbar-collapse.collapse
-    //    ul.nav.nav-tabs
-    //        li(ng-repeat='(uid, deviceInfo) in deviceList')
-    //            a(data-toggle='tab', ng-href='#'+'{{uid}}') {{::deviceInfo.deviceDisplayName}}
-    //
-    //.tab-content
-    //    div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').tab-pane.fade
-    //        div(ng-controller="deviceCtrl")
-    //            include ../device/device-module
