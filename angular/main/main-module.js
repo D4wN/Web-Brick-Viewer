@@ -41,12 +41,18 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         eleMenu.addClass('active');
         $scope.navigationID = id;
 
-        $log.log($scope.navigationBtn);
+        // $log.log($scope.navigationBtn);
         $scope.navigationBtn.removeClass('in'); //TODO animation?
     }
 
     $scope.changeNavigationDefault = function(){
-        $scope.changeNavigation(connectToStack);
+        $scope.navigationID = "connectToStack";
+        let ele = angular.element('#' + $scope.navigationID);
+        let eleMenu = angular.element('#' + $scope.navigationID + '-Menu');
+
+        ele.addClass('in');
+        eleMenu.addClass('active');
+        $scope.navigationBtn.removeClass('in'); //TODO animation?
     }
 
 
