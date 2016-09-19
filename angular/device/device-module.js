@@ -7,14 +7,14 @@ m.controller('deviceCtrl', ['$scope', '$log', 'ExtendedView', 'TF', function($sc
 
     //Toggle visibility of simple view
     $scope.showSimpleView = true;
-    $scope.btnShowSimpleViewText = "Show Simple View";
+    $scope.btnShowSimpleViewText = "Hide Simple View";
     $scope.btnShowSimpleView = function(){
         if($scope.showSimpleView){
             $scope.showSimpleView = false;
-            $scope.btnShowSimpleViewText = "Hide Simple View";
+            $scope.btnShowSimpleViewText = "Show Simple View";
         } else {
             $scope.showSimpleView = true;
-            $scope.btnShowSimpleViewText = "Show Simple View";
+            $scope.btnShowSimpleViewText = "Hide Simple View";
         }
     }
 
@@ -24,10 +24,10 @@ m.controller('deviceCtrl', ['$scope', '$log', 'ExtendedView', 'TF', function($sc
     $scope.btnShowExtendedView = function(){
         if($scope.showExtendedView){
             $scope.showExtendedView = false;
-            $scope.btnShowExtendedViewText = "Hide Extended View";
+            $scope.btnShowExtendedViewText = "Show Extended View";
         } else {
             $scope.showExtendedView = true;
-            $scope.btnShowExtendedViewText = "Show Extended View";
+            $scope.btnShowExtendedViewText = "Hide Extended View";
         }
     }
     

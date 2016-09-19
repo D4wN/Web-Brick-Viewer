@@ -1,21 +1,39 @@
-h4 {{::val['name']}}
-//p val = {{val}}
-//p second index = {{i}}
-table.table-bordered.table-responsive
-    tr(ng-if="timer.currentError")
-        td
-            b.text-danger.bg-danger Error: {{timer.currentError}}
-    //Only one value
-    tr(ng-if="!(val['subvalues'] | isArray)")
-        div
-        td(ng-if="((val['unitAddition'][2] | float) | isNumber)") {{(timer.currentValue / val['unitAddition'][2]) | number:2}} <i>{{val['unitAddition'][1]}}</i>
-        td(ng-if="!((val['unitAddition'][2] | float) | isNumber)") {{timer.currentValue}} <i> {{val['unit']}}</i>
+//h4 {{::val['name']}}
+//
+//table.table-bordered.table-responsive
+//    tr(ng-if="timer.currentError")
+//        td
+//            b.text-danger.bg-danger Error: {{timer.currentError}}
+//    //Only one value
+//    tr(ng-if="!(val['subvalues'] | isArray)")
+//        div
+//        td(ng-if="((val['unitAddition'][2] | float) | isNumber)") {{(timer.currentValue / val['unitAddition'][2]) | number:2}} <i>{{val['unitAddition'][1]}}</i>
+//        td(ng-if="!((val['unitAddition'][2] | float) | isNumber)") {{timer.currentValue}} <i> {{val['unit']}}</i>
+//
+//
+//    //Subvalue
+//    tr(ng-if="(val['subvalues'] | isArray)" ng-repeat="subName in val['subvalues']" ng-init="i = $index")
+//        td
+//            b {{subName}}:
+//
+//        td(ng-if="((val['unitAddition'][i][2] | float) | isNumber)") {{(timer.currentValue[i] / val['unitAddition'][i][2]) | number:2}} <i>{{val['unitAddition'][i][1]}}</i>
+//        td(ng-if="!((val['unitAddition'][i][2] | float) | isNumber)") {{timer.currentValue[i]}} <i> {{val['unit'][i]}}</i>
 
 
-    //Subvalue
-    tr(ng-if="(val['subvalues'] | isArray)" ng-repeat="subName in val['subvalues']" ng-init="i = $index")
-        td
-            b {{subName}}:
 
-        td(ng-if="((val['unitAddition'][i][2] | float) | isNumber)") {{(timer.currentValue[i] / val['unitAddition'][i][2]) | number:2}} <i>{{val['unitAddition'][i][1]}}</i>
-        td(ng-if="!((val['unitAddition'][i][2] | float) | isNumber)") {{timer.currentValue[i]}} <i> {{val['unit'][i]}}</i>
+.row
+    h3.col-xs-12 {{::val['name']}}
+.row
+    b(ng-if="timer.currentError").col-xs-12.text-danger.bg-danger Error: {{timer.currentError}}
+
+//Only one value
+.row(ng-if="!(val['subvalues'] | isArray)")
+    div(ng-if="((val['unitAddition'][2] | float) | isNumber)").col-xs-6  {{(timer.currentValue / val['unitAddition'][2]) | number:2}} <i>{{val['unitAddition'][1]}}</i>
+    div(ng-if="!((val['unitAddition'][2] | float) | isNumber)").col-xs-6  {{timer.currentValue}} <i> {{val['unit']}}</i>
+
+////Subvalue
+div(ng-if="(val['subvalues'] | isArray)" ng-repeat="subName in val['subvalues']" ng-init="i = $index")
+    .row.value-border
+        b.col-xs-3 {{subName}}:
+        div(ng-if="((val['unitAddition'][i][2] | float) | isNumber)").col-xs-6 {{(timer.currentValue[i] / val['unitAddition'][i][2]) | number:2}} <i>{{val['unitAddition'][i][1]}}</i>
+        div(ng-if="!((val['unitAddition'][i][2] | float) | isNumber)").col-xs-6 {{timer.currentValue[i]}} <i> {{val['unit'][i]}}</i>

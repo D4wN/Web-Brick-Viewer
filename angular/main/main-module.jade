@@ -3,12 +3,13 @@ div(ng-controller="mainCtrl")
     //Navbar Src: http://bootsnipp.com/snippets/featured/responsive-navigation-menu
     div.container-fluid
         div.row
-            div.col-sm-3.col-md-3.nav-side-menu
+            div.col-sm-2.col-md-2.nav-side-menu
                 .brand Web Brick Viewer
                 i#menu-content-btn(data-toggle='collapse', data-target='#menu-content').glyphicon.glyphicon-menu-hamburger
                 .menu-list
                     ul#menu-content.menu-content.collapse.out
                         li.active(ng-click="changeNavigation('connectToStack')" id='connectToStack-Menu') Connect
+                            span.glyphicon.glyphicon-off.icon-sidenavbar-right
 
                         //Generated after connect
                         li(ng-repeat='(uid, deviceInfo) in deviceList' ng-click="changeNavigation(uid)" id='{{uid}}-Menu') {{::deviceInfo.deviceDisplayName}} ({{::uid}})
@@ -25,11 +26,16 @@ div(ng-controller="mainCtrl")
                         //Normal Template------------------------------------------------------
                         //li(data-toggle='collapse', data-target='#newWorld') NewWorld
 
-            div.col-sm-9.col-md-9.main-content
+            div.col-sm-10.col-md-10.main-content
                 div#connectToStack.collapse.in
-                    input(ng-readonly="btnConnectText != 'Connect'" type='text' ng-model='ipAddress').form-control
-                    input(ng-readonly="btnConnectText != 'Connect'" type='number' max='65535' min="1" ng-model='websocketPort').form-control
-                    button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled').btn.btn-default {{btnConnectText}}
+                    .row
+                        label.col-xs-6.col-sm-3 IP Address
+                        label.col-xs-6.col-sm-3 WebSocket Port
+                    .row(style="margin-bottom: 10px;")
+                        input(ng-readonly="btnConnectText != 'Connect'" type='text' ng-model='ipAddress').col-xs-6.col-sm-3.input-style
+                        input(ng-readonly="btnConnectText != 'Connect'" type='number' max='65535' min="1" ng-model='websocketPort').col-xs-6.col-sm-3.input-style
+                    .row
+                        button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled').btn.btn-default.col-xs-12.col-sm-6 {{btnConnectText}}
 
                 div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').collapse
                     div(ng-controller="deviceCtrl")

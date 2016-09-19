@@ -95,7 +95,8 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
                 TF.ipcon = null;
                 return;
             });
-            // $log.log(TF.ipcon);
+
+            $scope.navigationBtn.addClass('in'); //TODO animation?
 
             TF.ipcon.on(TF.Tinkerforge.IPConnection.CALLBACK_CONNECTED, function(connectReason){
                     $log.log("[" + $scope.debug_name + "]reason = " + connectReason);
@@ -141,18 +142,4 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         btnConnectChange("Connect", false);
     }
 
-
-    //TESt some functions
-    $scope.test = function(){
-        // let m = WBVUtils.regexUnitName("lx/100 lx")
-        // $log.log("Regex Test:");
-        // $log.log(WBVUtils.getUnitData("\u00b0C"));
-        // $log.log(WBVUtils.getUnitData("22marv/133337 hier is derr rest"));
-        // $log.log(WBVUtils.getUnitData("mV"));
-        // $log.log(WBVUtils.getUnitData("10m/h"));
-        // $log.log(WBVUtils.getUnitData("1/100 m/s\u00b2"));
-        // $log.log(WBVUtils.getUnitData("lx/1234 hallo welt"));
-
-
-    }
 }]);
