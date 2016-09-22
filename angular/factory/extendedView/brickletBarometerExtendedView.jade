@@ -1,2 +1,9 @@
 div(ng-controller="BrickletBarometerCtrl")
     p value: {{viewName}}
+    br
+
+    div.col-xs-12
+        .row
+            b(ng-show="graph.timer.currentError").col-xs-12.text-danger.bg-danger Air Pressure Error: {{graph.timer.currentError}}
+            div.col-xs-12
+                div(id='{{uid}}-flot-airpressure').graph

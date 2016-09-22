@@ -19,29 +19,6 @@ m.controller('valueCtrl', ['$scope', '$log', 'PollingValueTimer', 'WBVUtils', fu
     $scope.timer = new PollingValueTimer(1000, $scope.val['getter'], $scope.device, $scope.val['args']);
     $scope.timer.start();
 
-
-    if($scope.uid == 'fa1'){
-
-        // let t = function(object){
-        //     // return isNaN(object);
-        //     // return (typeof object == 'number');
-        //     let n = parseFloat(object);
-        //     if(isNaN(n)) return false;
-        //     return (typeof n == 'number');
-        //
-        // }
-        // $log.log(t("42"));
-        // $log.log(t(42));
-        // $log.log(t(""));
-        // $log.log(t(null));
-        // $log.log(t([]));
-        // $log.log(t(undefined));
-
-
-
-
-    }
-
     $scope.$on("$destroy", function(){
         if($scope.timer){
             $scope.timer.stop();

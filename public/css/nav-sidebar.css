@@ -32,6 +32,11 @@ input.input-style {
     border-color: #bbb;
 }
 
+div.graph {
+    height: 250px;
+    min-height: 100px;
+}
+
 
 
 
