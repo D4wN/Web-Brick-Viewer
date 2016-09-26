@@ -3,24 +3,34 @@
 var angApp = angular.module('wbv');
 
 angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', function($log, $timeout, $rootScope, PollingValueTimer){
-    function Graph(id, valueData, device, interval = 50, unitFactor = 1, label = "Value"){
+    // function Graph(id, valueData, device, interval = 50, unitFactor = 1, label = "Value"){
+    function Graph(id, device, graphConfigs, interval = 50){
         this.debug_name = "[Graph|" + id + "]"
         this.ele = null;
         this.eleName = id;
         this.interval = interval;
-        this.unitFactor = unitFactor
+        this.graphConfigs = graphConfigs;
 
-        this.label = label;
-        this.data = []; //x,y
-        this.dataMaxSize = 200; //last 10 seconds of data (1000ms * 10 = -> 50ms * 200 )
+        this.data = {}; //init data - for each graphConfig
+        this.dataMaxSize = 200; //last 10 seconds of data (1000ms * 10 = -> 50ms * 200 ) TODO make dynamic (interval <=> time to log)
         this.plot = null;
+        this.timer = [];
 
 
         let that = this;
-        this.timer = new PollingValueTimer(interval, valueData['getter'], device, valueData['args'], function(value){
-            that.addValue(value / that.unitFactor);
-        });
+        this.graphConfigs.forEach(function(object, index){
 
+
+            that.data[that.graphConfigs[index].label] = {};
+            that.data[that.graphConfigs[index].label].data = [];
+            that.data[that.graphConfigs[index].label].color = that.graphConfigs[index].color;
+
+
+
+            that.timer.push(new PollingValueTimer(interval, that.graphConfigs[index].valueData['getter'], device, that.graphConfigs[index].valueData['args'], function(value){
+                that.addValue(value / that.graphConfigs[index].unitFactor, that.graphConfigs[index].label);
+            }));
+        });
     }
 
     Graph.prototype.start = function(){
@@ -36,10 +46,7 @@ angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', 
                 return;
             }
 
-            let flotData = [{
-                label: that.label,
-                data: that.data
-            }];
+            let flotData = that.getData();
             //src: http://www.jqueryflottutorial.com/how-to-make-jquery-flot-realtime-update-chart.html
             let flotOptions = {
                 series: {
@@ -73,15 +80,20 @@ angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', 
                 }
             };
             that.plot = $.plot(that.ele, flotData, flotOptions);
-            that.timer.start();
+
+            that.timer.forEach(function(t, index){
+                t.start();
+            });
         });
     }
 
     Graph.prototype.stop = function(){
-        this.timer.stop();
+        this.timer.forEach(function(t, index){
+            t.stop();
+        });
     }
 
-    Graph.prototype.addValue = function(value){
+    Graph.prototype.addValue = function(value, label){
         // $log.log(this.debug_name + "addValue()");
         if(!this.ele){
             $log.warn(this.debug_name + "addValue() - Element was null");
@@ -89,13 +101,35 @@ angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', 
         }
 
         let now = new Date().getTime();
-        this.data.push([now, value]);
+        //search for the right DATA element
+        this.data[label].data.push([now, value]);
 
-        if(this.data.length > this.dataMaxSize){
-            this.data.shift();
+        if(this.data[label].data.length > this.dataMaxSize){
+            this.data[label].data.shift();
         }
 
         this.update();
+    }
+
+    Graph.prototype.getData = function(){
+        let flotData = [];
+        //for each element in key, value
+        for(let key in this.data){
+            // let key = this.graphConfigs[0].label
+
+            // $log.log()
+
+            let value = this.data[key].data;
+            let color = this.data[key].color;
+
+            flotData.push({
+                label: key,
+                data: value,
+                color: color
+            });
+        }
+
+        return flotData;
     }
 
     Graph.prototype.update = function(){
@@ -105,10 +139,7 @@ angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', 
             return;
         }
 
-        let flotData = [{
-            label: this.label,
-            data: this.data
-        }];
+        let flotData = this.getData();
 
         this.plot.setData(flotData);
         this.plot.setupGrid();
@@ -116,4 +147,44 @@ angApp.factory('Graph', ['$log', '$timeout', '$rootScope', 'PollingValueTimer', 
     }
 
     return Graph;
+}]);
+
+angApp.factory('GraphConfig', ['$log', function($log){
+    function GraphConfig(label, valueData, unitFactor = 1, color = "#edc240"){
+        this.debug_name = "[GraphConfig|" + label + "]";
+
+        this.label = label;
+        this.valueData = valueData;
+        this.unitFactor = unitFactor;
+        this.color = color;
+    }
+
+    GraphConfig.prototype.validate = function(){
+        let ret = true;
+
+        if(this.label === null || this.label === undefined){
+            $log.log(this.debug_name + " Label was null or undefined!");
+            ret = false;
+        }
+
+        if(this.valueData === null || this.valueData === undefined){
+            $log.log(this.debug_name + " ValueData was null or undefined!");
+            ret = false;
+        }
+
+        //TODO check if number -> WBVUtil
+        if(this.unitFactor === null || this.unitFactor === undefined){
+            $log.log(this.debug_name + " UnitFactor was null or undefined!");
+            ret = false;
+        }
+
+        if(this.color === null || this.color === undefined){
+            $log.log(this.debug_name + " Color was null or undefined!");
+            ret = false;
+        }
+
+        return ret;
+    }
+
+    return GraphConfig;
 }]);
