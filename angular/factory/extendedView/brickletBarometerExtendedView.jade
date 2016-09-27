@@ -1,9 +1,30 @@
 div(ng-controller="BrickletBarometerCtrl")
-    p value: {{viewName}}
-    br
 
     div.col-xs-12
         .row
-            b(ng-show="graph.timer.currentError").col-xs-12.text-danger.bg-danger Air Pressure Error: {{graph.timer.currentError}}
-            div.col-xs-12
-                div(id='{{uid}}-flot-airpressure').graph
+            //b(ng-show="graph.timer.currentError").col-xs-12.col-sm-6.text-danger.bg-danger Air Pressure Error: {{graph.timer.currentError}}
+        div.col-xs-12.col-md-6
+            div(id='{{uid}}-flot-airpressure').graph
+        div.col-xs-12.col-md-6
+            div(id='{{uid}}-flot-altitude').graph
+
+    div.col-xs-12
+        .row
+            h3.col-xs-12 Option
+            div(style="margin-top: 10px;").col-xs-12
+                .row
+                    //min10 000 and max1200 000   mb/1000!
+                    label.col-xs-6.col-md-3 Reference Air Pressure[mbar]:
+                    input(type='number' min="0" max="1200" ng-model="referenceAirPressure").input-style.col-xs-6.col-sm-2
+                    button(ng-click="getReferenceAirPressure()" ng-disabled="btnGetReferenceAirPressure").btn.btn-default.col-xs-6.col-sm-2 GET
+                        span(style="vertical-align: middle; float: right;").glyphicon.glyphicon-refresh
+                    button(ng-click="setReferenceAirPressure()" ng-disabled="btnSetReferenceAirPressure").btn.btn-default.col-xs-6.col-sm-2 SET
+                        span(style="vertical-align: middle; float: right;").glyphicon.glyphicon-floppy-save
+            div(style="margin-top: 10px;").col-xs-12
+                .row
+                    label.col-xs-6.col-sm-3 Air Pressure Moving Average Length:
+                    input(type='number' min="0" max="25" ng-model="airPressureMovingAverageLength" ng-change="setAveraging()").input-style.col-xs-6.col-sm-1
+                    label.col-xs-6.col-sm-3 Air Pressure Average Length:
+                    input(type='number' min="0" max="10" ng-model="airPressureAverageLength" ng-change="setAveraging()").input-style.col-xs-6.col-sm-1
+                    label.col-xs-6.col-sm-3 Temperate Average Length:
+                    input(type='number' min="0" max="255" ng-model="temperateAverageLength" ng-change="setAveraging()").input-style.col-xs-6.col-sm-1
