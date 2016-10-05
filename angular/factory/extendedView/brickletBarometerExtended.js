@@ -5,7 +5,8 @@ var angApp = angular.module('wbv');
 angApp.factory('BrickletBarometerExtended', ['$log', '$http', '$timeout', 'Graph', 'GraphConfig', function($log, $http, $timeout, Graph, GraphConfig){
     function BrickletBarometerExtended(){
         this.debug_name = "[BrickletBarometerExtended]";
-        this.viewPath = "/extendedViews/brickletBarometerExtendedView";   //PAth on Server to the jade file
+        // this.viewPath = "/extendedViews/brickletBarometerExtendedView";   //Path on Server to the jade file - deprecated!
+        this.viewName = "brickletBarometerExtendedView"                     //Solution for only Client
     }
 
     BrickletBarometerExtended.prototype.getController = function(){

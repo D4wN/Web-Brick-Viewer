@@ -16,7 +16,7 @@
     //    div Todo
 
 .row(ng-if="deviceInfo.deviceSpec==null && !extendedView" style="margin-top: 10px;")
-    p No Simple View for this Device found.
+    p.col-xs-12 There is no Simple View for this Device.
 
 .row(ng-if="deviceInfo.deviceSpec!=null" style="margin-top: 10px;")
     button(ng-click="btnShowSimpleView()").col-xs-12.btn.btn-default.btn-fixed-size {{btnShowSimpleViewText}}
@@ -27,7 +27,14 @@
 
 .row(ng-if="extendedView" style="margin-top: 10px;")
     button(ng-if="btnLoadExtendedView" ng-click="btnLoadExtendedView()" ).col-xs-12.btn.btn-default.btn-fixed-size Load Extended View
+
     div(ng-if="!btnLoadExtendedView")
         button(ng-click="btnShowExtendedView()" style="margin-bottom: 10px;").col-xs-12.btn.btn-default.btn-fixed-size {{btnShowExtendedViewText}}
         div(ng-hide="!showExtendedView")
-            ng-include(src="extendedView.viewPath")
+            //Add Extende Views here via 'include' from jade/pug parser!
+            //Barometer Extended View
+            div(ng-if="extendedView.viewName == 'brickletBarometerExtendedView'")
+                include ../factory/extendedView/brickletBarometerExtendedView
+            //RED Brick Extended View
+            div(ng-if="extendedView.viewName == 'brickREDExtendedView'")
+                include ../factory/extendedView/red/brickREDExtendedView

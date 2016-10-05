@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
 
 //Routes
 app.use('/', index);
-app.use('/extendedViews', extendedViews);
+// app.use('/extendedViews', extendedViews); //not needed, client only!
 //app.use('/api', api);
 
 //Error Handling

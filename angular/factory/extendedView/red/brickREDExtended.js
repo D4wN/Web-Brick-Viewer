@@ -5,7 +5,8 @@ var angApp = angular.module('wbv');
 angApp.factory('BrickREDExtended', ['$log', 'TF', function($log, TF){
     function BrickREDExtended(){
         this.debug_name = "[BrickREDExtended]";
-        this.viewPath = "/extendedViews/RED/brickREDExtendedView";   //Path on Server to the jade file
+        // this.viewPath = "/extendedViews/RED/brickREDExtendedView";   //Path on Server to the jade file - deprecated!
+        this.viewName = "brickREDExtendedView"                      //Solution for only Client
     }
 
     BrickREDExtended.prototype.getController = function(){
