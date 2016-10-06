@@ -12,19 +12,29 @@ div(ng-controller="mainCtrl")
                             span.glyphicon.glyphicon-off.icon-sidenavbar-right
 
                         //Generated after connect
-                        li(ng-repeat='(uid, deviceInfo) in deviceList' ng-click="changeNavigation(uid)" id='{{uid}}-Menu') {{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                        //Generate REDBricks
+                        div(ng-repeat='(uid, deviceInfo) in deviceList' ng-if="deviceInfo.deviceClassName=='BrickRED'")
+                            li(ng-click="changeNavigation(uid)" ){{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                            //Submenus
+                            ul(id='{{uid}}-Menu-datatarget').sub-menu.collapse
+                                //TODO ADD STATIC SUBMENUS HERE!!<----------------------------------------------------------------------------------------
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
 
-                        //RED Template--------------------------------------------------------
-                        //li(data-toggle='collapse', data-target='#redbrickMenu')
-                        //    | REDBrick(UID)
-                        //    span.glyphicon.glyphicon-plus.icon-sidenavbar-right
-                        //ul#redbrickMenu.sub-menu.collapse
-                        //    li.active
-                        //        | General
-                        //    li
-                        //        | Settings
-                        //Normal Template------------------------------------------------------
-                        //li(data-toggle='collapse', data-target='#newWorld') NewWorld
+                        //Generate others
+                        div(ng-repeat='(uid, deviceInfo) in deviceList' ng-if="deviceInfo.deviceClassName!='BrickRED'")
+                            li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') {{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                            //Submenus
+                            ul(id='{{uid}}-Menu-datatarget').sub-menu.collapse
+
 
             div.col-sm-10.col-md-10.main-content
                 div#connectToStack.collapse.in
@@ -37,6 +47,11 @@ div(ng-controller="mainCtrl")
                     .row
                         button(ng-click='btnConnectFunction()' ng-disabled='btnConnectDisabled').btn.btn-default.col-xs-12.col-sm-6 {{btnConnectText}}
 
-                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}').collapse
+                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}' ng-if="deviceInfo.deviceClassName!='BrickRED'").collapse
+                    div(ng-controller="deviceCtrl")
+                        include ../device/device-module
+
+                //FIXME ADD BRICKRED CONTROLLER HERE AND ADD VIEWS FOR BRICKRED HERE!
+                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}' ng-if="deviceInfo.deviceClassName=='BrickRED'")
                     div(ng-controller="deviceCtrl")
                         include ../device/device-module
