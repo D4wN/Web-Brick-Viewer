@@ -1,7 +1,7 @@
 "use strict";
 
 var m = angular.module('wbv.main', []);
-m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 'DeviceSpecs', function($scope, $log, $http, TF, DeviceInformation, DeviceSpecs){
+m.controller('mainCtrl', ['$scope', '$log', '$http', '$compile', 'TF', 'DeviceInformation', 'DeviceSpecs', 'WBVUtils', function($scope, $log, $http, $compile, TF, DeviceInformation, DeviceSpecs, WBVUtils){
     //this.templateURL = "/angular/main/main-module.jade";
     $scope.debug_name = "[Manager Tab]"; //TODO refactore debug_name from scope away
     let debug_name = "[Manager Tab]";
@@ -22,6 +22,12 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
             $log.log(debug_name + " Navigation got the same ID. Change nothing.");
             return;
         }
+
+        //Check if Submenu ID TODO deprecated?
+        // if(WBVUtils.checkKey($scope.navigationSubMenu, id)){
+        //     $log.log(debug_name + " Navigation Id is a Submenu. Do nothing.");
+        //     return;
+        // }
 
         let ele = angular.element('#' + id);
         let eleMenu = angular.element('#' + id + '-Menu');
@@ -44,7 +50,6 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         // $log.log($scope.navigationBtn);
         $scope.navigationBtn.removeClass('in'); //TODO animation?
     }
-
     $scope.changeNavigationDefault = function(){
         $scope.navigationID = "connectToStack";
         let ele = angular.element('#' + $scope.navigationID);
@@ -54,7 +59,75 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', 'TF', 'DeviceInformation', 
         eleMenu.addClass('active');
         $scope.navigationBtn.removeClass('in'); //TODO animation?
     }
+    // $scope.navigationSubMenu = {}
+    $scope.addNavigationSubmenu = function(navUID, subMenuConfig){
+        $log.log(debug_name + ".addNavigationSubmenu(" + navUID + ")");
+        if(subMenuConfig == null || subMenuConfig == undefined){
+            $log.warn(debug_name + " No subMenuConfig was not found!");
+            return;
+        }
 
+        let eleID = navUID + '-Menu';
+        let eleMenu = angular.element('#' + eleID);
+        let eleSubmenu = angular.element('#' + eleID + "-datatarget");
+        if(eleMenu.length == 0){
+            $log.warn(debug_name + " Element(" + eleID + ") was not found!");
+            return;
+        }
+        if(eleSubmenu.length == 0){
+            $log.warn(debug_name + " Element(" + eleID + "-datatarget) was not found!");
+            return;
+        }
+        //Check if Submenu exists - Workaround with data-target!
+        if(eleMenu.attr('data-target') != undefined){
+            $log.warn(debug_name + " Submenu for Element(" + eleID + ") already exists!");
+            return;
+        }
+
+        let icon = angular.element('<span class="glyphicon glyphicon-plus icon-sidenavbar-right"></span>');
+        eleMenu.append(icon);
+        eleMenu.removeAttr('ng-click');
+        eleMenu.removeAttr('id');
+        eleMenu.removeClass('in');
+        eleMenu.removeClass('active');
+        eleMenu.attr('data-toggle', 'collapse');
+        eleMenu.attr('data-target', "#" + eleID + "-datatarget");
+
+        let ulEle = angular.element("#" + eleID + "-datatarget");
+        ulEle.addClass('in');
+
+        //Create Submenu Entries
+        for(let k in subMenuConfig){
+
+            if(!WBVUtils.checkKey(subMenuConfig[k], 'name') || !WBVUtils.checkKey(subMenuConfig[k], 'target')){
+                $log.log(debug_name + " Missing Entries in Element(" + k + ") of subMenuConfig!");
+                continue;
+            }
+
+            let sub = angular.element('<li id="' + subMenuConfig[k].target + '-Menu" ng-click="changeNavigation(\'' + subMenuConfig[k].target + '\')">' + subMenuConfig[k].name + '</li>')
+            $compile(sub)($scope);
+            eleSubmenu.append(sub);
+        }
+
+        //Activate the new Overview Entry, if exists
+        eleMenu = angular.element('#' + eleID);
+        if(eleMenu.length == 0){
+            return;
+        }
+        eleMenu.addClass('active');
+
+        //
+        // let newSubmenu = angular.element('<ul id=' + eleID + '-datatarget></ul>');
+        // newSubmenu.addClass('sub-menu');
+        // newSubmenu.addClass('collapse');
+        // //FOR EACH IN CONFIG
+        // let sub = angular.element('<li id="hallo" ng-click="changeNavigation(uidNEW)"></li>')
+        //
+        // newSubmenu.append(sub);
+        //
+        // eleMenu.insertAfter(newSubmenu);
+
+    }
 
     //Button Connect ---------------------------------------------------------------------------------------------------
     $scope.btnConnectText = "Connect";

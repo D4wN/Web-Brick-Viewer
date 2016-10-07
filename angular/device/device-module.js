@@ -40,7 +40,7 @@ m.controller('deviceCtrl', ['$scope', '$log', 'ExtendedView', 'TF', function($sc
         $scope.device = TF.getDeviceImpl($scope.deviceInfo.deviceSpec['class'], $scope.uid);
 
     }
-
+    
     //Check Extended View
     let checkExtendedView = function(){
         let className = $scope.deviceInfo.deviceClassName;
