@@ -20,7 +20,7 @@ angApp.factory('BrickletBarometerExtended', ['$log', '$http', '$timeout', 'Graph
             $scope.graphAltitude.start();
 
             //Init Option
-            $scope.referenceAirPressure = 1013.25;//mbar/1000 - default value; TODO Valid values are between 10000 and 1200000
+            $scope.referenceAirPressure = 1013.25;//mbar/1000 - default value; Valid values are between 10000 and 1200000
             $scope.btnGetReferenceAirPressure = false;
             $scope.getReferenceAirPressure = function(){
                 $log.log(debug_name + "getReferenceAirPressure()");
