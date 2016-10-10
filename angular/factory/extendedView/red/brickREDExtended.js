@@ -19,24 +19,7 @@ angApp.factory('BrickREDExtended', ['$log', 'TF', function($log, TF){
 
             $scope.device = TF.getDeviceImpl($scope.deviceInfo.deviceClassName, $scope.uid);
             $log.log($scope.device);
-
-
-            //Add Submenus to navigation
-            // let submenuConfig = [
-            //     {
-            //         name: "Overview",
-            //         target: $scope.uid
-            //     }, {
-            //         name: "Program",
-            //         target: $scope.uid+"-redbrick-program"
-            //     }, {//TODO delete debug entries
-            //
-            //         target: "missing Name"
-            //     }, {
-            //         name: "missing target"
-            //     }
-            // ]
-            // $scope.addNavigationSubmenu($scope.uid, submenuConfig);
+            
 
         }];
     }

@@ -14,26 +14,21 @@ div(ng-controller="mainCtrl")
                         //Generated after connect
                         //Generate REDBricks
                         div(ng-repeat='(uid, deviceInfo) in deviceList' ng-if="deviceInfo.deviceClassName=='BrickRED'")
-                            li(ng-click="changeNavigation(uid)" ){{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                            li(id='{{uid}}-Menu' ng-click="changeNavigationSubmenu(uid, 'Overview')" data-toggle="collapse" data-target="\#{{uid}}-Menu-datatarget") {{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                                span.glyphicon.glyphicon-plus.icon-sidenavbar-right
                             //Submenus
                             ul(id='{{uid}}-Menu-datatarget').sub-menu.collapse
                                 //TODO ADD STATIC SUBMENUS HERE!!<----------------------------------------------------------------------------------------
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
-                                li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') Overview
+                                li(ng-click="changeNavigationSubmenu(uid, 'Overview')" id='{{uid}}-Menu-Overview') Overview
+                                li(ng-click="changeNavigationSubmenu(uid, 'Program')" id='{{uid}}-Menu-Program') Program
+                                //li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu-Console') Console
+                                //li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu-Logs') Logs
 
                         //Generate others
                         div(ng-repeat='(uid, deviceInfo) in deviceList' ng-if="deviceInfo.deviceClassName!='BrickRED'")
-                            li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu') {{::deviceInfo.deviceDisplayName}} ({{::uid}})
-                            //Submenus
-                            ul(id='{{uid}}-Menu-datatarget').sub-menu.collapse
+                            li(id='{{uid}}-Menu' ng-click="changeNavigation(uid)") {{::deviceInfo.deviceDisplayName}} ({{::uid}})
+                            //Submenus - Not needed right now
+                            //ul(id='{{uid}}-Menu-datatarget').sub-menu.collapse
 
 
             div.col-sm-10.col-md-10.main-content
@@ -51,7 +46,6 @@ div(ng-controller="mainCtrl")
                     div(ng-controller="deviceCtrl")
                         include ../device/device-module
 
-                //FIXME ADD BRICKRED CONTROLLER HERE AND ADD VIEWS FOR BRICKRED HERE!
-                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}' ng-if="deviceInfo.deviceClassName=='BrickRED'")
+                div(ng-repeat='(uid, deviceInfo) in deviceList' id='{{uid}}' ng-if="deviceInfo.deviceClassName=='BrickRED'").collapse
                     div(ng-controller="deviceCtrl")
-                        include ../device/device-module
+                        include ../factory/extendedView/red/brickREDExtendedView
