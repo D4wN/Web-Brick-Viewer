@@ -21,8 +21,9 @@ div(ng-controller="mainCtrl")
                                 //TODO ADD STATIC SUBMENUS HERE!!<----------------------------------------------------------------------------------------
                                 li(ng-click="changeNavigationSubmenu(uid, 'Overview')" id='{{uid}}-Menu-Overview') Overview
                                 li(ng-click="changeNavigationSubmenu(uid, 'Program')" id='{{uid}}-Menu-Program') Program
-                                //li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu-Console') Console
-                                //li(ng-click="changeNavigation(uid)" id='{{uid}}-Menu-Logs') Logs
+                                li(ng-click="changeNavigationSubmenu(uid, 'Console')" id='{{uid}}-Menu-Console') Console
+                                li(ng-click="changeNavigationSubmenu(uid, 'Datalogger')" id='{{uid}}-Menu-Datalogger') Datalogger - Seperat?
+                                li(ng-click="changeNavigationSubmenu(uid, 'Logs')" id='{{uid}}-Menu-Logs') Logs
 
                         //Generate others
                         div(ng-repeat='(uid, deviceInfo) in deviceList' ng-if="deviceInfo.deviceClassName!='BrickRED'")

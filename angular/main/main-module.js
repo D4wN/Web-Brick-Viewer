@@ -92,7 +92,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', '$compile', 'TF', 'DeviceIn
         $scope.navigationIDSubmenu = childID;
 
         $scope.changeNavigation(id);
-        // $scope.navigationBtn.removeClass('in'); //TODO animation? - is it neede?
+        // $scope.navigationBtn.removeClass('in'); //TODO animation? - is it needed?
     }
     $scope.changeNavigationDefault = function(){
         $scope.navigationID = "connectToStack";
