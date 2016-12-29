@@ -1,6 +1,11 @@
-div(ng-controller="BrickREDCtrl").well
-    p Hallooooo
+div(ng-controller="BrickREDCtrl")
+    include ../../../device/deviceHeader
 
     div(id="{{uid}}-RED-Overview").collapse
         p Overview is here
+
+
     include ./brickREDExtendedProgramView
+    include ./brickREDExtendedConsoleView
+    include ./brickREDExtendedDataloggerView
+    include ./brickREDExtendedLogView

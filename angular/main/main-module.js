@@ -8,7 +8,7 @@ m.controller('mainCtrl', ['$scope', '$log', '$http', '$compile', 'TF', 'DeviceIn
 
     $scope.name = $scope.debug_name;
     //Manager Tab Var---------------------------------------------------------------------------------------------------
-    $scope.ipAddress = "192.168.0.14";
+    $scope.ipAddress = "192.168.178.32";
     $scope.websocketPort = 4280;
     // $scope.secret = "";
     $scope.deviceList = {};

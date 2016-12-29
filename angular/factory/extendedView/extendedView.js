@@ -9,7 +9,6 @@ angApp.factory('ExtendedView', ['$log', 'WBVUtils', 'BrickletBarometerExtended',
         this.extendedViewDeviceList = {};
         this.extendedViewDeviceList[Tinkerforge.BrickletBarometer.name] = BrickletBarometerExtended;
         this.extendedViewDeviceList[Tinkerforge.BrickRED.name] = BrickREDExtended;
-
     }
 
     ExtendedView.prototype.getExtendedView = function(className){
