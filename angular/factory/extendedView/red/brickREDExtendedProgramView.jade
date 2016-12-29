@@ -1,2 +1,12 @@
 div(id='{{uid}}-RED-Program').collapse
-    p Hier sind die Programme? maybe
+    .row
+        h3.col-xs-12 Program
+    .row
+        b.col-xs-6  Name
+        b.col-xs-6  ID(Debugging)
+
+    div(ng-repeat="prog in redProgramList")
+        .row
+            div.col-xs-6  {{prog.stringData}}
+            div.col-xs-6  {{prog.programId}}
+
