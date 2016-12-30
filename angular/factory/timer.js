@@ -73,19 +73,6 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
 
             that.device[that.functionName](...tmp_args);
         }, this.interval, 0, true, tmp_args);
-
-
-        /*
-         """Starts the timer if <self._interval> is not 0 otherwise the
-         timer will be canceled
-         """
-         if self._interval == 0:
-         self.cancel()
-         return
-
-         self._t.start()
-         self._was_started = True
-         */
     }
 
     PollingValueTimer.prototype.stop = function(){
@@ -97,80 +84,8 @@ angApp.factory('PollingValueTimer', ['$log', '$interval', 'WBVUtils', 'TF', func
 
         $interval.cancel(this.session);
         this.session = null;
-        /*
-         self.exit_flag = True
-         self._was_started = False
-
-         def cancel(self):
-         self._t.cancel()
-
-         def join(self):
-         if self._interval == 0:  # quick fix for no timer.start()
-         return
-
-         if self._was_started:
-         self._t.join()
-         */
     }
 
 
     return PollingValueTimer;
 }]);
-
-/*
- class LoggerTimer(object):
- """This class provides a timer with a repeat functionality based on a interval"""
-
- def __init__(self, interval, func_name, var_name, device):
- """
- interval -- the repeat interval in seconds
- func -- the function which will be called
- """
- self.exit_flag = False
- if interval < 0:
- interval = 0
-
- self._interval = interval # in seconds
- self._func_name = func_name
- self._var_name = var_name
- self._device = device
- self._was_started = False
- self._t = Timer(self._interval, self._loop)
-
- def _loop(self):
- """Runs the <self._func_name> function every <self._interval> seconds"""
- start = time.time() # FIXME: use time.monotonic() in Python 3
- getattr(self._device, self._func_name)(self._var_name)
- elapsed = max(time.time() - start, 0) # FIXME: use time.monotonic() in Python 3
- self.cancel()
- if self.exit_flag:
- return
- self._t = Timer(max(self._interval - elapsed, 0), self._loop)
- self.start()
-
- def start(self):
- """Starts the timer if <self._interval> is not 0 otherwise the
- timer will be canceled
- """
- if self._interval == 0:
- self.cancel()
- return
-
- self._t.start()
- self._was_started = True
-
- def stop(self):
- self.exit_flag = True
- self._was_started = False
-
- def cancel(self):
- self._t.cancel()
-
- def join(self):
- if self._interval == 0:  # quick fix for no timer.start()
- return
-
- if self._was_started:
- self._t.join()
-
- */
