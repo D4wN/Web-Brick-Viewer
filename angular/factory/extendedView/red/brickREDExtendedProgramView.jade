@@ -2,11 +2,19 @@ div(id='{{uid}}-RED-Program').collapse
     .row
         h3.col-xs-12 Program
     .row
-        b.col-xs-6  Name
-        b.col-xs-6  ID(Debugging)
+        button(ng-click="getREDPrograms()" ).btn.btn-default.col-xs-12.col-sm-3 Refresh
+    .row
+        b.col-xs-4 Name
+        b.col-xs-4 State
+        //b.col-xs-3 ProcessID(Debugging)
+
 
     div(ng-repeat="prog in redProgramList")
         .row
-            div.col-xs-6  {{prog.stringData}}
-            div.col-xs-6  {{prog.programId}}
+            div.col-xs-4 {{prog.stringData}}
+            div.col-xs-4 {{prog.programState}}
+            div
+                button(ng-if="(prog.programState!='RUNNING')" ng-click="startREDProgram(prog)" ).btn.btn-default.col-xs-4 Start
+                button(ng-if="(prog.programState=='RUNNING')" ng-click="stopREDProgram(prog)" ).btn.btn-default.col-xs-4 Stop
+
 
