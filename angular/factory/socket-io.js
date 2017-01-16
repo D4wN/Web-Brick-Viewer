@@ -56,7 +56,7 @@ angApp.factory('Socket', ['$rootScope', function($rootScope) {
     return Socket;
 }]);
 
-//Gloabl Namepsaces FIXME dont need that?
-angApp.factory('Manager', ['Socket', function(Socket) {
-    return new Socket('/manager');
-}]);
+// //Gloabl Namepsaces FIXME dont need that?
+// angApp.factory('Manager', ['Socket', function(Socket) {
+//     return new Socket('/manager');
+// }]);

@@ -1,130 +1,161 @@
 "use strict";
 
 var io = require('socket.io')();
-var tf = require('./tinkerforge');
 var lgr = new (require('./simpleLogger'))("Socket.io");
-var deviceManager = new (require('./deviceManager'))();
+var SSH = require('./mySSH');
 
+var sshList = {};
 
 /*FUNCTIONS************************************************************************************************************/
+const sshResult = function(success, output, pwd = null){
+    return {
+        success: success,
+        output: output,
+        pwd: pwd
+    }
+}
 
+const executeCommand = function(client_ip_address, command, cb){
+    lgr.log("SSH executeCommand(" + client_ip_address + ") command: '" + command + "' in " + sshList[client_ip_address].baseDir);
+    sshList[client_ip_address].exec(command, {
+        out: function(stdout){
+            sshList[client_ip_address].reset();
+            cb(sshResult(true, stdout, getPWDString(client_ip_address))); //only successful execs should have pwd
+        },
+        err: function(stderr){
+            sshList[client_ip_address].reset();
+            cb(sshResult(false, stderr));
+        },
+        exit: function(code){
+            //code 0 = ok
+            if(code != 0){
+                sshList[client_ip_address].reset();
+                cb(sshResult(false, "Exit Code:" + code));
+            }
+        }
+    }).start({
+        success: function(){
+            // lgr.log("executeCommand success");
+        }, fail: function(err){
+            // lgr.log("executeCommand failed: " + err);
+        }
+    });
+}
 
-/** TODO create a seperated class for this (DeviceManager)
- * Fetches the current connected tinkerforge devices and checks the current registered list.
- * Sends the data to a client, if the client requests the data.
- */
-//var getCurrentDeviceList = function(cb_client){
-//    tf.getCurrentDeviceList(function(device){
-//        //lgr.log(deviceManager.connectedDevices);
-//        var key = device.name + ":" + device.uid;
-//        if(key in deviceManager.connectedDevices)
-//            lgr.log("Key(" + key + ") in List!!!");
-//        else {
-//            lgr.log("Key(" + key + ") not in List");
-//            deviceManager.connectedDevices[key] = device;
-//            initDeviceNamepsaces(key)
-//        }
-//        if(cb_client == null || cb_client === undefined)
-//            return;
-//
-//        cb_client(device);
-//    });
-//}
+const isPathAbsolute = function(path){ //src: http://stackoverflow.com/a/17819167
+    return /^(?:\/|[a-z]+:\/\/)/.test(path);
+}
+const changeDirectory = function(client_ip_address, path, cb){
+    lgr.log("SSH changeDirectory(" + client_ip_address + ") changing from " + sshList[client_ip_address].baseDir + " to " + path);
+    sshList[client_ip_address].baseDir = path;
+    executeCommand(client_ip_address, "pwd", function(returnData){
+        if(returnData.success){
+            if(returnData.output.length > 0){ //output has some invisible char at the end!
+                sshList[client_ip_address].baseDir = returnData.output.substring(0, returnData.output.length - 1);
+                returnData.pwd = getPWDString(client_ip_address);
+            }
+            cb(returnData);
+        } else {
+            cb(returnData);
+        }
+    });
+}
+
+const getPWDString = function(client_ip_address){
+    return sshList[client_ip_address].user + "@" + sshList[client_ip_address].host + ":" + sshList[client_ip_address].baseDir;
+}
 
 /*NAMESPACES***********************************************************************************************************/
+var ssh_io = io.of('/ssh');
+ssh_io.on('connection', function(socket){
+    var client_ip_address = socket.request.connection.remoteAddress;
+    lgr.log("ssh_io(" + client_ip_address + ") logged on!");
+
+    //Connect to SSH - Host should always be the current Server hosting the Website //TODO add Host!
+    socket.on('login', function(data){
+        //TODO check for error
+        lgr.log("ssh_io(" + client_ip_address + ") login with data...");
+        if(false){ //FIXME if(sshList[client_ip_address] != null){ //to prevent the page refresh problem
+            socket.emit('login', sshResult(false, "Error! Already Logged in."));
+        } else {
+
+            let sshOjb = SSH(data); //TODO check if correctly connected? where is the fail case?
+
+            sshOjb.start({
+                success: function(){
+                    lgr.log("SSH Login(" + client_ip_address + ") Success");
+                    sshList[client_ip_address] = sshOjb;
+                    socket.emit('login', sshResult(true, "Login successful!"));
+                },
+                fail: function(err){
+                    lgr.log("SSH Login(" + client_ip_address + ") Error: " + err);
+                    socket.emit('login', sshResult(false, "Error! Check the Username or Password."));
+                }
+            });
+        }
+    });
+
+    socket.on('logout', function(data){
+        //TODO check for error
+        lgr.log("SSH Logout(" + client_ip_address + ") logout");
+
+        if(sshList[client_ip_address] != null){
+            sshList[client_ip_address].end();
+            delete sshList[client_ip_address];
+
+            socket.emit('logout', sshResult(true, "Logout successful!"));
+        } else {
+            socket.emit('logout', sshResult(false, "Client was not logged in!"));
+        }
+
+
+    });
+
+    socket.on('sshExec', function(command){
+        //bugfix for now
+        if(command.toLocaleLowerCase() == "cd" || command.toLowerCase() == "cd "){
+            return;
+        }
+
+        if(sshList[client_ip_address] == null || command == null || command == undefined){
+            lgr.log("sshExec(" + client_ip_address + ") no SSH Session found!");
+            socket.emit('sshExec', sshResult(false, "No SSH Session found! Please Login again."));
+        } else {
+            if(command.substring(0, 3) == "cd "){
+                let path = command.substring(3, command.length);
+                changeDirectory(client_ip_address, path, function(returnData){
+                    socket.emit('sshExec', returnData);
+                });
+            } else {
+                executeCommand(client_ip_address, command, function(returnData){
+                    socket.emit('sshExec', returnData);
+                });
+            }
+        }
+    });
+});
 
 /* Manager Namepsace(/manager)
  *   init
  */
-var manager = io.of('/manager');
-manager.on('connection', function(socket){
-    var client_ip_address = socket.request.connection.remoteAddress;
-    lgr.log("Manager(" + client_ip_address + ") logged on!");
-    //Init - get current connected TF devices
-    socket.on('init', function(){
-        sendDevicesToClient(socket);
-        //socket.emit('init', data); //Emits directly to the socket
-        //manager.emit('init', data); //Emit to ALL subscribed sockets
-
-    })
-});
-/**
- * Sends device data to the client. Only init!
- * TODO add Update function(disconnect device, connect new, etc.)
- * @param socket
- */
-var sendDevicesToClient = function(socket){
-    //clean data(remove socketio entry)
-
-    deviceManager.refreshDeviceList(initDeviceNamepsaces, function(device){
-        lgr.log("Sending Data...");
-        socket.emit('init', device); //Emits directly to the socket
-    })
-}
-
-var updateClientWithConnectedDevice = function(key, device){
-    lgr.log("Sending Update Connect...");
-    manager.emit('update', {'connect': device}); //device  is self referencing?!
-    initDeviceNamepsaces(key);
-
-}
-
-var updateClientWithDisconnectedDevice = function(device){ //TODO rework this part
-    lgr.log("Sending Update Disconnect...");
-    manager.emit('update', {'disconnect': device});
-}
-
-/* testBrick Namepsace(/manager)
- *
- */
-//Init Device Namepsaces
-var initDeviceNamepsaces = function(deviceKey){
-    deviceManager.connectedDevices[deviceKey]['socketio'] = {};
-    deviceManager.connectedDevices[deviceKey]['socketio']['namespace'] = io.of(deviceKey);
-    deviceManager.connectedDevices[deviceKey]['socketio']['device'] = tf.initDevice(deviceManager.connectedDevices[deviceKey]['name'], deviceManager.connectedDevices[deviceKey]['uid']);
-    //Socket.io Namepsace
-    deviceManager.connectedDevices[deviceKey]['socketio']['namespace'].on('connection', function(socket){
-        lgr.log("[" + deviceKey + "] Connected!");
-
-        var dev = deviceManager.connectedDevices[deviceKey]['socketio']['namespace'];
-        socket.on('init', function(){
-            lgr.log("[" + deviceKey + "] Got Init.");
-            socket.emit('init', "Hello from " + deviceKey);
-        });
-
-    });
-    //tfDeviceNamespaces['Barometer Bricklet:fVP']['namespace'].on('connection', function(socket){
-    //    lgr.log("[Barometer Bricklet:fVP'] Connected!");
-    //
-    //    var dev = tfDeviceNamespaces['Barometer Bricklet:fVP']['namespace'];
-    //    socket.on('init', function(){
-    //        lgr.log('got init');
-    //        socket.emit('init', "Hallo Welt!");
-    //    });
-    //
-    //});
-    //
-    //
-    //tf.initCallback(tfDeviceNamespaces['Barometer Bricklet:fVP']['device'], null, function(value){ //TODO change values
-    //    //lgr.log("[Barometer Bricklet:fVP']airPressure = " + value);
-    //    tfDeviceNamespaces['Barometer Bricklet:fVP']['namespace'].emit('airPressure', value);
-    //});
-
-}
-
+// var manager = io.of('/manager');
+// manager.on('connection', function(socket){
+//     var client_ip_address = socket.request.connection.remoteAddress;
+//     lgr.log("Manager(" + client_ip_address + ") logged on!");
+//     //Init - get current connected TF devices
+//     socket.on('init', function(){
+//         sendDevicesToClient(socket);
+//         //socket.emit('init', data); //Emits directly to the socket
+//         //manager.emit('init', data); //Emit to ALL subscribed sockets
+//
+//     })
+// });
 /*EXPORTS**************************************************************************************************************/
 module.exports.init = function(server){
     if(server === undefined){
         lgr.logErr("Socket.io could not be initialized! Server was given undefined!")
         return;
     }
-
     io.listen(server);
     lgr.log("Socket.io listening.");
-
-    //deviceManager.connectedDevices['BrickMaster:68zo2F'] = null; //DEBUG only
-    //deviceManager.connectedDevices['BrickletBarometer:fVP'] = null;
-    deviceManager.initCallbackHandler(updateClientWithConnectedDevice, updateClientWithDisconnectedDevice);
-    deviceManager.refreshDeviceList(initDeviceNamepsaces);
-    //initDeviceNamepsaces();
 }

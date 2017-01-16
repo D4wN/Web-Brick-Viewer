@@ -1,2 +1,33 @@
 div(id='{{uid}}-RED-Console').collapse
-    p Console here
+    div
+        .row
+            h3.col-sm-12 SSH Console
+        .row
+            p(ng-if='!sshConnected').col-sm-12 <b>ATTENTION</b>: There is currently NO encryption for the Username, Password or Commands!
+        .row(ng-if='!sshConnected')
+            label.col-xs-4.col-sm-3 Username
+            label.col-xs-4.col-sm-3 Password
+            label.col-xs-4.col-sm-3 SSH Port
+        .row(ng-if='!sshConnected')
+            input(ng-readonly="sshConnected" type='text' ng-model='sshConfig.sshUser' placeholder='Username').col-xs-4.col-sm-3.input-style
+            input(ng-readonly="sshConnected" type='password' ng-model='sshConfig.sshPassword').col-xs-4.col-sm-3.input-style
+            input(ng-readonly="sshConnected" type='number' max='65535' min="1" ng-model='sshConfig.sshPort' required).col-xs-4.col-sm-3.input-style
+        .row
+            button(ng-disabled='btnSshLoginDisabled' ng-click='sshLogin()').btn.btn-default.col-xs-12.col-sm-9 {{btnSshLoginText}}
+            b(ng-if='btnSshLoginErrorText').col-xs-12.col-sm-9.text-danger.bg-danger {{btnSshLoginErrorText}}
+        br
+        .row.col-sm-12(ng-hide='!sshConnected')
+            div(style="padding: 0px; padding-left: 2px; color: white; background-color: black;").row.well
+                div(ng-repeat='o in sshConsoleOutput').col-sm-12
+                    div {{o.output}}
+            .row
+                input(type='text' ng-model='consoleCommand' placeholder='Enter command here' ng-keypress="sshSendCommand($event)").col-xs-9.input-style
+                button(ng-click='sshSendCommand()').btn.btn-default.col-xs-3 Send
+            br
+            .row
+                p
+                    |The current version of the Console is very simple, highly experimental and does not support advanced commands like
+                    | <b><i>sudo</i></b> or text editors. Only commands with a simple output, like <b><i>ls</i></b> or <b><i>cd</i></b>
+                    | are currently supported.
+                p
+                    |Only the last 10 commands and outputs are displayed. SSH Login and Logout are counted as well.

@@ -2,8 +2,9 @@
 
 var express = require('express');
 var path = require('path');
-//var io = require('../scripts/socket.io.js');
+var io = require('../scripts/socket.io.js');
 //var tf = require('../scripts/tinkerforge.js')
+
 
 //Routes
 var index = require('../routes/index.js');
@@ -74,8 +75,9 @@ exports.start = function() {
             console.error("Server was undefined!")
             return;
         }
-        //tf.init(server);
-        //io.init(server);
+
+        io.init(server);
+
 
     } catch(e) {
         console.log("Server could not be started. " + e.stack);
